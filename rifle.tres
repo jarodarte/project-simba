@@ -14,4 +14,5 @@ magazine_size = 30
 current_ammo = null
 weapon_scene = ExtResource("2_otrmw")
 current_reserve_magazines = null
+burst_count = 3
 metadata/_custom_type_script = "uid://usc4sl4sxcbl"

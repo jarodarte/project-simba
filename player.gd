@@ -24,8 +24,6 @@ var can_shoot: bool = true
 var is_reloading: bool = false
 var runtime_weapons: Array[WeaponData] = []
 var current_weapon_node: Node3D
-
-# tracks the reload coroutine so we can invalidate it on weapon swap
 var _reload_id: int = 0
 
 func spawn_weapon():
@@ -35,30 +33,42 @@ func spawn_weapon():
 		current_weapon_node = current_weapon.weapon_scene.instantiate()
 		weapon_anchor.add_child(current_weapon_node)
 
+var _is_bursting: bool = false
+
 func fire_gun():
 	if current_weapon_node == null:
 		return
+	if _is_bursting:
+		return
 
+	_is_bursting = true
 	can_shoot = false
-	shoot_timer.start(current_weapon.fire_rate)
 
-	current_weapon.current_ammo -= 1
-	var audio = current_weapon_node.get_node_or_null("ShootSound")
-	if audio:
-		audio.play()
-	emit_weapon_stats()
-	flash.visible = true
-	get_tree().create_timer(0.05).timeout.connect(func(): flash.visible = false)
+	for i in current_weapon.burst_count:
+		if current_weapon.current_ammo <= 0:
+			break
 
-	# raycast updates automatically — force_raycast_update() not needed
-	if raycast.is_colliding():
-		var effect = hit_effect_scene.instantiate()
-		get_tree().root.add_child(effect)
-		effect.global_position = raycast.get_collision_point()
-		effect.emitting = true
-		var collider = raycast.get_collider()
-		if collider and collider.is_in_group("enemy"):
-			collider.take_damage(current_weapon.damage, raycast)
+		current_weapon.current_ammo -= 1
+
+		var audio = current_weapon_node.get_node_or_null("ShootSound")
+		if audio:
+			audio.play()
+
+		emit_weapon_stats()
+		flash.visible = true
+		get_tree().create_timer(0.05).timeout.connect(func(): flash.visible = false)
+
+		if raycast.is_colliding():
+			var effect = hit_effect_scene.instantiate()
+			get_tree().root.add_child(effect)
+			effect.global_position = raycast.get_collision_point()
+			effect.emitting = true
+			var collider = raycast.get_collider()
+			if collider and collider.is_in_group("enemy"):
+				collider.take_damage(current_weapon.damage, raycast)
+		await get_tree().create_timer(current_weapon.burst_delay).timeout
+	_is_bursting = false
+	shoot_timer.start(current_weapon.fire_rate)  # cooldown before next burst
 
 func reload():
 	if is_reloading:
@@ -96,6 +106,7 @@ func change_weapon(direction: int):
 	current_weapon = runtime_weapons[weapon_index]
 	spawn_weapon()
 	emit_weapon_stats()
+	_is_bursting = false
 	can_shoot = true
 	shoot_timer.stop()
 	is_reloading = false

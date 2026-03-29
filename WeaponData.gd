@@ -12,3 +12,5 @@ class_name WeaponData
 @export var weapon_scene: PackedScene #weapon mesh
 @export var current_reserve_magazines = max_reserve_magazines
 @export var headshot_multiplier: float = 1.5
+@export var burst_count = 1
+@export var burst_delay = 0.1

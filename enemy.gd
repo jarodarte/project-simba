@@ -1,18 +1,19 @@
 extends CharacterBody3D
 
 const GRAVITY = 9.8
+
 var player: Node3D = null
 var health: float = 100.0
+var is_flashing: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")
 var DamageTextScene = preload("res://damage_text.tscn")
+
 @export var SPEED = 2.0
 @export var head_collision_shape: CollisionShape3D
 @onready var nav_agent = $NavigationAgent3D
 @onready var damage_zone = $DamageZone
 @onready var mesh = $MeshInstance3D
 @onready var material = mesh.get_surface_override_material(0)
-
-var is_flashing: bool = false
 
 func _ready():
 	damage_zone.body_entered.connect(_on_body_entered)
