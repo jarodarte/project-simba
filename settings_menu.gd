@@ -133,3 +133,21 @@ func _input(event: InputEvent) -> void:
 
 func _on_preview_control_changed(_value) -> void:
 	crosshair_preview.update_preview(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
+
+func _on_reset_button_pressed() -> void:
+	InputMap.load_from_project_settings()
+	_build_action_list()
+	SettingsManager.save_settings()
+
+
+func _on_crosshair_reset_button_pressed() -> void:
+	SettingsManager.crosshair_color = Color.GREEN
+	SettingsManager.crosshair_length = 10.0
+	SettingsManager.crosshair_thickness = 3.0
+	SettingsManager.crosshair_gap = 3.0
+	load_crosshair_settings(10.0, 3.0, 3.0, Color.GREEN)
+	emit_signal("crosshair_updated", length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
+	SettingsManager.save_settings()
+	
+	
+	
