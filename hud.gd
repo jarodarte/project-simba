@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+
 @onready var points_label = $Control/PointsLabel
 @onready var health_label = $Control/HealthBar
 @onready var ammo_counter = $Control/VBoxContainer/AmmoCounter

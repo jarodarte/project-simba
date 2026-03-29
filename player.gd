@@ -182,7 +182,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
 	#movement process
-	var input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input = Input.get_vector("left", "right", "forward", "back")
 	var dir = (transform.basis * Vector3(input.x, 0, input.y)).normalized()
 	velocity.x = dir.x * SPEED
 	velocity.z = dir.z * SPEED

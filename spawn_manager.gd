@@ -1,5 +1,6 @@
 extends Node
 
+
 var spawn_points: Array = []     
 var current_index: int = 0      
 var enemies_spawned: int = 0       
