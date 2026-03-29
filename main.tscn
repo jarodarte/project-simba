@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dns1tpcbxstai" path="res://timed_spawner.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c5vcp70r6veoo" path="res://player.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://cbj1h80hi5skx" path="res://loot_button.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://b2pv5a8fko5c2" path="res://pistol.tscn" id="7_272bh"]
 
 [sub_resource type="Sky" id="Sky_a202f"]
 
@@ -22,6 +24,13 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 agent_radius = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
+
+[sub_resource type="Resource" id="Resource_5vw27"]
+script = ExtResource("6_272bh")
+current_ammo = null
+weapon_scene = ExtResource("7_272bh")
+current_reserve_magazines = null
+metadata/_custom_type_script = "uid://usc4sl4sxcbl"
 
 [node name="Node3D" type="Node3D" unique_id=2144823753]
 
@@ -144,10 +153,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.723503, -0.91540194, -30.5
 
 [node name="lootButton" parent="." unique_id=994099034 instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.529083, -0.5337618, -41.744186)
-pickup_type = "health"
+pickup_type = "gun"
 ammo_type = "9mm"
 ammo_amount = 1
 health_amount = 20.0
+gun_drop = SubResource("Resource_5vw27")
 
 [node name="lootButton2" parent="." unique_id=1624959748 instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.385174, -0.6092345, -27.729279)

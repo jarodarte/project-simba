@@ -99,7 +99,7 @@ func reload():
 	emit_weapon_stats()
 	is_reloading = false
 
-func change_weapon(direction: int):
+func swap_weapon(direction: int):
 	if weapons.size() == 0:
 		return
 	weapon_index = wrap(weapon_index + direction, 0, weapons.size())
@@ -174,9 +174,9 @@ func _input(event):
 			current_lookat.interact(self)
 
 	if event.is_action_pressed("next_weapon"):
-		change_weapon(1)
+		swap_weapon(1)
 	if event.is_action_pressed("prev_weapon"):
-		change_weapon(-1)
+		swap_weapon(-1)
 
 func _physics_process(delta):
 	#shooting process

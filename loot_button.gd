@@ -2,11 +2,12 @@ extends Area3D
 
 @export_group("Button Config")
 @export var points_cost: int = 50
-@export_enum("ammo", "health") var pickup_type: String = "ammo"
+@export_enum("ammo", "health" , "gun") var pickup_type: String = "ammo"
 @export var ammo_type: String = "9mm"
 @export var ammo_amount: int = 10
 @export var health_amount: float = 20
 @export var interaction_range: float = 3.0
+@export var gun_drop: WeaponData
 
 @onready var label = $Label3D
 @onready var sound = $AudioStreamPlayer3D
@@ -24,8 +25,11 @@ func update_label(message: String = ""):
 	var reward_text = ""
 	if pickup_type == "ammo":
 		reward_text = str(ammo_amount) + " " + ammo_type + " Mag"
-	else:
+	elif pickup_type == "health":
 		reward_text = "+" + str(health_amount) + " Health"
+	else: 
+		if gun_drop == null: reward_text = "???"
+		else: reward_text = gun_drop.name
 	label.text = "%s\nCost: %d" % [reward_text, points_cost]
 
 func _input(event: InputEvent):
@@ -58,6 +62,8 @@ func apply_reward():
 				player.emit_weapon_stats()
 	elif pickup_type == "health":
 		GameManager.heal(health_amount)
+	else:
+		give_gun_to_player()
 
 func flash_error(msg: String):
 	update_label(msg)
@@ -65,3 +71,19 @@ func flash_error(msg: String):
 	await get_tree().create_timer(1.5).timeout
 	label.modulate = Color.WHITE
 	update_label()
+
+func give_gun_to_player():
+	var new_weapon = gun_drop.duplicate(true)
+	new_weapon.current_ammo = new_weapon.magazine_size
+	new_weapon.current_reserve_magazines = new_weapon.max_reserve_magazines
+	player.runtime_weapons[player.weapon_index] = new_weapon
+	player.current_weapon = new_weapon
+	player.spawn_weapon()
+	player.emit_weapon_stats()
+	#reset shooting state
+	player._is_bursting = false
+	player.can_shoot = true
+	player.shoot_timer.stop()
+	player.is_reloading = false
+	player._reload_id += 1  # cancels any reload
+	player.emit_weapon_stats()
