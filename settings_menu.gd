@@ -10,8 +10,22 @@ const ACTIONS = [ "forward", "back", "left", "right", "interact", "jump", "shoot
 @onready var save_button = $HBoxContainer/Save
 @onready var cancel_button = $HBoxContainer/Cancel
 @onready var save_exit_button = $HBoxContainer/SaveExit
+@onready var length_slider = $TabContainer/Gameplay/HBoxContainer/LengthSlider
+@onready var thickness_slider = $TabContainer/Gameplay/HBoxContainer2/ThicknessSlider
+@onready var gap_slider = $TabContainer/Gameplay/HBoxContainer3/GapSlider
+@onready var color_picker = $TabContainer/Gameplay/HBoxContainer4/ColorPicker
+@onready var crosshair_preview = $TabContainer/Gameplay/CrosshairPreview
+
+signal crosshair_updated(length: float, thickness: float, gap: float, color: Color)
 
 var listening_for: String = ""
+
+func load_crosshair_settings(length: float, thickness: float, gap: float, color: Color) -> void:
+	length_slider.value = length
+	thickness_slider.value = thickness
+	gap_slider.value = gap
+	color_picker.color = color
+	crosshair_preview.update_preview(length, thickness, gap, color)
 
 func _ready() -> void:
 	option_button.add_item("720p", 0)
@@ -21,22 +35,28 @@ func _ready() -> void:
 	sens_slider.value = SettingsManager.mouse_sensitivity
 	volume_slider.value = SettingsManager.sound_volume
 	option_button.selected = SettingsManager.resolution
+	length_slider.value_changed.connect(_on_preview_control_changed)
+	thickness_slider.value_changed.connect(_on_preview_control_changed)
+	gap_slider.value_changed.connect(_on_preview_control_changed)
+	color_picker.color_changed.connect(_on_preview_control_changed)
 	_build_action_list()
 
 func _on_save_pressed() -> void:
 	SettingsManager.mouse_sensitivity = sens_slider.value
 	SettingsManager.sound_volume = volume_slider.value
 	SettingsManager.resolution = option_button.selected
+	SettingsManager.crosshair_color = color_picker.color
+	SettingsManager.crosshair_length = length_slider.value
+	SettingsManager.crosshair_thickness = thickness_slider.value
+	SettingsManager.crosshair_gap = gap_slider.value
+	emit_signal("crosshair_updated", length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
 	SettingsManager.save_settings()
 
 func _on_cancel_pressed() -> void:
 	visible = false
 
 func _on_save_exit_pressed() -> void:
-	SettingsManager.mouse_sensitivity = sens_slider.value
-	SettingsManager.sound_volume = volume_slider.value
-	SettingsManager.resolution = option_button.selected
-	SettingsManager.save_settings()
+	_on_save_pressed()
 	visible = false
 
 func _build_action_list() -> void:
@@ -110,3 +130,6 @@ func _input(event: InputEvent) -> void:
 	listening_for = ""
 	_build_action_list()
 	get_viewport().set_input_as_handled()
+
+func _on_preview_control_changed(_value) -> void:
+	crosshair_preview.update_preview(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)

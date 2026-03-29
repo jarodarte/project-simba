@@ -7,6 +7,10 @@ var sound_volume: float = 0.5
 var keybindings: Dictionary = {}
 var resolution: int = 1
 var resolutions = [Vector2i(1280, 720),Vector2i(1920, 1080), Vector2i(2560, 1440), Vector2i(3840, 2160)]
+var crosshair_length: float = 10.0
+var crosshair_thickness: float = 3.0
+var crosshair_gap: float = 3.0
+var crosshair_color: Color = Color.GREEN
 
 func _ready() -> void:
 	load_settings()
@@ -17,6 +21,10 @@ func save_settings() -> void:
 	config.set_value("sound","sound_volume", sound_volume)
 	config.set_value("controls","keybinds", keybindings)
 	config.set_value("video","resolution", resolution)
+	config.set_value("crosshair", "length", crosshair_length)
+	config.set_value("crosshair", "thickness", crosshair_thickness)
+	config.set_value("crosshair", "gap", crosshair_gap)
+	config.set_value("crosshair", "color", crosshair_color)
 	config.save(SAVE_PATH)
 	_apply_settings()
 
@@ -28,6 +36,10 @@ func load_settings() -> void:
 	sound_volume = config.get_value("sound","sound_volume", 0.5)
 	keybindings = config.get_value("controls","keybinds", {})
 	resolution = config.get_value("video","resolution", 1)
+	crosshair_length = config.get_value("crosshair", "length", 10.0)
+	crosshair_thickness = config.get_value("crosshair", "thickness", 3.0)
+	crosshair_gap = config.get_value("crosshair", "gap", 3.0)
+	crosshair_color = config.get_value("crosshair", "color", Color.GREEN)
 	_apply_settings()
 
 func _apply_settings() ->void:

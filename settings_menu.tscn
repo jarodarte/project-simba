@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfporapnlqw7f"]
 
 [ext_resource type="Script" uid="uid://c2travk0sn8ds" path="res://settings_menu.gd" id="1_ufg0w"]
+[ext_resource type="Script" uid="uid://4f0jxsehmcj2" path="res://crosshair_preview.gd" id="2_0cmel"]
 
 [node name="SettingsMenu" type="Control" unique_id=1083175389]
 layout_mode = 3
@@ -27,16 +28,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 3
+current_tab = 0
 
 [node name="Gameplay" type="VBoxContainer" parent="TabContainer" unique_id=381521575]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="Label" type="Label" parent="TabContainer/Gameplay" unique_id=1323502424]
 layout_mode = 2
-text = "Coming Soon..."
+text = "Crosshair"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Gameplay" unique_id=1470633024]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/HBoxContainer" unique_id=1161657994]
+layout_mode = 2
+text = "Length"
+
+[node name="LengthSlider" type="HSlider" parent="TabContainer/Gameplay/HBoxContainer" unique_id=696729788]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 30.0
+value = 10.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Gameplay" unique_id=407294809]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/HBoxContainer2" unique_id=850736559]
+layout_mode = 2
+text = "Thickness"
+
+[node name="ThicknessSlider" type="HSlider" parent="TabContainer/Gameplay/HBoxContainer2" unique_id=1366293553]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 10.0
+value = 3.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Gameplay" unique_id=1937246159]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/HBoxContainer3" unique_id=438487904]
+layout_mode = 2
+text = "Gap"
+
+[node name="GapSlider" type="HSlider" parent="TabContainer/Gameplay/HBoxContainer3" unique_id=1142042818]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 20.0
+value = 3.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Gameplay" unique_id=767118676]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Gameplay/HBoxContainer4" unique_id=1908842065]
+layout_mode = 2
+text = "Color"
+
+[node name="ColorPicker" type="ColorPickerButton" parent="TabContainer/Gameplay/HBoxContainer4" unique_id=744568790]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="CrosshairPreview" type="Control" parent="TabContainer/Gameplay" unique_id=1329418714]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+script = ExtResource("2_0cmel")
 
 [node name="Sound" type="VBoxContainer" parent="TabContainer" unique_id=2022532711]
 visible = false
@@ -65,6 +122,7 @@ text = "Resolution"
 layout_mode = 2
 
 [node name="Input" type="VBoxContainer" parent="TabContainer" unique_id=898144342]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 

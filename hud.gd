@@ -10,10 +10,10 @@ extends CanvasLayer
 @onready var settings_menu = $PauseMenu/SettingsMenu
 @onready var wave_start_label = $Control/WaveStartLabel
 
-var crosshair_length: float = 10
-var crosshair_thickness: float = 3
-var crosshair_gap: float = 3
-var crosshair_color: Color = Color.GREEN
+var crosshair_length: float = SettingsManager.crosshair_length
+var crosshair_thickness: float = SettingsManager.crosshair_thickness
+var crosshair_gap: float = SettingsManager.crosshair_gap
+var crosshair_color: Color = SettingsManager.crosshair_color
 var _tween: Tween
 
 func update_points(new_points: int):
@@ -62,6 +62,15 @@ func build_crosshair():
 	down.color = crosshair_color
 	crosshair.add_child(down)
 
+func rebuild_crosshair(length: float, thickness: float, gap: float, color: Color) -> void:
+	for item in crosshair.get_children():
+		item.queue_free()
+	crosshair_length = length
+	crosshair_thickness = thickness
+	crosshair_gap = gap
+	crosshair_color = color
+	build_crosshair()
+
 func toggle_pause():
 	get_tree().paused = !get_tree().paused
 	if get_tree().paused:
@@ -80,6 +89,7 @@ func _ready():
 	GameManager.health_changed.connect(update_health)
 	GameManager.wave_started.connect(_on_wave_started)
 	GameManager.weapon_ui_update.connect(update_weapon_ui)
+	settings_menu.crosshair_updated.connect(rebuild_crosshair)
 	update_points(GameManager.points)
 	update_health(GameManager.health)
 	_on_wave_started(GameManager.current_wave)
@@ -87,6 +97,7 @@ func _ready():
 
 func _on_options_button_pressed() -> void:
 	settings_menu.visible = true
+	settings_menu.load_crosshair_settings(crosshair_length, crosshair_thickness, crosshair_gap, crosshair_color)
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
