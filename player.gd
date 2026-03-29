@@ -106,11 +106,7 @@ func swap_weapon(direction: int):
 	current_weapon = runtime_weapons[weapon_index]
 	spawn_weapon()
 	emit_weapon_stats()
-	_is_bursting = false
-	can_shoot = true
-	shoot_timer.stop()
-	is_reloading = false
-	_reload_id += 1  #invalidates any in-flight reload coroutine
+	reset_gun_state()
 
 func emit_weapon_stats():
 	GameManager.weapon_ui_update.emit(
@@ -209,3 +205,10 @@ func _physics_process(delta):
 
 func _on_shoot_timer_timeout():
 	can_shoot = true
+
+func reset_gun_state(): 
+	_is_bursting = false
+	can_shoot = true
+	shoot_timer.stop()
+	is_reloading = false
+	_reload_id += 1  # cancels any reload

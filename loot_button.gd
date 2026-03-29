@@ -80,10 +80,5 @@ func give_gun_to_player():
 	player.current_weapon = new_weapon
 	player.spawn_weapon()
 	player.emit_weapon_stats()
-	#reset shooting state
-	player._is_bursting = false
-	player.can_shoot = true
-	player.shoot_timer.stop()
-	player.is_reloading = false
-	player._reload_id += 1  # cancels any reload
+	player.reset_gun_state()
 	player.emit_weapon_stats()
