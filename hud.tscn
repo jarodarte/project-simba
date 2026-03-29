@@ -85,6 +85,7 @@ label_settings = SubResource("LabelSettings_640wx")
 horizontal_alignment = 2
 
 [node name="Crosshair" type="Control" parent="Control" unique_id=64658316]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
