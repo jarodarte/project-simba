@@ -4,6 +4,9 @@ const SPEED = 4.0
 const JUMP_FORCE = 6.0
 const GRAVITY_UP = 9.8
 const GRAVITY_DOWN = 18.0
+const BOB_SPEED = (2 * PI) # how fast the cycle runs
+const BOB_AMOUNT = 0.05    # how far it moves 
+const BOB_LERP_SPEED = 10.0
 
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
@@ -15,6 +18,7 @@ const GRAVITY_DOWN = 18.0
 @onready var footstep_sound = $FootstepSound
 @export var weapons: Array[WeaponData] = []
 
+var _is_bursting: bool = false
 var current_weapon: WeaponData
 var weapon_index: int = 0
 var current_lookat = null
@@ -25,6 +29,7 @@ var is_reloading: bool = false
 var runtime_weapons: Array[WeaponData] = []
 var current_weapon_node: Node3D
 var _reload_id: int = 0
+var bob_time: float = 0.0
 
 func spawn_weapon():
 	if current_weapon_node:
@@ -32,8 +37,6 @@ func spawn_weapon():
 	if current_weapon and current_weapon.weapon_scene:
 		current_weapon_node = current_weapon.weapon_scene.instantiate()
 		weapon_anchor.add_child(current_weapon_node)
-
-var _is_bursting: bool = false
 
 func fire_gun():
 	if current_weapon_node == null:
@@ -200,6 +203,16 @@ func _physics_process(delta):
 		if footstep_timer.is_stopped(): footstep_timer.start()
 	else:
 		footstep_timer.stop()
+	#weapon sway 
+	var bob_target = Vector3.ZERO
+	if is_moving and is_on_floor():
+		bob_time += delta * BOB_SPEED
+		var bob_x = sin(bob_time) * BOB_AMOUNT
+		var bob_y = sin(bob_time * 2) * BOB_AMOUNT
+		bob_target = Vector3(bob_x, bob_y, 0)
+	else: bob_time = 0.0
+	gun_holder.position = lerp(gun_holder.position, bob_target, BOB_LERP_SPEED * delta)
+
 	#checks to show information
 	check_interaction()
 
