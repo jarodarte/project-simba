@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://ndoujiytw0bm"]
+
+[ext_resource type="Script" uid="uid://p6r51qxt2sq2" path="res://player.gd" id="1_a202f"]
+
+[sub_resource type="Sky" id="Sky_a202f"]
+
+[sub_resource type="Environment" id="Environment_noarx"]
+background_mode = 2
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_a202f")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_a0tk4"]
+
+[sub_resource type="Compositor" id="Compositor_r3fl7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4xowi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a202f"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jka67"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i5arm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a202f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a202f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
+
+[node name="Node3D" type="Node3D" unique_id=2144823753]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079369174]
+environment = SubResource("Environment_noarx")
+camera_attributes = SubResource("CameraAttributesPractical_a0tk4")
+compositor = SubResource("Compositor_r3fl7")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=2076177896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4506956, 0)
+floor_constant_speed = true
+script = ExtResource("1_a202f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1569697456]
+mesh = SubResource("CapsuleMesh_4xowi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=623542917]
+shape = SubResource("CapsuleShape3D_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=855460332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500883, 0)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=287412964]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, -0.001, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1450380285]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_jka67")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=932700964]
+mesh = SubResource("PlaneMesh_i5arm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1732611430]
+transform = Transform3D(0.8660254, 0.3535534, -0.3535534, 0, 0.7071068, 0.7071068, 0.5, -0.61237246, 0.61237246, 0, 0, 0)
+
+[node name="slope" type="StaticBody3D" parent="." unique_id=804563140]
+transform = Transform3D(8.660254, -5, 0, 5, 8.660254, 0, 0, 0, 10, 15.761776, -1.8988767, 0)
+physics_material_override = SubResource("PhysicsMaterial_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slope" unique_id=1044082550]
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="slope" unique_id=628591006]
+transform = Transform3D(1, -2.9802322e-08, 0, 2.9802322e-08, 1, 0, 0, 0, 0.99999994, 0.000731349, 0.0012665987, 0)
+mesh = SubResource("BoxMesh_a0tk4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=706511184]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 22.587, -0.119228244, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=538167582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006818151, 0)
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1746718175]
+shape = SubResource("BoxShape3D_a0tk4")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1339202037]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.1794863, 1.6932082, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=861841311]
+mesh = SubResource("SphereMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=915756074]
+shape = SubResource("SphereShape3D_noarx")
+
+[connection signal="body_entered" from="Area3D" to="Player" method="_on_area_3d_body_entered"]

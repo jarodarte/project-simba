@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bnpmg0of43gmo"]
+
+[node name="Room" type="CSGCombiner3D" unique_id=1952696821]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=786619413]
+size = Vector3(20, 0.5, 20)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1993018804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+size = Vector3(20, 4, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=890763077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10)
+size = Vector3(20, 4, 0.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=2128468783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0)
+size = Vector3(0.5, 4, 20)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=476289270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 0)
+size = Vector3(0.5, 4, 20)

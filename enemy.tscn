@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dnkfhtodwr512"]
+
+[ext_resource type="Script" uid="uid://c811pnb2j8kpy" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi2p4"]
+radius = 0.4
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7k104"]
+radius = 0.4
+height = 1.75
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a0tk4"]
+radius = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+radius = 0.4
+
+[node name="Enemy" type="CharacterBody3D" unique_id=700309911 node_paths=PackedStringArray("head_collision_shape") groups=["enemy"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_7k104")
+head_collision_shape = NodePath("HeadHurtbox")
+
+[node name="HeadHurtbox" type="CollisionShape3D" parent="." unique_id=1549179496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_qi2p4")
+
+[node name="BodyHurtbox" type="CollisionShape3D" parent="." unique_id=1034230685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("CapsuleShape3D_7k104")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1016774746]
+mesh = SubResource("CapsuleMesh_a0tk4")
+surface_material_override/0 = SubResource("StandardMaterial3D_7k104")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1061427175]
+
+[node name="DamageZone" type="Area3D" parent="." unique_id=1079467073]
+collision_layer = 9
+collision_mask = 3
+
+[node name="EnemyHitbox" type="CollisionShape3D" parent="DamageZone" unique_id=46808253]
+shape = SubResource("CapsuleShape3D_4gyqm")

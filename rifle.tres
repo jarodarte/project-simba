@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dx0rufvkjrbcs"]
+
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="1_msfsp"]
+[ext_resource type="PackedScene" uid="uid://b6230ll5wn06r" path="res://rifle.tscn" id="2_otrmw"]
+
+[resource]
+script = ExtResource("1_msfsp")
+name = "Assault Rifle"
+ammo_type = "45mm"
+fire_rate = 0.075
+is_auto = true
+damage = 20
+magazine_size = 30
+current_ammo = null
+weapon_scene = ExtResource("2_otrmw")
+current_reserve_magazines = null
+metadata/_custom_type_script = "uid://usc4sl4sxcbl"

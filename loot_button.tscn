@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cbj1h80hi5skx"]
+
+[ext_resource type="Script" uid="uid://71wkti73d3ql" path="res://loot_button.gd" id="1_idq7m"]
+[ext_resource type="AudioStream" uid="uid://bmkb5akc3m6ms" path="res://Audio/confirmation_001.ogg" id="2_rnn0v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idq7m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rnn0v"]
+
+[node name="lootButton" type="Area3D" unique_id=1822226648 groups=["pickups"]]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_idq7m")
+score_cost = null
+pickup_type = null
+ammo_type = null
+ammo_amount = null
+health_amount = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1715307549]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_idq7m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=381940]
+mesh = SubResource("BoxMesh_rnn0v")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1945149531 groups=["pickups"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+layers = 5
+billboard = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2039789203]
+stream = ExtResource("2_rnn0v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

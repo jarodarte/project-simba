@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dvgobqgn8x74v"]
+
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="1_pp57v"]
+[ext_resource type="PackedScene" uid="uid://b2pv5a8fko5c2" path="res://pistol.tscn" id="2_25jnp"]
+
+[resource]
+script = ExtResource("1_pp57v")
+damage = 20
+current_ammo = null
+weapon_scene = ExtResource("2_25jnp")
+current_reserve_magazines = null
+metadata/_custom_type_script = "uid://usc4sl4sxcbl"
