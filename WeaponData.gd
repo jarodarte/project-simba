@@ -14,3 +14,8 @@ class_name WeaponData
 @export var headshot_multiplier: float = 1.5
 @export var burst_count = 1
 @export var burst_delay = 0.1
+
+@export_group("Spray")
+@export var spread_radius: float = 0.0
+@export var spray_pattern: Array[Vector2] = []
+@export var spray_reset_time: float = 0.4

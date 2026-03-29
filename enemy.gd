@@ -41,22 +41,25 @@ func _on_body_entered(body):
 	GameManager.enemy_died()
 	queue_free()
 
-func take_damage(base_amount: float, raycast: RayCast3D = null):
+func take_damage(base_amount: float, hit: Dictionary = {}):
 	var amount = base_amount
 	var is_headshot = false
 
-	if raycast != null and raycast.is_colliding() and raycast.get_collider() == self:
-		var hit_shape = shape_owner_get_owner(raycast.get_collider_shape())
-		is_headshot = hit_shape == head_collision_shape
-		if is_headshot:
-			amount *= player.current_weapon.headshot_multiplier
-	
+	if not hit.is_empty() and hit.get("collider") == self:
+		var shape_idx = hit.get("shape", -1)
+		if shape_idx >= 0:
+			var hit_shape = shape_owner_get_owner(shape_idx)
+			if hit_shape != null:
+				is_headshot = hit_shape == head_collision_shape
+				if is_headshot:
+					amount *= player.current_weapon.headshot_multiplier
+
 	health -= amount
-	#floating damage text
+
 	var damage_text = DamageTextScene.instantiate()
 	get_tree().root.add_child(damage_text)
 	damage_text.display(amount, global_position)
-	#removes enemy if dead
+
 	if health <= 0.0:
 		GameManager.enemy_died()
 		GameManager.update_points(GameManager.points + 10)
@@ -64,12 +67,8 @@ func take_damage(base_amount: float, raycast: RayCast3D = null):
 		queue_free()
 		return
 
-	# only start a new flash if one isn't already running
 	if not is_flashing:
 		flash_damage(is_headshot)
-	
-	if is_headshot : GameManager.update_points(GameManager.points + 15) 
-	else: GameManager.update_points(GameManager.points + 10)
 
 func flash_damage(is_headshot: bool):
 	is_flashing = true

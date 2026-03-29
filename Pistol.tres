@@ -9,4 +9,5 @@ damage = 20
 current_ammo = null
 weapon_scene = ExtResource("2_25jnp")
 current_reserve_magazines = null
+spread_radius = 1.5
 metadata/_custom_type_script = "uid://usc4sl4sxcbl"

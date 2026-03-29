@@ -30,6 +30,8 @@ var runtime_weapons: Array[WeaponData] = []
 var current_weapon_node: Node3D
 var _reload_id: int = 0
 var bob_time: float = 0.0
+var _spray_index: int = 0
+var _spray_reset_timer: float = 0.0
 
 func spawn_weapon():
 	if current_weapon_node:
@@ -52,7 +54,8 @@ func fire_gun():
 			break
 
 		current_weapon.current_ammo -= 1
-
+		_spray_index += 1
+		_spray_reset_timer = current_weapon.spray_reset_time
 		var audio = current_weapon_node.get_node_or_null("ShootSound")
 		if audio:
 			audio.play()
@@ -61,14 +64,14 @@ func fire_gun():
 		flash.visible = true
 		get_tree().create_timer(0.05).timeout.connect(func(): flash.visible = false)
 
-		if raycast.is_colliding():
+		var hit = shoot_ray()
+		if not hit.is_empty():
 			var effect = hit_effect_scene.instantiate()
 			get_tree().root.add_child(effect)
-			effect.global_position = raycast.get_collision_point()
+			effect.global_position = hit.position
 			effect.emitting = true
-			var collider = raycast.get_collider()
-			if collider and collider.is_in_group("enemy"):
-				collider.take_damage(current_weapon.damage, raycast)
+			if hit.collider and hit.collider.is_in_group("enemy"):
+				hit.collider.take_damage(current_weapon.damage, hit)
 		await get_tree().create_timer(current_weapon.burst_delay).timeout
 	_is_bursting = false
 	shoot_timer.start(current_weapon.fire_rate)  # cooldown before next burst
@@ -92,6 +95,8 @@ func reload():
 	current_weapon_node.get_node("AnimationPlayer").play("reload")
 
 	await get_tree().create_timer(2.0).timeout
+	_spray_index = 0
+	_spray_reset_timer = 0.0
 
 	# if weapon was swapped or another reload started during the wait, abort
 	if _reload_id != my_reload_id or current_weapon != weapon_at_start:
@@ -105,6 +110,8 @@ func reload():
 func swap_weapon(direction: int):
 	if weapons.size() == 0:
 		return
+	_spray_index = 0
+	_spray_reset_timer = 0.0
 	weapon_index = wrap(weapon_index + direction, 0, weapons.size())
 	current_weapon = runtime_weapons[weapon_index]
 	spawn_weapon()
@@ -178,11 +185,13 @@ func _input(event):
 		swap_weapon(-1)
 
 func _physics_process(delta):
+
 	#shooting process
 	if current_weapon and not is_reloading:
 		var trying_to_shoot = Input.is_action_pressed("shoot") if current_weapon.is_auto else Input.is_action_just_pressed("shoot")
 		if trying_to_shoot and can_shoot and current_weapon.current_ammo > 0:
 			fire_gun()
+
 	#jumping process
 	if not is_on_floor():
 		var gravity = GRAVITY_UP if velocity.y > 0 else GRAVITY_DOWN
@@ -191,6 +200,7 @@ func _physics_process(delta):
 		velocity.y = 0
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
+
 	#movement process
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var dir = (transform.basis * Vector3(input.x, 0, input.y)).normalized()
@@ -198,11 +208,13 @@ func _physics_process(delta):
 	velocity.z = dir.z * SPEED
 	move_and_slide()
 	#movement sound fx
+
 	var is_moving = Vector2(velocity.x, velocity.z).length() > 0.1
 	if is_moving and is_on_floor():
 		if footstep_timer.is_stopped(): footstep_timer.start()
 	else:
 		footstep_timer.stop()
+
 	#weapon sway 
 	var bob_target = Vector3.ZERO
 	if is_moving and is_on_floor():
@@ -216,6 +228,12 @@ func _physics_process(delta):
 	#checks to show information
 	check_interaction()
 
+	# spray reset
+	if _spray_reset_timer > 0.0:
+		_spray_reset_timer -= delta
+		if _spray_reset_timer <= 0.0:
+			_spray_index = 0
+
 func _on_shoot_timer_timeout():
 	can_shoot = true
 
@@ -225,3 +243,35 @@ func reset_gun_state():
 	shoot_timer.stop()
 	is_reloading = false
 	_reload_id += 1  # cancels any reload
+
+func get_shot_direction() -> Vector3:
+	var base_dir = -camera.global_transform.basis.z
+
+	var offset_deg := Vector2.ZERO
+
+	if current_weapon.spray_pattern.size() > 0:
+		# pattern-based: walk the sequence, clamp at the end
+		var idx = min(_spray_index, current_weapon.spray_pattern.size() - 1)
+		offset_deg = current_weapon.spray_pattern[idx]
+	elif current_weapon.spread_radius > 0.0:
+		# random bloom: pick a point inside the spread cone
+		var angle = randf() * TAU
+		var dist = randf() * current_weapon.spread_radius
+		offset_deg = Vector2(cos(angle), sin(angle)) * dist
+
+	# rotate base_dir by the offset using camera's local axes
+	var right = camera.global_transform.basis.x
+	var up = camera.global_transform.basis.y
+	var offset_rad = offset_deg * (PI / 180.0)
+	return (base_dir + right * offset_rad.x + up * offset_rad.y).normalized()
+
+func shoot_ray() -> Dictionary:
+	var origin = camera.global_position
+	var direction = get_shot_direction()
+	var end = origin + direction * 1000.0
+
+	var space = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.exclude = [self]
+
+	return space.intersect_ray(query)
