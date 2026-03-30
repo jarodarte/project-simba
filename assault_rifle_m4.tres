@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_msfsp")
 name = "Assault Rifle"
-ammo_type = "45mm"
 fire_rate = 0.075
 is_auto = true
 damage = 25

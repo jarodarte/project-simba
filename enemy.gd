@@ -5,6 +5,7 @@ const GRAVITY = 9.8
 var player: Node3D = null
 var health: float = 100.0
 var is_flashing: bool = false
+var _is_dead: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")
 var DamageTextScene = preload("res://damage_text.tscn")
 
@@ -13,7 +14,7 @@ var DamageTextScene = preload("res://damage_text.tscn")
 @onready var nav_agent = $NavigationAgent3D
 @onready var damage_zone = $DamageZone
 @onready var mesh = $MeshInstance3D
-@onready var material = mesh.get_surface_override_material(0)
+var material: StandardMaterial3D  
 
 func _ready():
 	damage_zone.body_entered.connect(_on_body_entered)
@@ -38,10 +39,11 @@ func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
 	GameManager.take_damage(10)
-	GameManager.enemy_died()
-	queue_free()
+	_die()
 
 func take_damage(base_amount: float, hit: Dictionary = {}):
+	if not is_inside_tree():
+		return
 	var amount = base_amount
 	var is_headshot = false
 
@@ -52,7 +54,8 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 			if hit_shape != null:
 				is_headshot = hit_shape == head_collision_shape
 				if is_headshot:
-					amount *= player.current_weapon.headshot_multiplier
+					if is_instance_valid(player) and player.current_weapon:
+						amount *= player.current_weapon.headshot_multiplier
 
 	health -= amount
 	GameManager.update_points(GameManager.points + 10)
@@ -62,10 +65,7 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 	damage_text.display(amount, global_position)
 
 	if health <= 0.0:
-		GameManager.enemy_died()
-		GameManager.update_points(GameManager.points + 10)
-		play_death_sound()
-		queue_free()
+		_die()
 		return
 
 	if not is_flashing:
@@ -87,3 +87,11 @@ func play_death_sound():
 	sound.stream = death_sound
 	sound.play()
 	sound.finished.connect(sound.queue_free)
+
+func _die():
+	if _is_dead:
+		return
+	_is_dead = true
+	GameManager.enemy_died()
+	play_death_sound()
+	queue_free()

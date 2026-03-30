@@ -11,11 +11,6 @@
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_idq7m")
-score_cost = null
-pickup_type = null
-ammo_type = null
-ammo_amount = null
-health_amount = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1715307549]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -31,6 +26,3 @@ billboard = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2039789203]
 stream = ExtResource("2_rnn0v")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

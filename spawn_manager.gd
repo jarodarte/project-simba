@@ -15,6 +15,7 @@ func _ready():
 	GameManager.start_wave()  
 
 func _start_wave(_current_wave: int):
+	current_index = 0
 	spawn_points = get_tree().get_nodes_in_group("spawn_point")
 	enemies_spawned = 0
 	enemies_to_spawn = GameManager.get_enemies_per_wave()
@@ -25,5 +26,5 @@ func _spawn_next():
 	var point = spawn_points[current_index]
 	point.spawn_enemy()
 	current_index = (current_index + 1) % spawn_points.size()
-	enemies_spawned = enemies_spawned + 1
+	enemies_spawned += 1
 	if enemies_spawned == enemies_to_spawn: timer.stop()

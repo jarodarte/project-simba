@@ -109,7 +109,7 @@ func reload():
 	# if weapon was swapped or another reload started during the wait, abort
 	if _reload_id != my_reload_id or current_weapon != weapon_at_start:
 		return
-	#resets the current ammo and depletes the reserve magazines
+	# resets the current ammo and depletes the reserve magazines
 	current_weapon.current_ammo = current_weapon.magazine_size
 	current_weapon.current_reserve_magazines -= 1
 	emit_weapon_stats()
@@ -189,13 +189,13 @@ func _input(event):
 
 func _physics_process(delta):
 
-	#shooting process
+	# shooting process
 	if current_weapon and not is_reloading:
 		var trying_to_shoot = Input.is_action_pressed("shoot") if current_weapon.is_auto else Input.is_action_just_pressed("shoot")
 		if trying_to_shoot and can_shoot and current_weapon.current_ammo > 0:
 			fire_gun()
 
-	#jumping process
+	# jumping process
 	if not is_on_floor():
 		var gravity = GRAVITY_UP if velocity.y > 0 else GRAVITY_DOWN
 		velocity.y -= gravity * delta
@@ -204,21 +204,21 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
 
-	#movement process
+	# movement process
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var dir = (transform.basis * Vector3(input.x, 0, input.y)).normalized()
 	velocity.x = dir.x * SPEED
 	velocity.z = dir.z * SPEED
 	move_and_slide()
-	#movement sound fx
 
+	# movement sound fx
 	var is_moving = Vector2(velocity.x, velocity.z).length() > 0.1
 	if is_moving and is_on_floor():
 		if footstep_timer.is_stopped(): footstep_timer.start()
 	else:
 		footstep_timer.stop()
 
-	#weapon sway 
+	# weapon sway
 	var bob_target = Vector3.ZERO
 	if is_moving and is_on_floor():
 		bob_time += delta * BOB_SPEED
@@ -228,7 +228,7 @@ func _physics_process(delta):
 	else: bob_time = 0.0
 	gun_holder.position = lerp(gun_holder.position, bob_target, BOB_LERP_SPEED * delta)
 
-	#checks to show information
+	# checks to show information
 	check_interaction()
 
 	# spray reset
@@ -240,16 +240,19 @@ func _physics_process(delta):
 func _on_shoot_timer_timeout():
 	can_shoot = true
 
-func reset_gun_state(): 
+func reset_gun_state():
 	_is_bursting = false
 	can_shoot = true
 	shoot_timer.stop()
 	is_reloading = false
 	_reload_id += 1  # cancels any reload
 
+func _random_spread(radius: float) -> Vector2:
+	var angle = randf() * TAU
+	return Vector2(cos(angle), sin(angle)) * randf() * radius
+
 func get_shot_direction() -> Vector3:
 	var base_dir = -camera.global_transform.basis.z
-
 	var offset_deg := Vector2.ZERO
 
 	if current_weapon.spray_pattern.size() > 0:
@@ -258,20 +261,16 @@ func get_shot_direction() -> Vector3:
 		offset_deg = current_weapon.spray_pattern[idx]
 	elif current_weapon.spread_radius > 0.0:
 		# random bloom: pick a point inside the spread cone
-		var angle = randf() * TAU
-		var dist = randf() * current_weapon.spread_radius
-		offset_deg = Vector2(cos(angle), sin(angle)) * dist
-	
-	var speed_ratio = Vector2(velocity.x, velocity.z).length()
-	speed_ratio = clamp(speed_ratio / SPEED, 0.0, 1.0)
+		offset_deg = _random_spread(current_weapon.spread_radius)
 
-	var angle = randf() * TAU
-	var dist = randf() * current_weapon.move_spread_max * speed_ratio
-	offset_deg += Vector2(cos(angle), sin(angle)) * dist
-	if !is_on_floor(): 
-		angle = randf() * TAU
-		dist = randf() * current_weapon.jump_spread
-		offset_deg += Vector2(cos(angle), sin(angle)) * dist
+	# movement inaccuracy: scales with horizontal speed
+	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
+	offset_deg += _random_spread(current_weapon.move_spread_max * speed_ratio)
+
+	# jump penalty: flat spread added when airborne
+	if not is_on_floor():
+		offset_deg += _random_spread(current_weapon.jump_spread)
+
 	# rotate base_dir by the offset using camera's local axes
 	var right = camera.global_transform.basis.x
 	var up = camera.global_transform.basis.y

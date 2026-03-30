@@ -42,6 +42,7 @@ func _ready() -> void:
 	_build_action_list()
 
 func _on_save_pressed() -> void:
+	SettingsManager.keybindings = {}
 	SettingsManager.mouse_sensitivity = sens_slider.value
 	SettingsManager.sound_volume = volume_slider.value
 	SettingsManager.resolution = option_button.selected
@@ -49,7 +50,15 @@ func _on_save_pressed() -> void:
 	SettingsManager.crosshair_length = length_slider.value
 	SettingsManager.crosshair_thickness = thickness_slider.value
 	SettingsManager.crosshair_gap = gap_slider.value
-	emit_signal("crosshair_updated", length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
+	for key in ACTIONS:
+		var events = InputMap.action_get_events(key)
+		if not events.is_empty():
+			var event = events[0]
+			if event is InputEventKey:
+				SettingsManager.keybindings[key] = event.keycode
+			elif event is InputEventMouseButton:
+				SettingsManager.keybindings[key] = event.button_index
+	crosshair_updated.emit(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
 	SettingsManager.save_settings()
 
 func _on_cancel_pressed() -> void:
@@ -146,7 +155,7 @@ func _on_crosshair_reset_button_pressed() -> void:
 	SettingsManager.crosshair_thickness = 3.0
 	SettingsManager.crosshair_gap = 3.0
 	load_crosshair_settings(10.0, 3.0, 3.0, Color.GREEN)
-	emit_signal("crosshair_updated", length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
+	crosshair_updated.emit(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
 	SettingsManager.save_settings()
 	
 	

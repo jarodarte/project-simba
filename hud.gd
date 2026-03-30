@@ -10,10 +10,6 @@ extends CanvasLayer
 @onready var settings_menu = $PauseMenu/SettingsMenu
 @onready var wave_start_label = $Control/WaveStartLabel
 
-var crosshair_length: float = SettingsManager.crosshair_length
-var crosshair_thickness: float = SettingsManager.crosshair_thickness
-var crosshair_gap: float = SettingsManager.crosshair_gap
-var crosshair_color: Color = SettingsManager.crosshair_color
 var _tween: Tween
 
 func update_points(new_points: int):
@@ -42,33 +38,33 @@ func _on_wave_started(new_wave: int):
 func build_crosshair():
 	crosshair.position = crosshair.get_parent().size / 2.0
 	var right = ColorRect.new()
-	right.size = Vector2(crosshair_length, crosshair_thickness)
-	right.position = Vector2(crosshair_gap, -crosshair_thickness / 2.0)
-	right.color = crosshair_color
+	right.size = Vector2(SettingsManager.crosshair_length, SettingsManager.crosshair_thickness)
+	right.position = Vector2(SettingsManager.crosshair_gap, -SettingsManager.crosshair_thickness / 2.0)
+	right.color = SettingsManager.crosshair_color
 	crosshair.add_child(right)
 	var left = ColorRect.new()
-	left.size = Vector2(crosshair_length, crosshair_thickness)
-	left.position = Vector2(-crosshair_gap - crosshair_length, -crosshair_thickness / 2.0)
-	left.color = crosshair_color
+	left.size = Vector2(SettingsManager.crosshair_length, SettingsManager.crosshair_thickness)
+	left.position = Vector2(-SettingsManager.crosshair_gap - SettingsManager.crosshair_length, -SettingsManager.crosshair_thickness / 2.0)
+	left.color = SettingsManager.crosshair_color
 	crosshair.add_child(left)
 	var up = ColorRect.new()
-	up.size = Vector2(crosshair_thickness, crosshair_length)
-	up.position = Vector2(-crosshair_thickness / 2.0, -crosshair_gap - crosshair_length)
-	up.color = crosshair_color
+	up.size = Vector2(SettingsManager.crosshair_thickness, SettingsManager.crosshair_length)
+	up.position = Vector2(-SettingsManager.crosshair_thickness / 2.0, -SettingsManager.crosshair_gap - SettingsManager.crosshair_length)
+	up.color = SettingsManager.crosshair_color
 	crosshair.add_child(up)
 	var down = ColorRect.new()
-	down.size = Vector2(crosshair_thickness, crosshair_length)
-	down.position = Vector2(-crosshair_thickness / 2.0, crosshair_gap)
-	down.color = crosshair_color
+	down.size = Vector2(SettingsManager.crosshair_thickness, SettingsManager.crosshair_length)
+	down.position = Vector2(-SettingsManager.crosshair_thickness / 2.0, SettingsManager.crosshair_gap)
+	down.color = SettingsManager.crosshair_color
 	crosshair.add_child(down)
 
 func rebuild_crosshair(length: float, thickness: float, gap: float, color: Color) -> void:
 	for item in crosshair.get_children():
 		item.queue_free()
-	crosshair_length = length
-	crosshair_thickness = thickness
-	crosshair_gap = gap
-	crosshair_color = color
+	SettingsManager.crosshair_length = length
+	SettingsManager.crosshair_thickness = thickness
+	SettingsManager.crosshair_gap = gap
+	SettingsManager.crosshair_color = color
 	build_crosshair()
 
 func toggle_pause():
@@ -97,7 +93,7 @@ func _ready():
 
 func _on_options_button_pressed() -> void:
 	settings_menu.visible = true
-	settings_menu.load_crosshair_settings(crosshair_length, crosshair_thickness, crosshair_gap, crosshair_color)
+	settings_menu.load_crosshair_settings(GameManager.crosshair_length, GameManager.crosshair_thickness, GameManager.crosshair_gap, GameManager.crosshair_color)
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
