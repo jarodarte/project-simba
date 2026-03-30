@@ -70,8 +70,6 @@ func fire_gun():
 
 		var tracer = tracer_scene.instantiate()
 		get_tree().root.add_child(tracer)
-		print("weapon node: ", current_weapon_node)
-		print("muzzle: ", current_weapon_node.get_node_or_null("Muzzle"))
 		tracer.init(muzzle_pos, end_pos)
 
 		if not hit.is_empty():
