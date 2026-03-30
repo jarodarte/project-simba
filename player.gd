@@ -4,9 +4,6 @@ const SPEED = 4.0
 const JUMP_FORCE = 6.0
 const GRAVITY_UP = 9.8
 const GRAVITY_DOWN = 18.0
-const BOB_SPEED = (2 * PI) # how fast the cycle runs
-const BOB_AMOUNT = 0.05    # how far it moves 
-const BOB_LERP_SPEED = 10.0
 const ACCELERATION = 20.0
 const FRICTION = 6.0
 const COUNTER_STRAFE_DECEL = 16.
@@ -14,11 +11,11 @@ const COUNTER_STRAFE_DECEL = 16.
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 @onready var shoot_timer = $ShootTimer
-@onready var gun_holder = $Camera3D/GunHolder
 @onready var weapon_anchor = $Camera3D/GunHolder/WeaponAnchor
 @onready var footstep_timer = $FootstepTimer
 @onready var footstep_sound = $FootstepSound
 @export var weapons: Array[WeaponData] = []
+@onready var weapon_sway = $WeaponSway
 
 var tracer_scene = preload("res://bullet_tracer.tscn")
 var _is_bursting: bool = false
@@ -32,7 +29,6 @@ var is_reloading: bool = false
 var runtime_weapons: Array[WeaponData] = []
 var current_weapon_node: Node3D
 var _reload_id: int = 0
-var bob_time: float = 0.0
 var _spray_index: int = 0
 var _spray_reset_timer: float = 0.0
 var _current_move_spread: float = 0.0
@@ -236,16 +232,7 @@ func _physics_process(delta):
 	else:
 		footstep_timer.stop()
 
-	# weapon sway
-	var bob_target = Vector3.ZERO
-	if is_moving and is_on_floor():
-		bob_time += delta * BOB_SPEED
-		var bob_x = sin(bob_time) * BOB_AMOUNT
-		var bob_y = sin(bob_time * 2) * BOB_AMOUNT
-		bob_target = Vector3(bob_x, bob_y, 0)
-	else: bob_time = 0.0
-	gun_holder.position = lerp(gun_holder.position, bob_target, BOB_LERP_SPEED * delta)
-
+	weapon_sway.update(delta, is_moving, is_on_floor())
 	# checks to show information
 	check_interaction()
 

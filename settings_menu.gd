@@ -35,6 +35,7 @@ func _ready() -> void:
 	sens_slider.value = SettingsManager.mouse_sensitivity
 	volume_slider.value = SettingsManager.sound_volume
 	option_button.selected = SettingsManager.resolution
+	color_picker.color = SettingsManager.crosshair_color
 	length_slider.value_changed.connect(_on_preview_control_changed)
 	thickness_slider.value_changed.connect(_on_preview_control_changed)
 	gap_slider.value_changed.connect(_on_preview_control_changed)

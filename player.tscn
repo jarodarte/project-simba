@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://dx0rufvkjrbcs" path="res://assault_rifle_m4.tres" id="2_onrkg"]
 [ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="4_sweqy"]
 [ext_resource type="AudioStream" uid="uid://ccguib30lv3an" path="res://Audio/footstep_concrete_002.ogg" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://cf6x0amtic4fi" path="res://weapon_sway.gd" id="6_2hs0m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -39,5 +40,9 @@ bus = &"SFX"
 
 [node name="FootstepTimer" type="Timer" parent="." unique_id=475741616]
 wait_time = 0.5
+
+[node name="WeaponSway" type="Node3D" parent="." unique_id=1383967517 node_paths=PackedStringArray("gun_holder")]
+script = ExtResource("6_2hs0m")
+gun_holder = NodePath("../Camera3D/GunHolder")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
