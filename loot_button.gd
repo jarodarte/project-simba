@@ -48,21 +48,21 @@ func attempt_purchase():
 		GameManager.update_points(GameManager.points - points_cost)
 		if not apply_reward():
 			GameManager.update_points(GameManager.points + points_cost)
-			flash_error("No Matching Gun!")
+			flash_error("Gun doesn't use that ammo!")
 	else:
 		flash_error("Not enough points!")
 
 func apply_reward() -> bool:
 	sound.play()
 	if pickup_type == "ammo":
-		for weapon in player.runtime_weapons:
-			if weapon.ammo_type == ammo_type:
-				weapon.current_reserve_magazines = min(
-					weapon.current_reserve_magazines + ammo_amount,
-					weapon.max_reserve_magazines
-				)
-				player.emit_weapon_stats()
-				return true
+		var weapon = player.current_weapon
+		if weapon.ammo_type == ammo_type:
+			weapon.current_reserve_magazines = min(
+				weapon.current_reserve_magazines + ammo_amount,
+				weapon.max_reserve_magazines
+			)
+			player.emit_weapon_stats()
+			return true
 		return false
 	elif pickup_type == "health":
 		GameManager.heal(health_amount)
@@ -70,7 +70,6 @@ func apply_reward() -> bool:
 	else:
 		give_gun_to_player()
 		return true
-
 
 func flash_error(msg: String):
 	update_label(msg)

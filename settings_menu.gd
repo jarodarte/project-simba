@@ -55,9 +55,10 @@ func _on_save_pressed() -> void:
 		if not events.is_empty():
 			var event = events[0]
 			if event is InputEventKey:
-				SettingsManager.keybindings[key] = event.keycode
+					var code = event.keycode if event.keycode != 0 else event.physical_keycode
+					SettingsManager.keybindings[key] = {"type": "key", "value": code}
 			elif event is InputEventMouseButton:
-				SettingsManager.keybindings[key] = event.button_index
+				SettingsManager.keybindings[key] = {"type": "mouse", "value": event.button_index}
 	crosshair_updated.emit(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
 	SettingsManager.save_settings()
 
@@ -70,7 +71,7 @@ func _on_save_exit_pressed() -> void:
 
 func _build_action_list() -> void:
 	for child in action_list.get_children():
-		child.queue_free()
+		child.free()
 	
 	for action in ACTIONS:
 		var hbox = HBoxContainer.new()
@@ -144,10 +145,9 @@ func _on_preview_control_changed(_value) -> void:
 	crosshair_preview.update_preview(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
 
 func _on_reset_button_pressed() -> void:
+	SettingsManager.keybindings = {}
 	InputMap.load_from_project_settings()
 	_build_action_list()
-	SettingsManager.save_settings()
-
 
 func _on_crosshair_reset_button_pressed() -> void:
 	SettingsManager.crosshair_color = Color.GREEN
@@ -157,6 +157,3 @@ func _on_crosshair_reset_button_pressed() -> void:
 	load_crosshair_settings(10.0, 3.0, 3.0, Color.GREEN)
 	crosshair_updated.emit(length_slider.value, thickness_slider.value, gap_slider.value, color_picker.color)
 	SettingsManager.save_settings()
-	
-	
-	

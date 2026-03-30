@@ -93,7 +93,7 @@ func _ready():
 
 func _on_options_button_pressed() -> void:
 	settings_menu.visible = true
-	settings_menu.load_crosshair_settings(GameManager.crosshair_length, GameManager.crosshair_thickness, GameManager.crosshair_gap, GameManager.crosshair_color)
+	settings_menu.load_crosshair_settings(SettingsManager.crosshair_length, SettingsManager.crosshair_thickness, SettingsManager.crosshair_gap, SettingsManager.crosshair_color)
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

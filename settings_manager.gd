@@ -46,16 +46,15 @@ func _apply_settings() -> void:
 	var bus_idx = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus_idx, linear_to_db(sound_volume))
 	DisplayServer.window_set_size(resolutions[resolution])
-	
-	for action in keybindings:
-		var value = keybindings[action]
-		InputMap.action_erase_events(action)
-		
-		if value <= 3:  # it's a mouse button (1=left, 2=right, 3=middle)
-			var event = InputEventMouseButton.new()
-			event.button_index = value
-			InputMap.action_add_event(action, event)
-		else:  
-			var event = InputEventKey.new()
-			event.keycode = value
-			InputMap.action_add_event(action, event)
+	if not keybindings.is_empty():
+		for action in keybindings:
+			var entry = keybindings[action]
+			InputMap.action_erase_events(action)
+			if entry["type"] == "mouse":
+				var event = InputEventMouseButton.new()
+				event.button_index = entry["value"]
+				InputMap.action_add_event(action, event)
+			else:
+				var event = InputEventKey.new()
+				event.physical_keycode = entry["value"]
+				InputMap.action_add_event(action, event)

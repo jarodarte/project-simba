@@ -188,7 +188,6 @@ layout_mode = 2
 text = "Save & Exit"
 
 [connection signal="pressed" from="TabContainer/Gameplay/CrosshairResetButton" to="." method="_on_crosshair_reset_button_pressed"]
-[connection signal="pressed" from="TabContainer/Gameplay/CrosshairResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="TabContainer/Input/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
