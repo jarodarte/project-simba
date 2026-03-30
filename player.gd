@@ -7,6 +7,9 @@ const GRAVITY_DOWN = 18.0
 const BOB_SPEED = (2 * PI) # how fast the cycle runs
 const BOB_AMOUNT = 0.05    # how far it moves 
 const BOB_LERP_SPEED = 10.0
+const ACCELERATION = 20.0
+const FRICTION = 6.0
+const COUNTER_STRAFE_DECEL = 16.
 
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
@@ -208,8 +211,18 @@ func _physics_process(delta):
 	# movement process
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var dir = (transform.basis * Vector3(input.x, 0, input.y)).normalized()
-	velocity.x = dir.x * SPEED
-	velocity.z = dir.z * SPEED
+	var horizontal_velocity = Vector2(velocity.x, velocity.z)
+	var input_dot = horizontal_velocity.dot(Vector2(dir.x, dir.z))
+	if input.length() > 0.0:
+		if input_dot < 0.0:
+			velocity.x = lerp(velocity.x, dir.x * SPEED, COUNTER_STRAFE_DECEL * delta)
+			velocity.z = lerp(velocity.z, dir.z * SPEED, COUNTER_STRAFE_DECEL * delta)
+		else:
+			velocity.x = lerp(velocity.x, dir.x * SPEED, ACCELERATION * delta)
+			velocity.z = lerp(velocity.z, dir.z * SPEED, ACCELERATION * delta)
+	else:
+		velocity.x = lerp(velocity.x, 0.0, FRICTION * delta)
+		velocity.z = lerp(velocity.z, 0.0, FRICTION * delta)
 	move_and_slide()
 		
 	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
