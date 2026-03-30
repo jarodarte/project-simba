@@ -182,10 +182,6 @@ func _input(event):
 	if event.is_action_pressed("reload") and not is_reloading:
 		reload()
 
-	if event.is_action_pressed("interact") and current_lookat:
-		if current_lookat.has_method("interact"):
-			current_lookat.interact(self)
-
 	if event.is_action_pressed("next_weapon"):
 		swap_weapon(1)
 	if event.is_action_pressed("prev_weapon"):
