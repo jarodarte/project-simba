@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="4_sweqy"]
 [ext_resource type="AudioStream" uid="uid://ccguib30lv3an" path="res://Audio/footstep_concrete_002.ogg" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://cf6x0amtic4fi" path="res://weapon_sway.gd" id="6_2hs0m"]
+[ext_resource type="Script" uid="uid://bv1p5xyfeecmi" path="res://interaction_checker.gd" id="7_1jxqw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -44,5 +45,9 @@ wait_time = 0.5
 [node name="WeaponSway" type="Node3D" parent="." unique_id=1383967517 node_paths=PackedStringArray("gun_holder")]
 script = ExtResource("6_2hs0m")
 gun_holder = NodePath("../Camera3D/GunHolder")
+
+[node name="InteractionChecker" type="Node3D" parent="." unique_id=4697784 node_paths=PackedStringArray("raycast")]
+script = ExtResource("7_1jxqw")
+raycast = NodePath("../Camera3D/RayCast3D")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

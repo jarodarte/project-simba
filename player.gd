@@ -16,12 +16,12 @@ const COUNTER_STRAFE_DECEL = 16.
 @onready var footstep_sound = $FootstepSound
 @export var weapons: Array[WeaponData] = []
 @onready var weapon_sway = $WeaponSway
+@onready var interaction_checker = $InteractionChecker
 
 var tracer_scene = preload("res://bullet_tracer.tscn")
 var _is_bursting: bool = false
 var current_weapon: WeaponData
 var weapon_index: int = 0
-var current_lookat = null
 var hit_effect_scene = preload("res://hit_effect.tscn")
 var pitch: float = 0.0
 var can_shoot: bool = true
@@ -133,26 +133,6 @@ func emit_weapon_stats():
 		current_weapon.current_reserve_magazines
 	)
 
-func check_interaction():
-	if raycast.is_colliding():
-		var collider = raycast.get_collider()
-		if collider and collider.has_method("show_info"):
-			if current_lookat != collider:
-				if current_lookat and current_lookat.has_method("hide_info"):
-					current_lookat.hide_info()
-				current_lookat = collider
-				current_lookat.show_info()
-		else:
-			_clear_current_lookat()
-	else:
-		_clear_current_lookat()
-
-func _clear_current_lookat():
-	if current_lookat:
-		if is_instance_valid(current_lookat) and current_lookat.has_method("hide_info"):
-			current_lookat.hide_info()
-		current_lookat = null
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	footstep_timer.timeout.connect(footstep_sound.play)
@@ -234,7 +214,7 @@ func _physics_process(delta):
 
 	weapon_sway.update(delta, is_moving, is_on_floor())
 	# checks to show information
-	check_interaction()
+	interaction_checker.check_interaction()
 
 	# spray reset
 	if _spray_reset_timer > 0.0:
