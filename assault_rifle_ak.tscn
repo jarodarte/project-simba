@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bwp7gfpbegegb"]
+
+[ext_resource type="AudioStream" uid="uid://bgao3p3g2f2e5" path="res://Audio/impactWood_medium_004.ogg" id="1_ub2sn"]
+[ext_resource type="AudioStream" uid="uid://b3c43s46scqbo" path="res://Audio/open_002.ogg" id="2_w7cph"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ub2sn"]
+size = Vector3(0.15, 0.15, 0.3)
+
+[sub_resource type="Animation" id="Animation_kmile"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j33d7"]
+resource_name = "reload"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.2831855, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jao7y"]
+_data = {
+&"RESET": SubResource("Animation_kmile"),
+&"reload": SubResource("Animation_j33d7")
+}
+
+[node name="Node3D" type="Node3D" unique_id=1850706280]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1966679833]
+mesh = SubResource("BoxMesh_ub2sn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1283630]
+libraries/ = SubResource("AnimationLibrary_jao7y")
+
+[node name="ShootSound" type="AudioStreamPlayer3D" parent="." unique_id=250515080]
+stream = ExtResource("1_ub2sn")
+volume_db = 3.0
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="." unique_id=1645197383]
+stream = ExtResource("2_w7cph")
+bus = &"SFX"
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1286258517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16043648)

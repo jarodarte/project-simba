@@ -55,6 +55,7 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 					amount *= player.current_weapon.headshot_multiplier
 
 	health -= amount
+	GameManager.update_points(GameManager.points + 10)
 
 	var damage_text = DamageTextScene.instantiate()
 	get_tree().root.add_child(damage_text)

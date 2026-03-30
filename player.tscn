@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p6r51qxt2sq2" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="2_hqtel"]
-[ext_resource type="Resource" uid="uid://dx0rufvkjrbcs" path="res://rifle.tres" id="2_onrkg"]
+[ext_resource type="Resource" uid="uid://dx0rufvkjrbcs" path="res://assault_rifle_m4.tres" id="2_onrkg"]
 [ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="4_sweqy"]
 [ext_resource type="AudioStream" uid="uid://ccguib30lv3an" path="res://Audio/footstep_concrete_002.ogg" id="5_sweqy"]
 
