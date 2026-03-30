@@ -32,6 +32,7 @@ var _reload_id: int = 0
 var bob_time: float = 0.0
 var _spray_index: int = 0
 var _spray_reset_timer: float = 0.0
+var _current_move_spread: float = 0.0
 
 func spawn_weapon():
 	if current_weapon_node:
@@ -210,7 +211,11 @@ func _physics_process(delta):
 	velocity.x = dir.x * SPEED
 	velocity.z = dir.z * SPEED
 	move_and_slide()
-
+		
+	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
+	var target_spread = current_weapon.move_spread_max * speed_ratio if current_weapon else 0.0
+	_current_move_spread = lerp(_current_move_spread, target_spread, 10.0 * delta)
+	
 	# movement sound fx
 	var is_moving = Vector2(velocity.x, velocity.z).length() > 0.1
 	if is_moving and is_on_floor():
@@ -264,14 +269,13 @@ func get_shot_direction() -> Vector3:
 		offset_deg = _random_spread(current_weapon.spread_radius)
 
 	# movement inaccuracy: scales with horizontal speed
-	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
-	offset_deg += _random_spread(current_weapon.move_spread_max * speed_ratio)
+	offset_deg += _random_spread(_current_move_spread)
 
 	# jump penalty: flat spread added when airborne
 	if not is_on_floor():
 		offset_deg += _random_spread(current_weapon.jump_spread)
 
-	# rotate base_dir by the offset using camera's local axes
+	# applies 2d offset to 3d direction
 	var right = camera.global_transform.basis.x
 	var up = camera.global_transform.basis.y
 	var offset_rad = offset_deg * (PI / 180.0)
