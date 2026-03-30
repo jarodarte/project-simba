@@ -27,10 +27,6 @@ collide_with_areas = true
 
 [node name="GunHolder" type="Node3D" parent="Camera3D" unique_id=188650488]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D/GunHolder" unique_id=1777363524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.2, -1)
-visible = false
-
 [node name="WeaponAnchor" type="Node3D" parent="Camera3D/GunHolder" unique_id=806945104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, -0.3, -0.6)
 

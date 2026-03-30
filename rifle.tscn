@@ -58,3 +58,6 @@ volume_db = 3.0
 [node name="ReloadSound" type="AudioStreamPlayer" parent="." unique_id=1645197383]
 stream = ExtResource("2_jao7y")
 bus = &"SFX"
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1286258517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16043648)

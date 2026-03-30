@@ -10,7 +10,6 @@ const BOB_LERP_SPEED = 10.0
 
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
-@onready var flash = $Camera3D/GunHolder/OmniLight3D
 @onready var shoot_timer = $ShootTimer
 @onready var gun_holder = $Camera3D/GunHolder
 @onready var weapon_anchor = $Camera3D/GunHolder/WeaponAnchor
@@ -18,6 +17,7 @@ const BOB_LERP_SPEED = 10.0
 @onready var footstep_sound = $FootstepSound
 @export var weapons: Array[WeaponData] = []
 
+var tracer_scene = preload("res://bullet_tracer.tscn")
 var _is_bursting: bool = false
 var current_weapon: WeaponData
 var weapon_index: int = 0
@@ -61,10 +61,19 @@ func fire_gun():
 			audio.play()
 
 		emit_weapon_stats()
-		flash.visible = true
-		get_tree().create_timer(0.05).timeout.connect(func(): flash.visible = false)
 
 		var hit = shoot_ray()
+
+		var muzzle = current_weapon_node.get_node_or_null("Muzzle")
+		var muzzle_pos = muzzle.global_position if muzzle else camera.global_position
+		var end_pos = hit.position if not hit.is_empty() else camera.global_position + get_shot_direction() * 1000.0
+
+		var tracer = tracer_scene.instantiate()
+		get_tree().root.add_child(tracer)
+		print("weapon node: ", current_weapon_node)
+		print("muzzle: ", current_weapon_node.get_node_or_null("Muzzle"))
+		tracer.init(muzzle_pos, end_pos)
+
 		if not hit.is_empty():
 			var effect = hit_effect_scene.instantiate()
 			get_tree().root.add_child(effect)
@@ -72,6 +81,7 @@ func fire_gun():
 			effect.emitting = true
 			if hit.collider and hit.collider.is_in_group("enemy"):
 				hit.collider.take_damage(current_weapon.damage, hit)
+
 		await get_tree().create_timer(current_weapon.burst_delay).timeout
 	_is_bursting = false
 	shoot_timer.start(current_weapon.fire_rate)  # cooldown before next burst
@@ -147,7 +157,6 @@ func _clear_current_lookat():
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	flash.visible = false
 	footstep_timer.timeout.connect(footstep_sound.play)
 
 	for weapon in weapons:

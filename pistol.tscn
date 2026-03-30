@@ -57,3 +57,6 @@ stream = ExtResource("1_08c3m")
 [node name="ReloadSound" type="AudioStreamPlayer" parent="." unique_id=1293787584]
 stream = ExtResource("2_bttkv")
 bus = &"SFX"
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1178840547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16180697)
