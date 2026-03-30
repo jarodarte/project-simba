@@ -15,7 +15,7 @@ var _tween: Tween
 func update_points(new_points: int):
 	points_label.text = "Points: " + str(new_points)
 
-func update_health(new_health: int):
+func update_health(new_health: float):
 	health_label.text = "HP: " + str(new_health)
 
 func update_weapon_ui(weapon_name: String, current: int, reserve: int):

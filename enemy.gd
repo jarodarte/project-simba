@@ -95,3 +95,8 @@ func _die():
 	GameManager.enemy_died()
 	play_death_sound()
 	queue_free()
+
+func _exit_tree():
+	if not _is_dead:
+		_is_dead = true
+		GameManager.enemy_died()
