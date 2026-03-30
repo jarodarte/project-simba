@@ -261,7 +261,17 @@ func get_shot_direction() -> Vector3:
 		var angle = randf() * TAU
 		var dist = randf() * current_weapon.spread_radius
 		offset_deg = Vector2(cos(angle), sin(angle)) * dist
+	
+	var speed_ratio = Vector2(velocity.x, velocity.z).length()
+	speed_ratio = clamp(speed_ratio / SPEED, 0.0, 1.0)
 
+	var angle = randf() * TAU
+	var dist = randf() * current_weapon.move_spread_max * speed_ratio
+	offset_deg += Vector2(cos(angle), sin(angle)) * dist
+	if !is_on_floor(): 
+		angle = randf() * TAU
+		dist = randf() * current_weapon.jump_spread
+		offset_deg += Vector2(cos(angle), sin(angle)) * dist
 	# rotate base_dir by the offset using camera's local axes
 	var right = camera.global_transform.basis.x
 	var up = camera.global_transform.basis.y
