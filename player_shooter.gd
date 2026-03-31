@@ -52,11 +52,12 @@ func fire_gun(is_grounded: bool):
 
 		emit_weapon_stats()
 
-		var hit = shoot_ray(is_grounded)
+		var shot_dir = get_shot_direction(is_grounded)
+		var hit = shoot_ray(shot_dir)
 
 		var muzzle = current_weapon_node.get_node_or_null("Muzzle")
 		var muzzle_pos = muzzle.global_position if muzzle else camera.global_position
-		var end_pos = hit.position if not hit.is_empty() else camera.global_position + get_shot_direction(is_grounded) * 1000.0
+		var end_pos = hit.position if not hit.is_empty() else camera.global_position + shot_dir * 1000.0
 
 		var tracer = tracer_scene.instantiate()
 		get_tree().root.add_child(tracer)
@@ -148,9 +149,8 @@ func get_shot_direction(is_grounded: bool) -> Vector3:
 	var offset_rad = offset_deg * (PI / 180.0)
 	return (base_dir + right * offset_rad.x + up * offset_rad.y).normalized()
 
-func shoot_ray(is_grounded: bool) -> Dictionary:
+func shoot_ray(direction: Vector3) -> Dictionary:
 	var origin = camera.global_position
-	var direction = get_shot_direction(is_grounded)
 	var end = origin + direction * 1000.0
 
 	var space = get_world_3d().direct_space_state
