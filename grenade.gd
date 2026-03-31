@@ -3,7 +3,6 @@ extends RigidBody3D
 var has_exploded: bool = false
 var data: ExplosiveData
 
-@onready var area = $Area3D
 @onready var mesh = $MeshInstance3D
 @onready var particles = $GPUParticles3D
 @onready var audio = $AudioStreamPlayer3D
@@ -24,18 +23,19 @@ func explode():
 	if has_exploded:
 		return
 	has_exploded = true
-	print("exploded at: ", global_position)
-	print("bodies found: ", area.get_overlapping_bodies())
-	var shape = area.get_node("CollisionShape3D")
-	shape.shape = SphereShape3D.new()
-	shape.shape.radius = data.explosion_radius
-	await get_tree().physics_frame
-	var bodies = area.get_overlapping_bodies()
-	for body in bodies:
+	var sphere = SphereShape3D.new()
+	sphere.radius = data.explosion_radius
+	var query = PhysicsShapeQueryParameters3D.new()
+	query.shape = sphere
+	query.transform = global_transform
+	query.collision_mask = 6  # layer 2 (player) + layer 3 (enemy)
+	var space = get_world_3d().direct_space_state
+	for result in space.intersect_shape(query, 32):
+		var body = result["collider"]
 		if body == self:
 			continue
 		var distance = (global_position - body.global_position).length()
-		var ratio = distance / data.explosion_radius
+		var ratio = clamp(distance / data.explosion_radius, 0.0, 1.0)
 		var damage = lerp(float(data.max_damage), float(data.min_damage), ratio)
 		if body.is_in_group("enemy"):
 			body.take_damage(int(damage), {})

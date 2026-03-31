@@ -100,6 +100,7 @@ func _physics_process(delta):
 	player_shooter.update(delta, speed_ratio)
 
 func throw_grenade():
+	cook_elapsed = 0.0
 	if current_explosive == null or current_explosive.count <= 0:
 		return
 	current_explosive.count -= 1
@@ -110,7 +111,6 @@ func throw_grenade():
 	var throw_direction = -camera.global_transform.basis.z
 	grenade.linear_velocity = throw_direction * current_explosive.throw_force
 	grenade.init(current_explosive, current_explosive.fuse_time - cook_elapsed)
-	cook_elapsed = 0.0  # reset for next throw
 
 func emit_grenade_stats():
 	GameManager.grenade_ui_update.emit(
