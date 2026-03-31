@@ -40,7 +40,7 @@ func fire_gun(is_grounded: bool):
 	can_shoot = false
 
 	for i in current_weapon.burst_count:
-		if current_weapon.current_ammo <= 0:
+		if current_weapon.current_ammo <= 0 or is_reloading:
 			break
 
 		current_weapon.current_ammo -= 1
