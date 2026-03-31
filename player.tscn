@@ -60,4 +60,4 @@ weapons = Array[ExtResource("2_hqtel")]([ExtResource("7_b26j0"), ExtResource("8_
 weapon_anchor = NodePath("../Camera3D/GunHolder/WeaponAnchor")
 player = NodePath("..")
 
-[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="PlayerShooter" method="_on_shoot_timer_timeout"]
