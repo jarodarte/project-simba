@@ -54,7 +54,7 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 			if hit_shape != null:
 				is_headshot = hit_shape == head_collision_shape
 				if is_headshot:
-					if is_instance_valid(player) and player.player_shooter.current_weapon:
+					if is_instance_valid(player) and is_instance_valid(player.player_shooter) and player.player_shooter.current_weapon:
 						amount *= player.player_shooter.current_weapon.headshot_multiplier
 
 	health -= amount
