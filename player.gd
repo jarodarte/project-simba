@@ -75,7 +75,7 @@ func _physics_process(delta):
 		if footstep_timer.is_stopped(): footstep_timer.start()
 	else:
 		footstep_timer.stop()
-	
+
 	weapon_sway.update(delta, is_moving, is_on_floor())
 	interaction_checker.check_interaction()
 
