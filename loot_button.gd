@@ -55,13 +55,13 @@ func attempt_purchase():
 func apply_reward() -> bool:
 	sound.play()
 	if pickup_type == "ammo":
-		var weapon = player.current_weapon
+		var weapon = player.player_shooter.current_weapon
 		if weapon.ammo_type == ammo_type:
 			weapon.current_reserve_magazines = min(
 				weapon.current_reserve_magazines + ammo_amount,
 				weapon.max_reserve_magazines
 			)
-			player.emit_weapon_stats()
+			player.player_shooter.emit_weapon_stats()
 			return true
 		return false
 	elif pickup_type == "health":
@@ -82,8 +82,8 @@ func give_gun_to_player():
 	var new_weapon = gun_drop.duplicate(true)
 	new_weapon.current_ammo = new_weapon.magazine_size
 	new_weapon.current_reserve_magazines = new_weapon.max_reserve_magazines
-	player.runtime_weapons[player.weapon_index] = new_weapon
-	player.current_weapon = new_weapon
-	player.spawn_weapon()
-	player.reset_gun_state()
-	player.emit_weapon_stats()
+	player.player_shooter.runtime_weapons[player.player_shooter.weapon_index] = new_weapon
+	player.player_shooter.current_weapon = new_weapon
+	player.player_shooter.spawn_weapon()
+	player.player_shooter.reset_gun_state()
+	player.player_shooter.emit_weapon_stats()

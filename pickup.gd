@@ -22,10 +22,10 @@ func hide_info():
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		if pickup_type == "ammo":
-			for weapon in body.runtime_weapons:
+			for weapon in body.player_shooter.runtime_weapons:
 				if weapon.ammo_type == ammo_type:
-					weapon.reserve_ammo = min(weapon.reserve_ammo + ammo_amount, weapon.max_reserve_ammo)
-					body.emit_weapon_stats()
+					weapon.current_reserve_magazines = min(weapon.current_reserve_magazines + ammo_amount, weapon.max_reserve_magazines)
+					body.player_shooter.emit_weapon_stats()
 		elif pickup_type == "health": 
 			GameManager.heal(health_amount)
 		queue_free()
