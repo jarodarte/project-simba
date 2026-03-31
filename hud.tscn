@@ -21,6 +21,12 @@ font_size = 50
 [sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
 font_size = 75
 
+[sub_resource type="LabelSettings" id="LabelSettings_61f8s"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_g10ll"]
+font_size = 35
+
 [node name="HUD" type="CanvasLayer" unique_id=690985505]
 process_mode = 3
 script = ExtResource("1_37p78")
@@ -123,6 +129,26 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_64ctp")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control" unique_id=1171858065]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -51.0
+offset_right = 145.0
+offset_bottom = 51.0
+grow_vertical = 2
+
+[node name="GrenadeLabel" type="Label" parent="Control/VBoxContainer2" unique_id=1435110090]
+layout_mode = 2
+text = "Grenade"
+label_settings = SubResource("LabelSettings_61f8s")
+
+[node name="GrenadeCountLabel" type="Label" parent="Control/VBoxContainer2" unique_id=110645225]
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_g10ll")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=851235634]
 process_mode = 3

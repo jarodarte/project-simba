@@ -14,12 +14,21 @@ const COUNTER_STRAFE_DECEL = 16.
 @onready var weapon_sway = $WeaponSway
 @onready var interaction_checker = $InteractionChecker
 @onready var player_shooter = $PlayerShooter
+@onready var grenade_anchor = $GrenadeAnchor
 
+@export var explosives: Array[ExplosiveData] = []
+
+var current_explosive: ExplosiveData
+var cook_elapsed: float = 0.0
+var is_cooking: bool = false
 var pitch: float = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	footstep_timer.timeout.connect(footstep_sound.play)
+	if explosives.size() > 0:
+		current_explosive = explosives[0].duplicate()
+		emit_grenade_stats()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -29,7 +38,7 @@ func _input(event):
 
 	if event.is_action_pressed("reload") and not player_shooter.is_reloading:
 		player_shooter.reload()
-
+	
 	if event.is_action_pressed("next_weapon"):
 		player_shooter.swap_weapon(1)
 	if event.is_action_pressed("prev_weapon"):
@@ -69,6 +78,13 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, 0.0, FRICTION * delta)
 	move_and_slide()
 
+	if Input.is_action_pressed("throw_grenade"):
+		is_cooking = true
+		cook_elapsed += delta
+	if Input.is_action_just_released("throw_grenade"):
+		throw_grenade()
+		is_cooking = false
+	
 	# movement sound fx
 	var is_moving = Vector2(velocity.x, velocity.z).length() > 0.1
 	if is_moving and is_on_floor():
@@ -82,3 +98,22 @@ func _physics_process(delta):
 	# spray reset
 	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
 	player_shooter.update(delta, speed_ratio)
+
+func throw_grenade():
+	if current_explosive == null or current_explosive.count <= 0:
+		return
+	current_explosive.count -= 1
+	emit_grenade_stats()
+	var grenade = current_explosive.grenade_scene.instantiate()
+	get_tree().root.add_child(grenade)
+	grenade.global_position = grenade_anchor.global_position
+	var throw_direction = -camera.global_transform.basis.z
+	grenade.linear_velocity = throw_direction * current_explosive.throw_force
+	grenade.init(current_explosive, current_explosive.fuse_time - cook_elapsed)
+	cook_elapsed = 0.0  # reset for next throw
+
+func emit_grenade_stats():
+	GameManager.grenade_ui_update.emit(
+		current_explosive.name,
+		current_explosive.count
+	)

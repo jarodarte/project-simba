@@ -9,6 +9,8 @@ extends CanvasLayer
 @onready var weapon_name_label = $Control/VBoxContainer/WeaponNameLabel
 @onready var settings_menu = $PauseMenu/SettingsMenu
 @onready var wave_start_label = $Control/WaveStartLabel
+@onready var grenade_label = $Control/VBoxContainer2/GrenadeLabel
+@onready var grenade_count_label = $Control/VBoxContainer2/GrenadeCountLabel
 
 var _tween: Tween
 
@@ -75,6 +77,10 @@ func toggle_pause():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$PauseMenu.visible = get_tree().paused
 
+func update_grenade_ui(grenade_name: String, grenade_count: int):
+	grenade_label.text = grenade_name
+	grenade_count_label.text = str(grenade_count)
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		toggle_pause()
@@ -85,6 +91,7 @@ func _ready():
 	GameManager.health_changed.connect(update_health)
 	GameManager.wave_started.connect(_on_wave_started)
 	GameManager.weapon_ui_update.connect(update_weapon_ui)
+	GameManager.grenade_ui_update.connect(update_grenade_ui)
 	settings_menu.crosshair_updated.connect(rebuild_crosshair)
 	update_points(GameManager.points)
 	update_health(GameManager.health)

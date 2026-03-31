@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://p6r51qxt2sq2" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://bp2vp4a3x7mxr" path="res://ExplosiveData.gd" id="2_n7ghd"]
 [ext_resource type="Resource" uid="uid://dx0rufvkjrbcs" path="res://assault_rifle_m4.tres" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://gi1u6081qlys" path="res://grenade.tscn" id="3_nvl01"]
 [ext_resource type="AudioStream" uid="uid://ccguib30lv3an" path="res://Audio/footstep_concrete_002.ogg" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://cf6x0amtic4fi" path="res://weapon_sway.gd" id="6_2hs0m"]
 [ext_resource type="Script" uid="uid://bv1p5xyfeecmi" path="res://interaction_checker.gd" id="7_1jxqw"]
@@ -10,12 +12,21 @@
 [ext_resource type="Script" uid="uid://ju1dfjq5pddd" path="res://player_shooter.gd" id="8_dw050"]
 [ext_resource type="Resource" uid="uid://beeltvvpf3qod" path="res://assault_rifle_ak.tres" id="8_n7ghd"]
 
+[sub_resource type="Resource" id="Resource_nvl01"]
+script = ExtResource("2_n7ghd")
+grenade_scene = ExtResource("3_nvl01")
+explosion_radius = 20.0
+explodes_on_impact = false
+count = 99
+metadata/_custom_type_script = "uid://bp2vp4a3x7mxr"
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1934467046 groups=["player"]]
 collision_layer = 2
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
+explosives = Array[ExtResource("2_n7ghd")]([SubResource("Resource_nvl01")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1998143408]
 shape = SubResource("CapsuleShape3D_noarx")
@@ -59,5 +70,7 @@ shoot_timer = NodePath("../ShootTimer")
 weapons = Array[ExtResource("2_hqtel")]([ExtResource("7_b26j0"), ExtResource("8_n7ghd"), ExtResource("2_onrkg")])
 weapon_anchor = NodePath("../Camera3D/GunHolder/WeaponAnchor")
 player = NodePath("..")
+
+[node name="GrenadeAnchor" type="Node3D" parent="." unique_id=843922240]
 
 [connection signal="timeout" from="ShootTimer" to="PlayerShooter" method="_on_shoot_timer_timeout"]

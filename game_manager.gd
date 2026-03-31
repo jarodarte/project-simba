@@ -9,8 +9,8 @@ var oof_sound = preload("res://Audio/error_008.ogg")
 signal wave_started(new_wave: int)
 signal points_changed(new_points: int)
 signal health_changed(new_health: float)
-@warning_ignore("unused_signal")
-signal weapon_ui_update(gun_name: String, current: int, reserve: int)
+signal _weapon_ui_update(gun_name: String, current: int, reserve: int)
+signal _grenade_ui_update(grenade_name: String, new_count: int)
 
 func get_enemies_per_wave() -> int:
 	return 5 + (current_wave * 5)
