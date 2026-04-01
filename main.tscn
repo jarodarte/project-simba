@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://b2pv5a8fko5c2" path="res://pistol.tscn" id="7_272bh"]
 [ext_resource type="Resource" uid="uid://beeltvvpf3qod" path="res://assault_rifle_ak.tres" id="7_dg77c"]
+[ext_resource type="PackedScene" uid="uid://bu24lrf5g4wcx" path="res://mystery_box.tscn" id="8_5vw27"]
 [ext_resource type="Resource" uid="uid://cymn1vpyhy3gb" path="res://smg.tres" id="8_efxa6"]
+[ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="12_dg77c"]
 
 [sub_resource type="Sky" id="Sky_a202f"]
 
@@ -144,7 +146,6 @@ omni_range = 40.0
 
 [node name="Player" parent="." unique_id=1934467046 instance=ExtResource("4_272bh")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.04116893, -1.041606, -34.60434)
-weapons = Array[ExtResource("6_272bh")]([ExtResource("5_4c57u"), ExtResource("7_dg77c"), ExtResource("8_efxa6")])
 
 [node name="Timed Spawner" parent="." unique_id=1538764362 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6661615, -1.0425949, -41.300117)
@@ -168,3 +169,8 @@ ammo_amount = 30
 
 [node name="lootButton3" parent="." unique_id=1050960019 instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.103848, -0.4854089, -35.336845)
+
+[node name="MysteryBox" parent="." unique_id=84698450 instance=ExtResource("8_5vw27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.995686, -1.5034723, -28.159025)
+weapon_table = Array[ExtResource("6_272bh")]([ExtResource("5_4c57u"), ExtResource("7_dg77c"), ExtResource("8_efxa6"), ExtResource("12_dg77c")])
+points_cost = 100

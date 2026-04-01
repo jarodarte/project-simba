@@ -13,7 +13,6 @@ collision_mask = 7
 script = ExtResource("1_idq7m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1715307549]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_idq7m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=381940]
