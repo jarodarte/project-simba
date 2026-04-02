@@ -40,8 +40,3 @@ func enemy_died():
 func heal(amount: float):
 	health = min(health + amount, 100)
 	health_changed.emit(health)
-
-# Access from anywhere:
-# GameManager.add_points(10)
-# GameManager.take_damage(25.0)
-# GameManager.shoot_gun(1)

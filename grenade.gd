@@ -2,7 +2,6 @@ extends RigidBody3D
 
 @export var data: ExplosiveData
 
-var _bounce_time: float = 0.0
 var _exploded: bool = false
 var _player: CharacterBody3D = null
 var _cooking: bool = false
@@ -94,5 +93,3 @@ func _process(delta: float) -> void:
 		return
 	if not _cooking or _exploded:
 		return
-	_bounce_time += delta
-	position.y = sin(_bounce_time * 10.0) * 0.02

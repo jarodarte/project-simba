@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://gi1u6081qlys"]
 
 [ext_resource type="Script" uid="uid://bbd35g000b2d4" path="res://grenade.gd" id="1_gju2f"]
-[ext_resource type="Resource" uid="uid://3bn861mduogq" path="res://frag_grenade.tres" id="2_24g56"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24g56"]
 friction = 0.8
@@ -24,7 +23,6 @@ contact_monitor = true
 max_contacts_reported = 10
 linear_damp = 0.5
 script = ExtResource("1_gju2f")
-data = ExtResource("2_24g56")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=984021567]
 mesh = SubResource("SphereMesh_pu16u")

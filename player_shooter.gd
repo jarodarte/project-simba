@@ -232,19 +232,19 @@ func equip_grenade() -> void:
 		return
 	if runtime_explosives.is_empty():
 		return
-	emit_grenade_stats()
 	current_grenade_data = runtime_explosives[grenade_index]
 	grenade_equipped = true
 	_cooking = false
 
-	
 	if current_weapon_node:
 		current_weapon_node.visible = false
 
 	if current_grenade_node:
 		current_grenade_node.queue_free()
 	current_grenade_node = current_grenade_data.grenade_scene.instantiate()
+	current_grenade_node.data = current_grenade_data  # assign before adding to tree
 	weapon_anchor.add_child(current_grenade_node)
+	emit_grenade_stats()  # emit after data is set
 
 func unequip_grenade() -> void:
 	grenade_equipped = false
@@ -262,7 +262,6 @@ func start_cook() -> void:
 	if _cooking or current_grenade_node == null:
 		return
 	_cooking = true
-	current_grenade_node.data = current_grenade_data
 	current_grenade_node.start_fuse()
 
 func throw_grenade() -> void:
