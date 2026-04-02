@@ -3,13 +3,12 @@ extends CharacterBody3D
 const GRAVITY = 9.8
 
 var player: Node3D = null
-var health: float = 100.0
+var health: float = 0.0
 var is_flashing: bool = false
 var _is_dead: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")
 var DamageTextScene = preload("res://damage_text.tscn")
-
-@export var SPEED = 2.0
+@export var data: EnemyData
 @export var head_collision_shape: CollisionShape3D
 @onready var nav_agent = $NavigationAgent3D
 @onready var damage_zone = $DamageZone
@@ -17,6 +16,7 @@ var DamageTextScene = preload("res://damage_text.tscn")
 var material: StandardMaterial3D  
 
 func _ready():
+	health = data.max_health
 	damage_zone.body_entered.connect(_on_body_entered)
 	player = get_tree().get_first_node_in_group("player")
 	material = mesh.get_surface_override_material(0).duplicate()
@@ -31,14 +31,14 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 	var direction = (nav_agent.get_next_path_position() - global_position).normalized()
-	velocity.x = direction.x * SPEED
-	velocity.z = direction.z * SPEED
+	velocity.x = direction.x * data.speed
+	velocity.z = direction.z * data.speed
 	move_and_slide()
 
 func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
-	GameManager.take_damage(10)
+	GameManager.take_damage(data.contact_damage)
 	_die()
 
 func take_damage(base_amount: float, hit: Dictionary = {}):
@@ -55,7 +55,7 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 				is_headshot = hit_shape == head_collision_shape
 				if is_headshot:
 					if is_instance_valid(player) and is_instance_valid(player.player_shooter) and player.player_shooter.current_weapon:
-						amount *= player.player_shooter.current_weapon.headshot_multiplier
+						amount *= player.player_shooter.current_weapon.headshot_multiplier * data.enemy_headshot_multiplier
 
 	health -= amount
 	GameManager.update_points(GameManager.points + 10)
@@ -93,6 +93,7 @@ func _die():
 		return
 	_is_dead = true
 	GameManager.enemy_died()
+	GameManager.update_points(GameManager.points + data.points_on_death)
 	play_death_sound()
 	queue_free()
 

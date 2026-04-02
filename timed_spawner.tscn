@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dns1tpcbxstai"]
 
 [ext_resource type="Script" uid="uid://bu8rejwohaljn" path="res://timed_spawner.gd" id="1_0sxn0"]
-[ext_resource type="PackedScene" uid="uid://dnkfhtodwr512" path="res://enemy.tscn" id="2_qj3i4"]
+[ext_resource type="PackedScene" uid="uid://dnkfhtodwr512" path="res://basic_enemy.tscn" id="2_qj3i4"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_wodgk"]
 
