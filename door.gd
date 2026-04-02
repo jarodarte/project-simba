@@ -69,6 +69,7 @@ func open_door() -> bool:
 	label.visible = false
 	collision.shape = null
 	anim.play("disappear")
+	sound.play()
 	var mat = mesh_instance.get_active_material(0)
 	if mat:
 		var unique_mat = mat.duplicate()

@@ -184,8 +184,10 @@ points_cost = 100
 transform = Transform3D(0.05108095, 0, -0.99869454, 0, 1, 0, 0.99869454, 0, 0.05108095, 10.207762, -0.31898594, -33.922836)
 mesh_resource = SubResource("BoxMesh_ycdy4")
 cost = 100
+interaction_range = 3.0
 
 [node name="Door2" parent="." unique_id=612981162 instance=ExtResource("13_ycdy4")]
 transform = Transform3D(0.05108095, 0, -0.99869454, 0, 1, 0, 0.99869454, 0, 0.05108095, -0.28253233, -0.21556407, -23.609497)
 mesh_resource = SubResource("BoxMesh_w48qg")
 cost = 100
+interaction_range = 3.0
