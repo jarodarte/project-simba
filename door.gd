@@ -13,6 +13,7 @@ extends Node3D
 var player: Node3D = null
 
 func _ready() -> void:
+	label.visible = false
 	player = get_tree().get_first_node_in_group("player")
 	label.text = "Open: " + str(cost)
 	if mesh_resource:

@@ -15,6 +15,7 @@ extends Area3D
 var player: Node3D = null
 
 func _ready() -> void:
+	label.visible = false
 	player = get_tree().get_first_node_in_group("player")
 	update_label()
 
@@ -87,3 +88,9 @@ func give_gun_to_player():
 	player.player_shooter.spawn_weapon()
 	player.player_shooter.reset_gun_state()
 	player.player_shooter.emit_weapon_stats()
+
+func show_info():
+	label.visible = true
+
+func hide_info():
+	label.visible = false
