@@ -4,13 +4,15 @@ var points:  int   = 0
 var health: float = 100
 var current_wave: int = 0
 var enemies_alive: int = 0
-var oof_sound = preload("res://Audio/error_008.ogg")
+
 
 signal wave_started(new_wave: int)
 signal points_changed(new_points: int)
 signal health_changed(new_health: float)
 @warning_ignore("unused_signal")
 signal weapon_ui_update(gun_name: String, current: int, reserve: int)
+@warning_ignore("unused_signal")
+signal grenade_ui_update(grenade_name: String, amount: int)
 
 func get_enemies_per_wave() -> int:
 	return 5 + (current_wave * 5)
@@ -24,19 +26,6 @@ func reset():
 func update_points(amount: int):
 	points = amount
 	points_changed.emit(points)
-
-func take_damage(amount: float):
-	health = max(0, health - amount)
-	var sound = AudioStreamPlayer.new()
-	get_tree().root.add_child(sound)
-	sound.volume_db = -10
-	sound.stream = oof_sound
-	sound.play()
-	sound.finished.connect(sound.queue_free)
-	health_changed.emit(health)
-	if health == 0:
-		reset()
-		get_tree().call_deferred("change_scene_to_file", "res://game_over.tscn")
 
 func start_wave():
 	current_wave += 1

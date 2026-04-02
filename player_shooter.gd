@@ -8,6 +8,7 @@ const SPEED = 4.0
 @export var weapons: Array[WeaponData] = []
 @export var weapon_anchor: Node3D
 @export var player: CharacterBody3D
+@export var explosives: Array[ExplosiveData] = []
 
 var _is_bursting: bool = false
 var current_weapon: WeaponData
@@ -22,6 +23,12 @@ var current_weapon_node: Node3D
 var _reload_id: int = 0
 var hit_effect_scene = preload("res://hit_effect.tscn")
 var tracer_scene = preload("res://bullet_tracer.tscn")
+var runtime_explosives: Array[ExplosiveData] = []
+var grenade_index: int = 0
+var grenade_equipped: bool = false
+var current_grenade_data: ExplosiveData = null
+var current_grenade_node: Node3D = null
+var _cooking: bool = false
 
 func spawn_weapon():
 	if current_weapon_node:
@@ -117,13 +124,27 @@ func swap_weapon(direction: int):
 	emit_weapon_stats()
 	reset_gun_state()
 
+func swap_to_weapon(new_position: int):
+	if weapons.size() == 0:
+		return
+	_spray_index = 0
+	_spray_reset_timer = 0.0
+	current_weapon = runtime_weapons[new_position]
+	spawn_weapon()
+	emit_weapon_stats()
+	reset_gun_state()
+
 func emit_weapon_stats():
 	GameManager.weapon_ui_update.emit(
 		current_weapon.name,
 		current_weapon.current_ammo,
 		current_weapon.current_reserve_magazines
 	)
-
+func emit_grenade_stats():
+	GameManager.grenade_ui_update.emit(
+		current_grenade_data.name,
+		current_grenade_data.current_amount
+	)
 func get_shot_direction(is_grounded: bool) -> Vector3:
 	var base_dir = -camera.global_transform.basis.z
 	var offset_deg := Vector2.ZERO
@@ -179,9 +200,17 @@ func _ready() -> void:
 		w.current_ammo = w.magazine_size
 		w.current_reserve_magazines = w.max_reserve_magazines
 		runtime_weapons.append(w)
-
+	
 	if runtime_weapons.size() > 0:
 		current_weapon = runtime_weapons[0]
+	
+	for explosive in explosives:
+		var e = explosive.duplicate(true)
+		runtime_explosives.append(e)
+
+	if runtime_explosives.size() > 0:
+		current_grenade_data = runtime_explosives[0]
+
 
 	if not shoot_timer.timeout.is_connected(_on_shoot_timer_timeout):
 		shoot_timer.timeout.connect(_on_shoot_timer_timeout)
@@ -197,3 +226,55 @@ func update(delta, speed_ratio: float):
 		_spray_index = 0
 	var target_spread = current_weapon.move_spread_max * speed_ratio if current_weapon else 0.0
 	_current_move_spread = lerp(_current_move_spread, target_spread, 10.0 * delta)
+
+func equip_grenade() -> void:
+	if current_grenade_data.current_amount <= 0:
+		return
+	if runtime_explosives.is_empty():
+		return
+	emit_grenade_stats()
+	current_grenade_data = runtime_explosives[grenade_index]
+	grenade_equipped = true
+	_cooking = false
+
+	
+	if current_weapon_node:
+		current_weapon_node.visible = false
+
+	if current_grenade_node:
+		current_grenade_node.queue_free()
+	current_grenade_node = current_grenade_data.grenade_scene.instantiate()
+	weapon_anchor.add_child(current_grenade_node)
+
+func unequip_grenade() -> void:
+	grenade_equipped = false
+	_cooking = false
+
+	if current_grenade_node:
+		current_grenade_node.queue_free()
+		current_grenade_node = null
+
+	if current_weapon_node:
+		current_weapon_node.visible = true
+	emit_weapon_stats()
+
+func start_cook() -> void:
+	if _cooking or current_grenade_node == null:
+		return
+	_cooking = true
+	current_grenade_node.data = current_grenade_data
+	current_grenade_node.start_fuse()
+
+func throw_grenade() -> void:
+	if not _cooking or current_grenade_node == null:
+		return
+	current_grenade_data.current_amount -= 1
+	var grenade = current_grenade_node
+	current_grenade_node = null          
+
+	weapon_anchor.remove_child(grenade)
+	get_tree().root.add_child(grenade)
+	grenade.global_position = camera.global_position
+	grenade.throw(camera)
+
+	unequip_grenade()

@@ -38,7 +38,7 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
-	GameManager.take_damage(data.contact_damage)
+	body.take_damage(data.contact_damage)
 	_die()
 
 func take_damage(base_amount: float, hit: Dictionary = {}):
@@ -65,6 +65,7 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 	damage_text.display(amount, global_position)
 
 	if health <= 0.0:
+		play_death_sound()
 		_die()
 		return
 
@@ -94,7 +95,6 @@ func _die():
 	_is_dead = true
 	GameManager.enemy_died()
 	GameManager.update_points(GameManager.points + data.points_on_death)
-	play_death_sound()
 	queue_free()
 
 func _exit_tree():

@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://bv1p5xyfeecmi" path="res://interaction_checker.gd" id="7_1jxqw"]
 [ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="8_b26j0"]
 [ext_resource type="Script" uid="uid://ju1dfjq5pddd" path="res://player_shooter.gd" id="8_dw050"]
+[ext_resource type="Script" uid="uid://bp2vp4a3x7mxr" path="res://ExplosiveData.gd" id="9_n7ghd"]
+[ext_resource type="Resource" uid="uid://3bn861mduogq" path="res://frag_grenade.tres" id="10_nvl01"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -58,5 +60,6 @@ shoot_timer = NodePath("../ShootTimer")
 weapons = Array[ExtResource("2_hqtel")]([ExtResource("2_onrkg"), ExtResource("8_b26j0")])
 weapon_anchor = NodePath("../Camera3D/GunHolder/WeaponAnchor")
 player = NodePath("..")
+explosives = Array[ExtResource("9_n7ghd")]([ExtResource("10_nvl01")])
 
 [connection signal="timeout" from="ShootTimer" to="PlayerShooter" method="_on_shoot_timer_timeout"]

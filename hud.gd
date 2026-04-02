@@ -16,12 +16,16 @@ func update_points(new_points: int):
 	points_label.text = "Points: " + str(new_points)
 
 func update_health(new_health: float):
-	health_label.text = "HP: " + str(new_health)
+	health_label.text = "HP: " + str(int(new_health))
 
 func update_weapon_ui(weapon_name: String, current: int, reserve: int):
 	weapon_name_label.text = weapon_name
 	ammo_counter.text = str(current) + " / " + str(reserve)
 
+func update_grenade_ui(grenade_name: String, amount: int):
+	weapon_name_label.text = grenade_name
+	ammo_counter.text = str(amount) 
+	
 func update_wave(new_wave: int):
 	wave_label.text = str(new_wave)
 
@@ -85,6 +89,7 @@ func _ready():
 	GameManager.health_changed.connect(update_health)
 	GameManager.wave_started.connect(_on_wave_started)
 	GameManager.weapon_ui_update.connect(update_weapon_ui)
+	GameManager.grenade_ui_update.connect(update_grenade_ui)
 	settings_menu.crosshair_updated.connect(rebuild_crosshair)
 	update_points(GameManager.points)
 	update_health(GameManager.health)

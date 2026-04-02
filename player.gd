@@ -15,6 +15,7 @@ const COUNTER_STRAFE_DECEL = 16.
 @onready var interaction_checker = $InteractionChecker
 @onready var player_shooter = $PlayerShooter
 
+var oof_sound = preload("res://Audio/error_008.ogg")
 var pitch: float = 0.0
 
 func _ready():
@@ -31,14 +32,37 @@ func _input(event):
 		player_shooter.reload()
 
 	if event.is_action_pressed("next_weapon"):
+		if player_shooter.grenade_equipped:
+			player_shooter.unequip_grenade()
 		player_shooter.swap_weapon(1)
 	if event.is_action_pressed("prev_weapon"):
+		if player_shooter.grenade_equipped:
+			player_shooter.unequip_grenade()
 		player_shooter.swap_weapon(-1)
+	if event.is_action_pressed("weapon_1"):
+		if player_shooter.grenade_equipped:
+			player_shooter.unequip_grenade()
+		player_shooter.swap_to_weapon(0)
+	if event.is_action_pressed("weapon_2"):
+		if player_shooter.grenade_equipped:
+			player_shooter.unequip_grenade()
+		player_shooter.swap_to_weapon(0)
+	if event.is_action_pressed("grenade"):
+		if player_shooter.grenade_equipped:
+			player_shooter.unequip_grenade()
+		else:
+			player_shooter.equip_grenade()
+
+	if event.is_action_pressed("shoot") and player_shooter.grenade_equipped:
+		player_shooter.start_cook()
+
+	if event.is_action_released("shoot") and player_shooter.grenade_equipped:
+		player_shooter.throw_grenade()
 
 func _physics_process(delta):
 
 	# shooting process
-	if player_shooter.current_weapon and not player_shooter.is_reloading:
+	if player_shooter.current_weapon and not player_shooter.is_reloading and not player_shooter.grenade_equipped:
 		var trying_to_shoot = Input.is_action_pressed("shoot") if player_shooter.current_weapon.is_auto else Input.is_action_just_pressed("shoot")
 		if trying_to_shoot and player_shooter.can_shoot and player_shooter.current_weapon.current_ammo > 0:
 			player_shooter.fire_gun(is_on_floor())
@@ -82,3 +106,16 @@ func _physics_process(delta):
 	# spray reset
 	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
 	player_shooter.update(delta, speed_ratio)
+
+func take_damage(amount: float):
+	GameManager.health = max(0, GameManager.health - amount)
+	var sound = AudioStreamPlayer.new()
+	get_tree().root.add_child(sound)
+	sound.volume_db = -10
+	sound.stream = oof_sound
+	sound.play()
+	sound.finished.connect(sound.queue_free)
+	GameManager.health_changed.emit(GameManager.health)
+	if GameManager.health == 0:
+		GameManager.reset()
+		get_tree().call_deferred("change_scene_to_file", "res://game_over.tscn")

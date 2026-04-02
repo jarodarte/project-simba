@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ExplosiveData" format=3 uid="uid://3bn861mduogq"]
+
+[ext_resource type="PackedScene" uid="uid://gi1u6081qlys" path="res://grenade.tscn" id="1_jgyml"]
+[ext_resource type="Script" uid="uid://bp2vp4a3x7mxr" path="res://ExplosiveData.gd" id="1_tdp5u"]
+
+[resource]
+script = ExtResource("1_tdp5u")
+sticky = true
+fuse_time = 5.0
+grenade_scene = ExtResource("1_jgyml")
+amount = 10
+current_amount = 10
+metadata/_custom_type_script = "uid://bp2vp4a3x7mxr"
