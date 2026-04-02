@@ -11,7 +11,8 @@
 [ext_resource type="Resource" uid="uid://beeltvvpf3qod" path="res://assault_rifle_ak.tres" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://bu24lrf5g4wcx" path="res://mystery_box.tscn" id="8_5vw27"]
 [ext_resource type="Resource" uid="uid://cymn1vpyhy3gb" path="res://smg.tres" id="8_efxa6"]
-[ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="12_dg77c"]
+[ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://pistol.tres" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://cy8n5bda6sjbx" path="res://door.tscn" id="13_ycdy4"]
 
 [sub_resource type="Sky" id="Sky_a202f"]
 
@@ -36,6 +37,10 @@ current_ammo = null
 weapon_scene = ExtResource("7_272bh")
 current_reserve_magazines = null
 metadata/_custom_type_script = "uid://usc4sl4sxcbl"
+
+[sub_resource type="BoxMesh" id="BoxMesh_ycdy4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w48qg"]
 
 [node name="Node3D" type="Node3D" unique_id=2144823753]
 
@@ -174,3 +179,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.103848, -0.4854089, -35.33
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.995686, -1.5034723, -28.159025)
 weapon_table = Array[ExtResource("6_272bh")]([ExtResource("5_4c57u"), ExtResource("7_dg77c"), ExtResource("8_efxa6"), ExtResource("12_dg77c")])
 points_cost = 100
+
+[node name="Door" parent="." unique_id=1562946 instance=ExtResource("13_ycdy4")]
+transform = Transform3D(0.05108095, 0, -0.99869454, 0, 1, 0, 0.99869454, 0, 0.05108095, 10.207762, -0.31898594, -33.922836)
+mesh_resource = SubResource("BoxMesh_ycdy4")
+cost = 100
+
+[node name="Door2" parent="." unique_id=612981162 instance=ExtResource("13_ycdy4")]
+transform = Transform3D(0.05108095, 0, -0.99869454, 0, 1, 0, 0.99869454, 0, 0.05108095, -0.28253233, -0.21556407, -23.609497)
+mesh_resource = SubResource("BoxMesh_w48qg")
+cost = 100

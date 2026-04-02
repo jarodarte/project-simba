@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ccguib30lv3an" path="res://Audio/footstep_concrete_002.ogg" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://cf6x0amtic4fi" path="res://weapon_sway.gd" id="6_2hs0m"]
 [ext_resource type="Script" uid="uid://bv1p5xyfeecmi" path="res://interaction_checker.gd" id="7_1jxqw"]
-[ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://Pistol.tres" id="8_b26j0"]
+[ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://pistol.tres" id="8_b26j0"]
 [ext_resource type="Script" uid="uid://ju1dfjq5pddd" path="res://player_shooter.gd" id="8_dw050"]
 [ext_resource type="Script" uid="uid://bp2vp4a3x7mxr" path="res://ExplosiveData.gd" id="9_n7ghd"]
 [ext_resource type="Resource" uid="uid://3bn861mduogq" path="res://frag_grenade.tres" id="10_nvl01"]
@@ -48,9 +48,8 @@ wait_time = 0.5
 script = ExtResource("6_2hs0m")
 gun_holder = NodePath("../Camera3D/GunHolder")
 
-[node name="InteractionChecker" type="Node3D" parent="." unique_id=4697784 node_paths=PackedStringArray("raycast")]
+[node name="InteractionChecker" type="Node3D" parent="." unique_id=4697784]
 script = ExtResource("7_1jxqw")
-raycast = NodePath("../Camera3D/RayCast3D")
 
 [node name="PlayerShooter" type="Node3D" parent="." unique_id=338797724 node_paths=PackedStringArray("camera", "raycast", "shoot_timer", "weapon_anchor", "player")]
 script = ExtResource("8_dw050")

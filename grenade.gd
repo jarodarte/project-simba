@@ -50,7 +50,7 @@ func _explode() -> void:
 	collision_layer = 0
 	collision_mask = 0
 
-	# Make sure overlapping bodies are detected
+	# make sure overlapping bodies are detected
 	explosion_area.monitoring = true
 	await get_tree().physics_frame
 
@@ -87,7 +87,7 @@ func start_fuse() -> void:
 		if not _exploded and is_inside_tree():
 			body_entered.connect(_on_body_entered)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _stuck_to != null and is_instance_valid(_stuck_to):
 		global_position = _stuck_to.global_position + _stuck_offset
 		return

@@ -101,6 +101,7 @@ func _physics_process(delta):
 		footstep_timer.stop()
 
 	weapon_sway.update(delta, is_moving, is_on_floor())
+
 	interaction_checker.check_interaction()
 
 	# spray reset
@@ -117,5 +118,4 @@ func take_damage(amount: float):
 	sound.finished.connect(sound.queue_free)
 	GameManager.health_changed.emit(GameManager.health)
 	if GameManager.health == 0:
-		GameManager.reset()
 		get_tree().call_deferred("change_scene_to_file", "res://game_over.tscn")

@@ -8,12 +8,13 @@ var is_flashing: bool = false
 var _is_dead: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")
 var DamageTextScene = preload("res://damage_text.tscn")
+var material: StandardMaterial3D  
+
 @export var data: EnemyData
 @export var head_collision_shape: CollisionShape3D
 @onready var nav_agent = $NavigationAgent3D
 @onready var damage_zone = $DamageZone
 @onready var mesh = $MeshInstance3D
-var material: StandardMaterial3D  
 
 func _ready():
 	health = data.max_health
