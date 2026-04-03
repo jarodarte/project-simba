@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bclelosw2tsuo"]
+
+[ext_resource type="PackedScene" uid="uid://cr6s5a66wicoq" path="res://zombie_clown.tscn" id="1_ll021"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_poq4k"]
+[ext_resource type="Texture2D" uid="uid://og3ftopkc1w1" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Farmer.png" id="3_qbarn"]
+
+[sub_resource type="Resource" id="Resource_0klj3"]
+script = ExtResource("2_poq4k")
+skin_texture = ExtResource("3_qbarn")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_ll021")]
+data = SubResource("Resource_0klj3")

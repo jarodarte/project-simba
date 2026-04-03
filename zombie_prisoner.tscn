@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c2kuhtvyig7h"]
+
+[ext_resource type="PackedScene" uid="uid://bt0to6cccodbr" path="res://zombie_pimp.tscn" id="1_bp7gf"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_ijoij"]
+[ext_resource type="Texture2D" uid="uid://6sn5gri6ubqu" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Prisoner.png" id="3_6h115"]
+
+[sub_resource type="Resource" id="Resource_l5ke6"]
+script = ExtResource("2_ijoij")
+skin_texture = ExtResource("3_6h115")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_bp7gf")]
+data = SubResource("Resource_l5ke6")
+
+[node name="Hat_Police" parent="Skeleton3D/Hat_Police" parent_id_path=PackedInt32Array(766095033) index="0" unique_id=1241531512]
+visible = true
+
+[node name="Hair_Top" parent="Skeleton3D/Hair_Top" parent_id_path=PackedInt32Array(773102184) index="0" unique_id=1356320828]
+visible = false
+
+[node name="Hat_Pimp" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="13" unique_id=1544233387]
+visible = false
+
+[node name="Hat_Sheriff" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="15" unique_id=875606012]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.28442568, 2.77997, 0.39443293)
+bone_name = "Hat_Sheriff"
+bone_idx = 30

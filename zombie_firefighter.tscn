@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dqpmhoed8pdma"]
+
+[ext_resource type="PackedScene" uid="uid://c3481lwl7br2f" path="res://zombie_farmersdaughter.tscn" id="1_6741n"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_s3ut2"]
+[ext_resource type="Texture2D" uid="uid://d010aasnt4ejm" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Firefighter.png" id="3_tvwlx"]
+
+[sub_resource type="Resource" id="Resource_n1glm"]
+script = ExtResource("2_s3ut2")
+skin_texture = ExtResource("3_tvwlx")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_6741n")]
+data = SubResource("Resource_n1glm")
+
+[node name="Hat_FireFighter" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="7" unique_id=1876438210]
+visible = true
+
+[node name="Hair_Bobs" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="10" unique_id=1415465151]
+visible = false

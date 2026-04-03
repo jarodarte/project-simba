@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bi4a8r1mau27u"]
+
+[ext_resource type="PackedScene" uid="uid://dk0malq76gvgw" path="res://zombie_airport_security.tscn" id="1_a6bx5"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_5a3aj"]
+[ext_resource type="Texture2D" uid="uid://dd8mqmbqx1dh0" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Runner.png" id="3_0d43a"]
+[ext_resource type="Texture2D" uid="uid://dd8mqmbqx1dh0" path="res://SimpleApocalypse/Models/Characters/Textures/SA_Zombie_Runner.png" id="4_fhl3e"]
+
+[sub_resource type="Resource" id="Resource_jkhjn"]
+script = ExtResource("2_5a3aj")
+skin_texture = ExtResource("3_0d43a")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63bdl"]
+albedo_texture = ExtResource("4_fhl3e")
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_a6bx5")]
+data = SubResource("Resource_jkhjn")
+
+[node name="Hat_Police" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="6" unique_id=766095033]
+visible = true
+
+[node name="Hat_Police" parent="Skeleton3D/Hat_Police" index="0" unique_id=1241531512]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_FireFighter" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="7" unique_id=1876438210]
+visible = true
+
+[node name="Hat_FireFighter" parent="Skeleton3D/Hat_FireFighter" index="0" unique_id=1585546110]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Cap_Backwards" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="8" unique_id=1681164053]
+visible = true
+
+[node name="Hat_Cap_Backwards" parent="Skeleton3D/Hat_Cap_Backwards" index="0" unique_id=1980542766]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Helmet" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="9" unique_id=956590925]
+visible = true
+
+[node name="Hat_Helmet" parent="Skeleton3D/Hat_Helmet" index="0" unique_id=304277814]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hair_Bobs" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="10" unique_id=1415465151]
+visible = true
+
+[node name="Hair_Bobs" parent="Skeleton3D/Hair_Bobs" index="0" unique_id=748225434]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hair_Ponytail" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="11" unique_id=737547690]
+visible = true
+
+[node name="Hair_Ponytail" parent="Skeleton3D/Hair_Ponytail" index="0" unique_id=127028113]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Pimp" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="13" unique_id=1544233387]
+visible = true
+
+[node name="Hat_Pimp" parent="Skeleton3D/Hat_Pimp" index="0" unique_id=783650560]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hair_Punk" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="14" unique_id=1874195714]
+visible = true
+
+[node name="Hair_Punk" parent="Skeleton3D/Hair_Punk" index="0" unique_id=2007759580]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Sheriff" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="15" unique_id=875606012]
+visible = true
+
+[node name="Hat_Sheriff" parent="Skeleton3D/Hat_Sheriff" index="0" unique_id=1006674528]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Cap" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="16" unique_id=2144290638]
+visible = true
+
+[node name="Hat_Cap" parent="Skeleton3D/Hat_Cap" index="0" unique_id=1662958572]
+visible = false
+
+[node name="GasMask" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="17" unique_id=453025604]
+visible = true
+
+[node name="GasMask" parent="Skeleton3D/GasMask" index="0" unique_id=1653994323]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Hobo" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="18" unique_id=1031822037]
+visible = true
+
+[node name="Hat_Hobo" parent="Skeleton3D/Hat_Hobo" index="0" unique_id=947729159]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="RiotHelmet" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="19" unique_id=517993622]
+visible = true
+
+[node name="RiotHelmet" parent="Skeleton3D/RiotHelmet" index="0" unique_id=1491094006]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="WarHelmet" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="20" unique_id=1632072729]
+visible = true
+
+[node name="WarHelmet" parent="Skeleton3D/WarHelmet" index="0" unique_id=585235560]
+visible = false
+
+[node name="Prop_Backpack" parent="Skeleton3D/Prop_Backpack" parent_id_path=PackedInt32Array(906290490) index="0" unique_id=130300544]
+visible = false
+
+[node name="Prop_FireFighterPack" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="30" unique_id=2733680]
+visible = true
+
+[node name="Prop_FireFighterPack" parent="Skeleton3D/Prop_FireFighterPack" index="0" unique_id=815046354]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")

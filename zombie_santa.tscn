@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4hkpg2jdag64"]
+
+[ext_resource type="PackedScene" uid="uid://bi4a8r1mau27u" path="res://zombie_runner.tscn" id="1_y5wiw"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_ahxyl"]
+[ext_resource type="Texture2D" uid="uid://dlbsijl6v45jt" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Santa.png" id="3_vo6x2"]
+
+[sub_resource type="Resource" id="Resource_nf68i"]
+script = ExtResource("2_ahxyl")
+skin_texture = ExtResource("3_vo6x2")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_y5wiw")]
+data = SubResource("Resource_nf68i")
+
+[node name="Hair_Ponytail" parent="Skeleton3D/Hair_Ponytail" parent_id_path=PackedInt32Array(737547690) index="0" unique_id=127028113]
+visible = false
+
+[node name="Hair_Top" parent="Skeleton3D/Hair_Top" parent_id_path=PackedInt32Array(773102184) index="0" unique_id=1356320828]
+visible = false

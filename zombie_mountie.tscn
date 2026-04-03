@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bl8hwv6hbm6hj"]
+
+[ext_resource type="PackedScene" uid="uid://du6gtthjj8e4q" path="res://zombie_mechanic.tscn" id="1_irhgr"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_2rnjv"]
+[ext_resource type="Texture2D" uid="uid://did5yi4gm5yyu" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Mountie.png" id="3_2vrto"]
+
+[sub_resource type="Resource" id="Resource_jqfx0"]
+script = ExtResource("2_2rnjv")
+skin_texture = ExtResource("3_2vrto")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_irhgr")]
+data = SubResource("Resource_jqfx0")
+
+[node name="Hat_Sheriff" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="15" unique_id=875606012]
+visible = true
