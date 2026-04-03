@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9026b30b758d4fd4fbf54cd5452a51c9
+timeCreated: 1460693289
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_DirtCircle.prefab
+  uploadId: 864498

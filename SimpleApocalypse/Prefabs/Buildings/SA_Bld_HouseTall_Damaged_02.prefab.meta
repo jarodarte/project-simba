@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fe0b1dc005b25444ebdd426a120a73c7
+timeCreated: 1460260649
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_HouseTall_Damaged_02.prefab
+  uploadId: 864498

@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://cm2nfg2stb2to"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_uqdmp"]
+[ext_resource type="Texture2D" uid="uid://bgfvd20oq0gqy" path="res://SimpleApocalypse/textures/SimpleApocalypse_Texture.png" id="2_ehh0d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isqfh"]
+resource_name = "lambert132"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("2_ehh0d")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ffwgl"]
+_surfaces = [{
+"aabb": AABB(-0.0279451, -0.0019479579, -0.1, 0.0279451, 0.0019479579, 0.1),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgABABQAAQAEABQAAgAUABUAAgAVAAUABgAFABUACgAUAAQAFQAUAAoABAALAAoAFQAHAAYACgAHABUACAAGAAcAFgAKAAsABwAKABYACwAMABYAFgAMAA0AFgAXAAcABwAXAAgADQAYABYAFwAWABgACAAXABkAGAAZABcAGQAJAAgACQAZABoAGgAZABgAGgAPAAkAGgAQAA8AGAAbABoAGwAYAA0AGgAbABAADQAOABsAGwAOABEAGwARABAAEgAQABEAEQATABIA"),
+"lods": [0.014839622, PackedByteArray("AAABAAIAAgADAAAAAgABAAQAAgAEAAUABgAFAAQABAAHAAYACAAGAAcACAAHAAkACgAHAAQACgAJAAcABAALAAoACwAMAAoACgAMAA0ADgAKAA0ADgAJAAoADgAPAAkADgAQAA8ADgARABAAEgAQABEAEQATABIA")],
+"name": "lambert132",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("H+3kvJ9S/7rNzMy9H+3kvAAAAADNzMy9H+3kvAAAAAAAAAAAH+3kvJ9S/7oAAAAAH23OvAAAAADNzMy9H23OvAAAAAAAAAAAw5XIvAAAAAAAAAAAw5XIvAAAAAA9pkm9zexkvAAAAAAAAAAAHwVjuwAAAAAAAAAAw5XIvAAAAAC4kk69w5XIvAAAAADNzMy9zexkvAAAAADNzMy9HwVjuwAAAADNzMy9AAA0uwAAAADNzMy9AAA0uwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADNzMy9AAAAAJ9S/7oAAAAAAAAAAJ9S/7rNzMy9H23OvAAAAAC4kk69H23OvAAAAAA9pkm9zexkvAAAAAC4kk69zexkvAAAAAA9pkm9HwVjuwAAAAC4kk69HwVjuwAAAAA9pkm9AAA0uwAAAAA9pkm9AAA0uwAAAAC4kk69")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cp764"]
+resource_name = "SA_Env_Path_Straight_01"
+_surfaces = [{
+"aabb": AABB(-0.0279451, -0.0019479579, -0.1, 0.0279451, 0.0019479579, 0.1),
+"attribute_data": PackedByteArray("AE25Ptg0bz8ATbk+2DRvPwBNuT7YNG8/AE25Ptg0bz+f8pc+9kNwP5/ylz72Q3A/n/KXPvZDcD+f8pc+9kNwP5/ylz72Q3A/n/KXPvZDcD+f8pc+9kNwP5/ylz72Q3A/n/KXPvZDcD+f8pc+9kNwPwBOuT7YNG8/AE65Ptg0bz8ATrk+2DRvPwBOuT7YNG8/ACC2PkhcBj8AILY+SFwGPwAgtj5IXAY/ACC2PkhcBj8AILY+SFwGPwAgtj5IXAY/ACC2PkhcBj8AILY+SFwGPxDSDj/jdUU/ENIOP+N1RT8Q0g4/43VFPxDSDj/jdUU/ENIOP+N1RT8Q0g4/43VFPxDSDj/jdUU/ENIOP+N1RT+f8pc+9kNwP5/ylz72Q3A/n/KXPvZDcD+f8pc+9kNwP5/ylz72Q3A/n/KXPvZDcD+f8pc+9kNwP5/ylz72Q3A/ACC2PkhcBj8AILY+SFwGPwAgtj5IXAY/ACC2PkhcBj8Q0g4/43VFPxDSDj/jdUU/ENIOP+N1RT8Q0g4/43VFPw=="),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAiAAQAIwAiAAYABgAJACMACQAGACQAIwAJAAcABwAIACMAJAAlAAkAJQAkACYAJgAnACUAKAAnACYACgAnACgAKAAMAAoAJgApACgAKQAmAA0ADQALACkADgAPABAAEAARAA4AKgATABQAKgASABMAKwAqABQAKwAUABUAFgAsABgAFgAtACwAFgAZAC0AGQAXAC0AHAAuAC8ALwAbABwAHQAbAC8ALwAaAB0AIAAwAB4AHgAfACAAHgAwADEAMQAhAB4A"),
+"lods": [0.014839622, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwAIAAQABAAJAAcABgAJAAQABgAKAAkACwAKAAYACwAMAAoACwAGAA0ADgAPABAAEAARAA4AEgATABQAEgAUABUAFgAXABgAFgAZABcAGgAbABwAHQAbABoAHgAfACAAHgAgACEA")],
+"material": SubResource("StandardMaterial3D_isqfh"),
+"name": "lambert132",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 50,
+"vertex_data": PackedByteArray("H+3kvJ9S/7rNzMy9H+3kvAAAAADNzMy9H+3kvAAAAAAAAAAAH+3kvJ9S/7oAAAAAH23OvAAAAADNzMy9w5XIvAAAAADNzMy9w5XIvAAAAAC4kk69w5XIvAAAAAAAAAAAH23OvAAAAAAAAAAAw5XIvAAAAAA9pkm9HwVjuwAAAAAAAAAAAAA0uwAAAADNzMy9AAA0uwAAAAAAAAAAHwVjuwAAAADNzMy9AAAAAAAAAADNzMy9AAAAAJ9S/7rNzMy9AAAAAJ9S/7oAAAAAAAAAAAAAAAAAAAAAAAA0uwAAAADNzMy9AAAAAAAAAADNzMy9AAAAAAAAAAAAAAAAAAA0uwAAAAAAAAAAH+3kvAAAAAAAAAAAH23OvAAAAADNzMy9H23OvAAAAAAAAAAAH+3kvAAAAADNzMy9w5XIvAAAAAC4kk69zexkvAAAAADNzMy9HwVjuwAAAADNzMy9w5XIvAAAAADNzMy9zexkvAAAAAAAAAAAw5XIvAAAAAAAAAAAw5XIvAAAAAA9pkm9HwVjuwAAAAAAAAAAH23OvAAAAAC4kk69H23OvAAAAAA9pkm9zexkvAAAAAC4kk69zexkvAAAAAA9pkm9HwVjuwAAAAC4kk69HwVjuwAAAAA9pkm9AAA0uwAAAAA9pkm9AAA0uwAAAAC4kk69AAA0uwAAAAC4kk69AAA0uwAAAAA9pkm9H23OvAAAAAA9pkm9H23OvAAAAAC4kk69HwVjuwAAAAC4kk69zexkvAAAAAC4kk69zexkvAAAAAA9pkm9HwVjuwAAAAA9pkm9AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v////3////+/////f////7////9/////v////3////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ffwgl")
+
+[node name="SA_Env_Path_Straight_01" type="MeshInstance3D" unique_id=1523311540]
+material_override = ExtResource("1_uqdmp")
+mesh = SubResource("ArrayMesh_cp764")

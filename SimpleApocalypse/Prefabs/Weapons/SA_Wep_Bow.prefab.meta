@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0780fd0586405584f9c72133e446af8b
+timeCreated: 1460261690
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Bow.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bef7fa2184d91564b805bc0a43393a3d
+timeCreated: 1460260651
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_BioTent_01.prefab
+  uploadId: 864498

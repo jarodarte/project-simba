@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: acf6a349ebef3194f98b0b994b1e6fad
+timeCreated: 1460260649
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_ShopSmall_Clean_01.prefab
+  uploadId: 864498

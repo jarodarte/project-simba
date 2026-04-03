@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 079954accd64b32419ec069129c81273
+timeCreated: 1463710642
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/FX/FX_Explosion_Rubble_Alt.prefab
+  uploadId: 864498

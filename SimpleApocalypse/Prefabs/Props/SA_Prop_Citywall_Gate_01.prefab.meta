@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 99c96936f1a3c6e41baa02a0df94b32a
+timeCreated: 1460261076
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_Citywall_Gate_01.prefab
+  uploadId: 864498

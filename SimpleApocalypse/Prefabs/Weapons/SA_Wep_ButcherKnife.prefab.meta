@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 78270b3397b5d0c41a78a22d5bb4c671
+timeCreated: 1460261693
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_ButcherKnife.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc
+timeCreated: 1463711805
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/FX/Old/FX_FlameThrower.prefab
+  uploadId: 864498

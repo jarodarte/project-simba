@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b5980e7d90b5fb54bbfed13c8d1de193
+timeCreated: 1460260318
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_DamagedConcrete.prefab
+  uploadId: 864498

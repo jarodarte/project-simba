@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 88b194a9f01103d418fef31afcafb912
+timeCreated: 1460260787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Matches.prefab
+  uploadId: 864498

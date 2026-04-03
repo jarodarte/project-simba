@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 17b3eafcd363120429187c6c17cc3e5a
+timeCreated: 1460261697
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Attachment_BipodUp.prefab
+  uploadId: 864498

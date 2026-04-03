@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d1a9c9d82731bef41b50afc91b803386
+timeCreated: 1463710634
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/FX/FX_WaterSplash_Alt.prefab
+  uploadId: 864498

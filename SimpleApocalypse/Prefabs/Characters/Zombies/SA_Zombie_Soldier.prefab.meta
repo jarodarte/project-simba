@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 33fe945564a51f64f8d6ea8f0c2e8be9
+timeCreated: 1462072722
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Characters/Zombies/SA_Zombie_Soldier.prefab
+  uploadId: 864498

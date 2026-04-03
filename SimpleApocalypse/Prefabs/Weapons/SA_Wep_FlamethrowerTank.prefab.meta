@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 02cdf47be73bd4a41abb9d33437ec403
+timeCreated: 1460261696
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_FlamethrowerTank.prefab
+  uploadId: 864498

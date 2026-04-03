@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 375c06a129a3fc842bd7255b98ec0ff3
+timeCreated: 1460260650
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_TownHouse_Clean_02.prefab
+  uploadId: 864498

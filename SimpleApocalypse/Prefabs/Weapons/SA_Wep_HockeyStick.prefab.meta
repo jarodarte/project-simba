@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8018a4cb71b5b5149ab3049ddd22d536
+timeCreated: 1460261690
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_HockeyStick.prefab
+  uploadId: 864498

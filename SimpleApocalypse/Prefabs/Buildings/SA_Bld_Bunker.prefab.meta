@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f43c85f2e7ce6e34db8bd00df599f489
+timeCreated: 1460260653
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_Bunker.prefab
+  uploadId: 864498

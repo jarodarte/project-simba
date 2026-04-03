@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 447a87c44591cc24c87a41b0cbf3de32
+timeCreated: 1460260790
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Ammo_AssaultRifleMagazine.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 929583f904a9a86478098af5ebae05fc
+timeCreated: 1460261116
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_Ambulance_Brokendown_01.prefab
+  uploadId: 864498

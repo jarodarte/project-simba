@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 873d0c7c4b9065d4a94861e47ef0815d
+timeCreated: 1460261694
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_SmokeGrenade.prefab
+  uploadId: 864498

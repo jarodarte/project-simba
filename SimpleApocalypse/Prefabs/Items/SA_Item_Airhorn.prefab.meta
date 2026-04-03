@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d611695a54a8b3b4696b3be4f4be0e06
+timeCreated: 1460260786
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Airhorn.prefab
+  uploadId: 864498

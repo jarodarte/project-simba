@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 839cd8c9db838c743bd6b78735f6ad4a
+timeCreated: 1460260911
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_SheriffCar.prefab
+  uploadId: 864498

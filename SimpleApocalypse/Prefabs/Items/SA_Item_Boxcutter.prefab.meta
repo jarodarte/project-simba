@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a6443d8f2ea5e924192c983d6d80f4ca
+timeCreated: 1460260785
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Boxcutter.prefab
+  uploadId: 864498

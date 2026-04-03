@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d4db3865f3e276479c2dbe7d1547e08
+timeCreated: 1460260910
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_ArmytruckTanker.prefab
+  uploadId: 864498

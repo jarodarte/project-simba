@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2e86c398b62cbb64db0813919386c61a
+timeCreated: 1460411874
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_Road_LaneTransition_Right01.prefab
+  uploadId: 864498

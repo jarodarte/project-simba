@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7f3b0320260bec34db6f29f31c5884f6
+timeCreated: 1460260912
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Firetruck.prefab
+  uploadId: 864498

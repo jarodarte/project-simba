@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7d480e68df217e74bb068d637b606951
+timeCreated: 1460261694
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_AT4Launcher.prefab
+  uploadId: 864498

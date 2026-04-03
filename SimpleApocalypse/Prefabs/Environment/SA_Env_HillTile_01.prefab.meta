@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 754ba981baf3eda48a671c62ba17a4f8
+timeCreated: 1460260317
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_HillTile_01.prefab
+  uploadId: 864498

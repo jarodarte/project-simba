@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9678953d772adfc4fbe629c94c1ed053
+timeCreated: 1460260908
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_BigMonsterTruck.prefab
+  uploadId: 864498

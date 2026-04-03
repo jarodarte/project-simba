@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5f34ab9d78d5a90489aeb8eac75ad20f
+timeCreated: 1460260785
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Ammo_Revolver.prefab
+  uploadId: 864498

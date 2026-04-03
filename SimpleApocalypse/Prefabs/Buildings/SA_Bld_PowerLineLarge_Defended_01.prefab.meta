@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a3e361aa4a4ea1947822cdbf89e7e865
+timeCreated: 1460260649
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_PowerLineLarge_Defended_01.prefab
+  uploadId: 864498

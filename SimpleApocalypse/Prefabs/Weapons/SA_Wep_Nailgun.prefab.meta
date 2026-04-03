@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d9d3f74fb939284da5c5c0db1e0d2dd
+timeCreated: 1460261698
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Nailgun.prefab
+  uploadId: 864498

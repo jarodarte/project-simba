@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e93b27b346718bf4e9210ef371cf1384
+timeCreated: 1460261082
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_TrafficLight_01.prefab
+  uploadId: 864498

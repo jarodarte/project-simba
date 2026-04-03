@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d34a882bea90f9e4d9e9f929c55ceac2
+timeCreated: 1460260909
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Troopcar.prefab
+  uploadId: 864498

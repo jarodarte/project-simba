@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b3cb6026b4d2f554d84c400e1f97842c
+timeCreated: 1460261697
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Fireaxe.prefab
+  uploadId: 864498

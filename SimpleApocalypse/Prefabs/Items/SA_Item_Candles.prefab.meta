@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b3dd47a850e07a40870714f9df8d5f8
+timeCreated: 1460260789
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Candles.prefab
+  uploadId: 864498

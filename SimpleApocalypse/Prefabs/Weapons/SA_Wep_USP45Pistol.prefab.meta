@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 72c705a07a157ad40a9ec1966856e23e
+timeCreated: 1460261697
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_USP45Pistol.prefab
+  uploadId: 864498

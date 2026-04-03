@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a4c537dfa7d6654cb816af5d0a8df04
+timeCreated: 1460260909
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Van.prefab
+  uploadId: 864498

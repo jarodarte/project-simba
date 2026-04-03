@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 05de6dcd323184e49941d4fcdfa237a4
+timeCreated: 1460261076
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_StepLadder_01.prefab
+  uploadId: 864498

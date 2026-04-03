@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7c64856cb2b7204408c84cddc25c64b1
+timeCreated: 1460261689
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Attachment_Silencer.prefab
+  uploadId: 864498

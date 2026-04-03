@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3f79b0dd3edea354ea7f2732e57b9813
+timeCreated: 1460260788
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Ammo_Shotgun.prefab
+  uploadId: 864498

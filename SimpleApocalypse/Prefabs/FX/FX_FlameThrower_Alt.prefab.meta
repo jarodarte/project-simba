@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5cd5599e01f32bd418f20a3b9eac1c57
+timeCreated: 1463711805
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/FX/FX_FlameThrower_Alt.prefab
+  uploadId: 864498

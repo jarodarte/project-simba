@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: babb8c76344f6eb4eb04c2794b80804b
+timeCreated: 1460260654
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_Building_Damaged_01.prefab
+  uploadId: 864498

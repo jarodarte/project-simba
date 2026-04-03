@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e62a77f928d45a4899c7456cc677b69
+timeCreated: 1460261693
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Attachment_Reddot.prefab
+  uploadId: 864498

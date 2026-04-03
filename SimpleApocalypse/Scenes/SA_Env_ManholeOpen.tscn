@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://c4h23cxdmtbe3"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_nrbrk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5nwu"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_imtmp"]
+_surfaces = [{
+"aabb": AABB(-0.016526375, 0, -0.01992649, 0.024620496, 0.0025640028, 0.028054161),
+"format": 34359742465,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIABAACAAEACAACAAQAAgAIAAAABAAGAAgAAQAFAAQABgAEAAUACAAGAAcABwAAAAgABQAHAAYAAwAAAAcAEgABAAAAAAADABIABQABABIABwATAAMAEwAHAAUAEgADABMABQAUABMAEwAUABIAEgAUAAUACQAKAAsADAALAAoACgAPAAwADQALAAwACwANAAkAEQAMAA8ADAARAA0AEAAPAAoACgAJABAADwAQABEAFQAJAA0ADgARABAAFgAQAAkAEAAWAA4ACQAVABYAEQAOABcAFwANABEAFwAOABYADQAXABUAFgAVABcA"),
+"lods": [0.007037022, PackedByteArray("AAABAAIAAwABAAAABAACAAEABQABAAMAAQAFAAQABgAEAAUAAwAHAAUABQAHAAYAAwAAAAcABAAGAAgACAACAAQACAAGAAcAAgAIAAAABwAAAAgACQAKAAsADAALAAoACwANAAkADQALAAwADgAJAA0ACgAPAAwACgAJABAADgAQAAkAEAAPAAoADgANABEADgARABAADAARAA0ADwAQABEAEQAMAA8A")],
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("cQsuvNQIKDtS+Oq6ce3XOtQIKDsKa/27FM7dOgmh2Do9Yvq7ruUkvGs+HzsptF27uP6JuwgtATmkeqK84XaLu0GWhzrhPKO8SASHvAgtATnhnmO8UmKHvEGWhzpII2W8cU8tvAmh2Dof1d66M50EPC6tjjrsKQU8M50EPAAAAADsKQU8PYQEvAAAAADsKQU8PYQEvAAAAACF9wO8PYQEvC6tjjrsKQU8mjnMuy6tjjopIMu7M50EPAAAAACF9wO8M50EPC6tjjqF9wO8PYQEvC6tjjqF9wO8w/VgOGs+HzsKsQe87Kd0vBQrmTrDJ1y8j8KduxQrmTrhNZa8hWvMOy6tjjr2hM07hWvMOy6tjjopIMu7mjnMuy6tjjr2hM07")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gh4dw"]
+resource_name = "SA_Env_ManholeOpen"
+_surfaces = [{
+"aabb": AABB(-0.016526375, 0, -0.01992649, 0.024620496, 0.0025640028, 0.028054161),
+"attribute_data": PackedByteArray("Nc9vPvW9aj81z28+9b1qPzXPbz72vWo/Nc9vPva9aj81z28+9r1qPzXPbz72vWo/Nc9vPvW9aj81z28+9b1qPz8+Nz73vWo/Pz43Pve9aj8/Pjc+9r1qPz8+Nz72vWo/27dSPvW9aj/Xt1I+9b1qP9e3Uj72vWo/27dSPva9aj/bt1I+9b1qP9u3Uj71vWo/27dSPva9aj/bt1I+9r1qP4Yglz71vWo/hiCXPvW9aj+GIJc+9b1qP4Yglz71vWo/hiCXPvW9aj886Uo+MNNvPzzpSj4x028/POlKPjHTbz886Uo+MNNvPzzpSj4x028/POlKPjDTbz886Uo+MNNvPzzpSj4x028/RlgSPjLTbz9GWBI+MdNvP0ZYEj4x028/RlgSPjLTbz/e0S0+MNNvP97RLT4x028/4tEtPjHTbz/i0S0+MNNvP+LRLT4w028/4tEtPjHTbz/i0S0+MdNvP+LRLT4w028/EjxrPjDTbz8SPGs+MNNvPxI8az4w028/EjxrPjDTbz8SPGs+MNNvP2johj71vWo/BhGIPvW9aj9o6IY+9b1qPwYRiD71vWo/hiCXPvW9aj+GIJc+9b1qP4Yglz71vWo/AIrfPdbmBj8Ait891uYGPwCK3z3W5gY/AIrfPdbmBj8SPGs+MNNvPxI8az4w028/EjxrPjDTbz8="),
+"format": 34359742487,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAMgAzADQANAA1ADIABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAANgAVABYAFwAVADYAFgAUADYANgA3ABcAFAAWABgAFwA3ADgAGAA4ABQAOAAYABcAGQAaABsAGwAcABkAOQA6ADsAOwA8ADkAHQAeAB8AHwAgAB0AIQAiACMAIwAkACEAJQAmACcAJwAoACUAKQAqACsAKwAsACkAPQAuAC8ALgA9AD4ALwA/AD0APgAwAC4APwAvADEAMAA+AC0AMQAtAD8ALQAxADAA"),
+"lods": [0.007037022, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFwAVABQAFAAWABgAFAAYABcAGQAaABsAGwAcABkAHQAeAB8AHwAgAB0AIQAiACMAIwAkACEAJQAmACcAJwAoACUAKQAqACsAKwAsACkALQAuAC8ALQAwAC4ALQAvADEALQAxADAA")],
+"material": SubResource("StandardMaterial3D_x5nwu"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("cQsuvNQIKDtS+Oq6ce3XOtQIKDsKa/27FM7dOgmh2Do9Yvq7cU8tvAmh2Dof1d66SASHvAgtATnhnmO8uP6JuwgtATmkeqK84XaLu0GWhzrhPKO8UmKHvEGWhzpII2W8cU8tvAmh2Dof1d66FM7dOgmh2Do9Yvq7uP6JuwgtATmkeqK8SASHvAgtATnhnmO8ce3XOtQIKDsKa/274XaLu0GWhzrhPKO8uP6JuwgtATmkeqK8FM7dOgmh2Do9Yvq7UmKHvEGWhzpII2W8cQsuvNQIKDtS+Oq6cU8tvAmh2Dof1d66SASHvAgtATnhnmO8ruUkvGs+HzsptF27ce3XOtQIKDsKa/27cQsuvNQIKDtS+Oq64XaLu0GWhzrhPKO8UmKHvEGWhzpII2W8M50EPC6tjjrsKQU8M50EPAAAAADsKQU8PYQEvAAAAADsKQU8PYQEvC6tjjrsKQU8M50EPAAAAACF9wO8M50EPC6tjjqF9wO8PYQEvC6tjjqF9wO8PYQEvAAAAACF9wO8M50EPAAAAADsKQU8M50EPAAAAACF9wO8PYQEvAAAAACF9wO8PYQEvAAAAADsKQU8M50EPC6tjjqF9wO8M50EPAAAAACF9wO8M50EPAAAAADsKQU8M50EPC6tjjrsKQU8PYQEvC6tjjrsKQU8PYQEvAAAAADsKQU8PYQEvAAAAACF9wO8PYQEvC6tjjqF9wO8mjnMuy6tjjopIMu7M50EPC6tjjrsKQU8PYQEvC6tjjrsKQU8M50EPC6tjjqF9wO8PYQEvC6tjjqF9wO8w/VgOGs+HzsKsQe8ruUkvGs+HzsptF277Kd0vBQrmTrDJ1y8j8KduxQrmTrhNZa8w/VgOGs+HzsKsQe8j8KduxQrmTrhNZa87Kd0vBQrmTrDJ1y8hWvMOy6tjjopIMu7hWvMOy6tjjr2hM07mjnMuy6tjjr2hM07mjnMuy6tjjopIMu7hWvMOy6tjjr2hM07hWvMOy6tjjopIMu7mjnMuy6tjjr2hM07gKb5if///z+ApvmJ////P4Cm+Yn///8/gKb5if///z/5CYAm////v/kJgCb///+/+QmAJv///7/5CYAm////v3iFxhD///8/eIXGEP///z94hcYQ////P3iFxhD///8//v/BqYCmAjv+/8GpgKYCO/7/wamApgI7/v/BqYCmAjvBKf9/////P8Ep/3////8/wSn/f////z/BKf9/////Pzhvhvr///+/OG+G+v///784b4b6////vzhvhvr///+/OG+G+v///7//f/9/////P/9//3////8//3//f////z//f/9/////P/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9//3//P////3//f/8/////f/9//z////9//3//PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3///////7//f///////P/9///////8//3///////7//f///////vzhvhvr///+/OG+G+v///784b4b6////vzhvhvr///+/OG+G+v///784b4b6////vzhvhvr///+//3///////7//f///////P/9///////8//3///////7//f///////P/9///////+//3///////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_imtmp")
+
+[node name="SA_Env_ManholeOpen" type="MeshInstance3D" unique_id=188558498]
+material_override = ExtResource("1_nrbrk")
+mesh = SubResource("ArrayMesh_gh4dw")

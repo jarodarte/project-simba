@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 45d2bc2c9ccd4e440ab916f134b20ad1
+timeCreated: 1460261689
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_FlamethrowerHandle.prefab
+  uploadId: 864498

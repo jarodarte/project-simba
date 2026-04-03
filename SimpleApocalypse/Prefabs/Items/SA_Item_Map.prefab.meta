@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ec7ca66bc439fd8488a40c954601ee72
+timeCreated: 1460260787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Map.prefab
+  uploadId: 864498

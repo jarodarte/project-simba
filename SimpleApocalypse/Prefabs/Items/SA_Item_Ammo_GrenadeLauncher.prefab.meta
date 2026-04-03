@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ecf40dcf02a1c64e8876b2e85f73314
+timeCreated: 1460260786
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Ammo_GrenadeLauncher.prefab
+  uploadId: 864498

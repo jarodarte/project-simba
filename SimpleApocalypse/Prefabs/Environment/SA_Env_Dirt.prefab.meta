@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 759349d528a9fc24caa71eabff058be7
+timeCreated: 1460612328
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_Dirt.prefab
+  uploadId: 864498

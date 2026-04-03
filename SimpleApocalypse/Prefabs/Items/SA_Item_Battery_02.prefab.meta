@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: efd4afff344245f4992187e41dc9f948
+timeCreated: 1460260787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Battery_02.prefab
+  uploadId: 864498

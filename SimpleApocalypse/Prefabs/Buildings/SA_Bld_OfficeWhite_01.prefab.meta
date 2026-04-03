@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 19b9beeb96fee8841b49b06c12648bdc
+timeCreated: 1460260649
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_OfficeWhite_01.prefab
+  uploadId: 864498

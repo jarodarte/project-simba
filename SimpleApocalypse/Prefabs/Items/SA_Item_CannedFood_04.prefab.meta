@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f4fdaf5678fb524489bb3d00d2f1a08
+timeCreated: 1460260788
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_CannedFood_04.prefab
+  uploadId: 864498

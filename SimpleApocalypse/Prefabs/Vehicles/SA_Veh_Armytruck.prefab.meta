@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4cdcf23b504e9a40bb03f4d332429d9
+timeCreated: 1460260909
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Armytruck.prefab
+  uploadId: 864498

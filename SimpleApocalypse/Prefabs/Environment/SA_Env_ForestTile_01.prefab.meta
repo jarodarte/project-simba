@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 113d994385275e0429a00fdee9fe650b
+timeCreated: 1460260318
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_ForestTile_01.prefab
+  uploadId: 864498

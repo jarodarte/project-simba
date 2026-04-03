@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60dea2b6e431b0943af90c267ab9d090
+timeCreated: 1460411874
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_RoadLane_NoLines_straight_01.prefab
+  uploadId: 864498

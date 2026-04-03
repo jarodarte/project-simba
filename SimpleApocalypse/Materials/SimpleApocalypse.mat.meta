@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 965e421d30d6a2a419dfd5b3597456b8
+timeCreated: 1460260110
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Materials/SimpleApocalypse.mat
+  uploadId: 864498

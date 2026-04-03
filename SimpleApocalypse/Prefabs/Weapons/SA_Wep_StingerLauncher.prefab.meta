@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c509fcf65fba31041b657a9ee7d282c1
+timeCreated: 1460261695
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_StingerLauncher.prefab
+  uploadId: 864498

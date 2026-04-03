@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 94bade2c2915a6a49913bcdfc21214ab
+timeCreated: 1460260787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_BearTrap.prefab
+  uploadId: 864498

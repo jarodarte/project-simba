@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 731f43e89faa95445be5bfa659423635
+timeCreated: 1460261094
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_WarningSign_01.prefab
+  uploadId: 864498

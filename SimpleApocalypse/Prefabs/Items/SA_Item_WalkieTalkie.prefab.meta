@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d37bdca3cf4a37248934e1cdf44b591f
+timeCreated: 1460260788
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_WalkieTalkie.prefab
+  uploadId: 864498

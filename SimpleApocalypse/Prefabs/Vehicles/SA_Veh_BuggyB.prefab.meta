@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d11fcb9458e2b6b44843a00d0b51abf4
+timeCreated: 1460260912
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_BuggyB.prefab
+  uploadId: 864498

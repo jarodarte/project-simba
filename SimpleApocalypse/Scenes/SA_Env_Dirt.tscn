@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://b6w4gpe34ts82"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_4625o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8ii5"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qjbbf"]
+_surfaces = [{
+"aabb": AABB(0, 0, -0.15000004, 0.15, 1e-05, 0.15000004),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("mpkZPgAAAACamRm+l5kZPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACcmRm+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h125d"]
+resource_name = "SA_Env_Dirt"
+_surfaces = [{
+"aabb": AABB(0, 0, -0.15000004, 0.15, 1e-05, 0.15000004),
+"attribute_data": PackedByteArray("IYY8P9y+Rz+D7Dw/3L5HP4PsPD96WEc/IYY8P3pYRz8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_d8ii5"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("mpkZPgAAAACamRm+l5kZPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACcmRm+/3////9//z//f////3//P/9/////f/8//3////9//z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qjbbf")
+
+[node name="SA_Env_Dirt" type="MeshInstance3D" unique_id=1468518420]
+material_override = ExtResource("1_4625o")
+mesh = SubResource("ArrayMesh_h125d")

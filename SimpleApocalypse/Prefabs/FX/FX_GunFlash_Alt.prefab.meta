@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6e1113468f14f5d47908179a77a9654c
+timeCreated: 1461110084
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/FX/FX_GunFlash_Alt.prefab
+  uploadId: 864498

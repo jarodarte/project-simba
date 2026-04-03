@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b734eaff27f6da6439f1adf47ca003f7
+timeCreated: 1460261690
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Shotgun.prefab
+  uploadId: 864498

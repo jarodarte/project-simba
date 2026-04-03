@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 47ca1dd4b9bdc5f49b71b0129219b528
+timeCreated: 1460411874
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_Path_Cross_mesh.prefab
+  uploadId: 864498

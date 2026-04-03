@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df301d32c6acbe24291894f74e611ab4
+timeCreated: 1460411873
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_Road_CornerLines_01.prefab
+  uploadId: 864498

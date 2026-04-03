@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2823ec5a0d529e4488dbce15e2df0a2
+timeCreated: 1460260788
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Canteen.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8b547fd9a346db64393c0c3da4c99249
+timeCreated: 1460261693
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_DoublebarrelShotgun.prefab
+  uploadId: 864498

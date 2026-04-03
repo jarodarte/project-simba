@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f47fae03f2aefa243a408ff3ac3fcdc3
+timeCreated: 1462072725
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Characters/Zombies/SA_Zombie_Mechanic.prefab
+  uploadId: 864498

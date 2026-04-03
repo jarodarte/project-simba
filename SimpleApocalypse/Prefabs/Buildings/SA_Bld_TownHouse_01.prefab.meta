@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 21db06cb57a74604eb05070e652e2c83
+timeCreated: 1460260659
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_TownHouse_01.prefab
+  uploadId: 864498

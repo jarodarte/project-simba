@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e32b3485c3d0f7c4f8f5ece13e8417d7
+timeCreated: 1460260656
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_OfficeOld_03.prefab
+  uploadId: 864498

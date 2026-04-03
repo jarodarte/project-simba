@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ce30757dc561ff843b915619973f7f78
+timeCreated: 1462072723
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Characters/Zombies/SA_Zombie_Mountie.prefab
+  uploadId: 864498

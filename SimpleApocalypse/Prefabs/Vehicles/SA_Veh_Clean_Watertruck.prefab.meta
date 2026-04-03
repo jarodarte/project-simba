@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3afbf25fb78e9c84caca30ac4dbf5cc2
+timeCreated: 1460260909
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Clean_Watertruck.prefab
+  uploadId: 864498

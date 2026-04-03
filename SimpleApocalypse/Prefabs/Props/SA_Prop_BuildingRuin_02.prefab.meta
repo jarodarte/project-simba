@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fef2c50cc4c93db41ab899331bc362b2
+timeCreated: 1460261091
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_BuildingRuin_02.prefab
+  uploadId: 864498

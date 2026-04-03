@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f8b6b9724b1ac4428bdeec2e58d28d1
+timeCreated: 1460261103
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_BrokenTank_01.prefab
+  uploadId: 864498

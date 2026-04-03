@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 85c9e8374d323aa4287d6ce009d4ea15
+timeCreated: 1460337461
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Props/SA_Prop_WaterContainerSpill_01.prefab
+  uploadId: 864498

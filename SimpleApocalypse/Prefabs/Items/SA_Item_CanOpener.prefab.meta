@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df2a9914bc744004aa6b59b79940abe8
+timeCreated: 1460260786
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_CanOpener.prefab
+  uploadId: 864498

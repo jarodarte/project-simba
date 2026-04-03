@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2ea9d608b39821b4d87301d037cab6cc
+timeCreated: 1460260787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_Lantern.prefab
+  uploadId: 864498

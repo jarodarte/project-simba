@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b8640587c228d3b49beec1d9083bb7cd
+timeCreated: 1460261696
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Handaxe.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 366bb547ba7bba243addbcf5bea7e9fe
+timeCreated: 1462072724
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Characters/Zombies/SA_Zombie_Prisoner.prefab
+  uploadId: 864498

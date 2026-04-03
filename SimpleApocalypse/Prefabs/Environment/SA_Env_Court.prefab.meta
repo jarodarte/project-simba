@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 784d162685a6a0a4286bbf934d113a23
+timeCreated: 1460603515
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_Court.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 395bfebd39b02e64682530ee733def37
+timeCreated: 1462081465
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Environment/SA_Env_Road_StraightLarge_01.prefab
+  uploadId: 864498

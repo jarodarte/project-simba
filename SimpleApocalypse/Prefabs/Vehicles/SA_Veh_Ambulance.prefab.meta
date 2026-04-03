@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cbbccb9fb56ef7949a614f1d16c6779d
+timeCreated: 1460260908
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Ambulance.prefab
+  uploadId: 864498

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b1ab59a98f5a65a45829fe5588e7ce66
+timeCreated: 1460260908
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Vehicles/SA_Veh_Tank.prefab
+  uploadId: 864498

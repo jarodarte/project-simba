@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cc19955c9ba71224da2f27ff87209aa9
+timeCreated: 1460260790
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_ToiletPaper.prefab
+  uploadId: 864498

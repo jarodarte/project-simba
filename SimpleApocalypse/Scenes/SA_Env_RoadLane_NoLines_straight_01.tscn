@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://bo7ng0ly2eccm"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_q7qco"]
+[ext_resource type="Texture2D" uid="uid://bgfvd20oq0gqy" path="res://SimpleApocalypse/textures/SimpleApocalypse_Texture.png" id="2_8ose6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvlq3"]
+resource_name = "lambert132"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("2_8ose6")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_brj22"]
+_surfaces = [{
+"aabb": AABB(-0.049999923, 0, -0.07, 0.049999923, 1e-05, 0.07),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "lambert132",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("uMxMvQAAAAApXI+9AAAAAAAAAAApXI+9AAAAAAAAAAAAAAAAuMxMvQAAAAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fh7ql"]
+resource_name = "SA_Env_RoadLane_NoLines_straight_01"
+_surfaces = [{
+"aabb": AABB(-0.049999923, 0, -0.07, 0.049999923, 1e-05, 0.07),
+"attribute_data": PackedByteArray("0HQxPzRlRT/QdDE/NGVFP9B0MT80ZUU/0HQxPzRlRT8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_hvlq3"),
+"name": "lambert132",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("uMxMvQAAAAApXI+9AAAAAAAAAAApXI+9AAAAAAAAAAAAAAAAuMxMvQAAAAAAAAAA/3///////7//f///////v/9///////+//3///////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_brj22")
+
+[node name="SA_Env_RoadLane_NoLines_straight_01" type="MeshInstance3D" unique_id=1780869862]
+material_override = ExtResource("1_q7qco")
+mesh = SubResource("ArrayMesh_fh7ql")

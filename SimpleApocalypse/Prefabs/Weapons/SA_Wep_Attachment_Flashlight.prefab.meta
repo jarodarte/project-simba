@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8d4be0c7cac781540942102aecff73bd
+timeCreated: 1460261697
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Weapons/SA_Wep_Attachment_Flashlight.prefab
+  uploadId: 864498

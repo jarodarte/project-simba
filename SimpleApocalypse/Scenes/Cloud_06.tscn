@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://k012j4uasn44"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_mor8g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5l7t"]
+resource_name = "blinn1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+emission_enabled = true
+uv1_offset = Vector3(1, 0, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_shy41"]
+_surfaces = [{
+"aabb": AABB(-1.9406617, -0.76784104, -2.1333222, 3.8813233, 1.5356821, 4.2666473),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAACAAQAAgADAAUABQAEAAIAAQAGAAMABQADAAYABgABAAcAAAAHAAEABwAIAAYACAAHAAAACQAGAAgAAAAJAAgACQAFAAYAAAAEAAoACQAAAAoACgAEAAUACQALAAUABQALAAoACgALAAkA"),
+"name": "blinn1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("mrGcPzuRRD+acIQ/mmf4vzuRRD9miAhAmmf4vzuRRD9aiAjAmmf4vzuRRL9aiAjAmmf4PzuRRD9aiAjAmmf4PzuRRL9aiAjAmmf4vzuRRL9miAhAmrGcPzuRRD9miAhAmrGcPzuRRL9miAhAmrGcPzuRRL+acIQ/mmf4PzuRRD+acIQ/mmf4PzuRRL+acIQ/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_re8gh"]
+resource_name = "Cloud_06"
+_surfaces = [{
+"aabb": AABB(-1.9406617, -0.76784104, -2.1333222, 3.8813233, 1.5356821, 4.2666473),
+"attribute_data": PackedByteArray("h+b/PtlOaT+H5v8+ukxpP4fm/z6yTWk/h+b/Pl1OaT+H5v8+ilBpP4fm/z4OUGk/h+b/PuwUeD+H5v8+7BR4P4fm/z7sFHg/h+b/PuwUeD+H5v8+7BR4P4fm/z7sFHg/h+b/PuwUeD+H5v8+7BR4P4fm/z6yPG8/h+b/PrI8bz+H5v8+sjxvP4fm/z6yPG8/h+b/PrI8bz+H5v8+sjxvP4fm/z6yPG8/h+b/PrI8bz+H5v8+7BR4P4fm/z7sFHg/h+b/PuwUeD+H5v8+7BR4P+f8/z4uLnw/5/z/Pi4ufD/n/P8+Li58P+f8/z4uLnw/5/z/Pi4ufD/n/P8+Li58P4fm/z6yPG8/h+b/PrI8bz+H5v8+sjxvP4fm/z6yPG8/"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAEAAUABgAHAAgACAAJAAYACgALAAwADAANAAoADgAPABAAEAARAA4AEgATABQAFAAVABIAFgAXABgAGAAZABYAGgAbABwAGgAdABsAHQAeABsAGgAfAB0AIAAhACIAIgAjACAA"),
+"material": SubResource("StandardMaterial3D_j5l7t"),
+"name": "blinn1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("mrGcPzuRRD+acIQ/mmf4vzuRRD9miAhAmmf4vzuRRD9aiAjAmrGcPzuRRD9miAhAmmf4PzuRRD9aiAjAmmf4PzuRRD+acIQ/mmf4vzuRRD9aiAjAmmf4vzuRRL9aiAjAmmf4PzuRRL9aiAjAmmf4PzuRRD9aiAjAmmf4vzuRRL9miAhAmmf4vzuRRD9miAhAmrGcPzuRRD9miAhAmrGcPzuRRL9miAhAmrGcPzuRRL9miAhAmrGcPzuRRD9miAhAmrGcPzuRRD+acIQ/mrGcPzuRRL+acIQ/mmf4vzuRRD9miAhAmmf4vzuRRL9miAhAmmf4vzuRRL9aiAjAmmf4vzuRRD9aiAjAmrGcPzuRRL+acIQ/mrGcPzuRRD+acIQ/mmf4PzuRRD+acIQ/mmf4PzuRRL+acIQ/mrGcPzuRRL+acIQ/mmf4vzuRRL9miAhAmrGcPzuRRL9miAhAmmf4PzuRRL9aiAjAmmf4vzuRRL9aiAjAmmf4PzuRRL+acIQ/mmf4PzuRRL9aiAjAmmf4PzuRRL+acIQ/mmf4PzuRRD+acIQ/mmf4PzuRRD9aiAjA/3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//////////7//////////v/////////+//////////7//f/9/////P/9//3////8//3//f////z//f/9/////P////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f/9/////P/9//3////8//3//f////z//f/9/////P/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v////3////+/////f////7////9/////v////3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_shy41")
+
+[node name="Cloud_06" type="MeshInstance3D" unique_id=1658064787]
+material_override = ExtResource("1_mor8g")
+mesh = SubResource("ArrayMesh_re8gh")

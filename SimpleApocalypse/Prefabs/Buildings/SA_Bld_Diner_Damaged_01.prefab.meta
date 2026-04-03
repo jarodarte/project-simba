@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c9b696e74ed996c4ea0947725a459f6f
+timeCreated: 1460260658
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Buildings/SA_Bld_Diner_Damaged_01.prefab
+  uploadId: 864498

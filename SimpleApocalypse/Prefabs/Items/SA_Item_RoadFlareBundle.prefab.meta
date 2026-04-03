@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b032296204500f4689a8912208311e6
+timeCreated: 1460260787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 44678
+  packageName: Simple Apocalypse - Cartoon Assets
+  packageVersion: 1.2.7
+  assetPath: Assets/SimpleApocalypse/Prefabs/Items/SA_Item_RoadFlareBundle.prefab
+  uploadId: 864498
