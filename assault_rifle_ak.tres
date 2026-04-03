@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://beeltvvpf3qod"]
 
 [ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="1_74olv"]
-[ext_resource type="PackedScene" uid="uid://8r0coa5s1t5" path="res://SimpleApocalypse/Scenes/SA_Wep_AssaultRifle01.tscn" id="2_d0kof"]
+[ext_resource type="PackedScene" uid="uid://bwp7gfpbegegb" path="res://assault_rifle_ak.tscn" id="2_d0kof"]
 
 [resource]
 script = ExtResource("1_74olv")

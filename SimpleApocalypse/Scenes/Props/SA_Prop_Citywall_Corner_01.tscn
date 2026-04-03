@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://bx8c8nlbqipxy"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_r4usk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8fga"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xfra3"]
+_surfaces = [{
+"aabb": AABB(0, 2.842171e-16, -0.026968928, 0.026968928, 0.19959877, 0.026968928),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYA"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("8e3cPJ9jTD4AAAAA8e3cPArXoyUAAAAAAAAAAArXoyUAAAAAAAAAAJ9jTD4AAAAA8e3cPJ9jTD7x7dy8AAAAAArXoyXx7dy88e3cPArXoyXx7dy8AAAAAJ9jTD7x7dy8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fb7ta"]
+resource_name = "SA_Prop_Citywall_Corner_01"
+_surfaces = [{
+"aabb": AABB(0, 2.842171e-16, -0.026968928, 0.026968928, 0.19959877, 0.026968928),
+"attribute_data": PackedByteArray("IolsPjDTbz8iiWw+MdNvPyKJbD4x028/IolsPjDTbz/8bYY+MNNvP/xthj4w028//G2GPjDTbz/8bYY+MNNvPyKJbD4x028/IolsPjDTbz8iiWw+MNNvPyKJbD4x028/LPgzPjLTbz8s+DM+MdNvPyz4Mz4x028/LPgzPjLTbz/EcU8+MNNvP8RxTz4x028/yHFPPjHTbz/IcU8+MNNvP8hxTz4w028/yHFPPjHTbz/IcU8+MdNvP8hxTz4w028/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_y8fga"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("8e3cPJ9jTD4AAAAA8e3cPArXoyUAAAAAAAAAAArXoyUAAAAAAAAAAJ9jTD4AAAAA8e3cPJ9jTD7x7dy88e3cPJ9jTD4AAAAAAAAAAJ9jTD4AAAAAAAAAAJ9jTD7x7dy88e3cPArXoyXx7dy88e3cPJ9jTD7x7dy8AAAAAJ9jTD7x7dy8AAAAAArXoyXx7dy88e3cPArXoyUAAAAA8e3cPArXoyXx7dy8AAAAAArXoyXx7dy8AAAAAArXoyUAAAAA8e3cPJ9jTD7x7dy88e3cPArXoyXx7dy88e3cPArXoyUAAAAA8e3cPJ9jTD4AAAAAAAAAAJ9jTD4AAAAAAAAAAArXoyUAAAAAAAAAAArXoyXx7dy8AAAAAJ9jTD7x7dy8/3//f////z//f/9/////P/9//3////8//3//f////z//f///////v/9///////+//3///////7//f///////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9//3//P////3//f/8/////f/9//z////9//3//PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xfra3")
+
+[node name="SA_Prop_Citywall_Corner_01" type="MeshInstance3D" unique_id=569109753]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_r4usk")
+mesh = SubResource("ArrayMesh_fb7ta")

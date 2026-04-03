@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://cfwiqu7t0cphh"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_kbr7n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhsq3"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_26w75"]
+_surfaces = [{
+"aabb": AABB(0, 0, -0.15000004, 0.15, 1e-05, 0.15000004),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("mpkZPgAAAACamRm+l5kZPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACcmRm+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_766im"]
+resource_name = "SA_Env_GrassSection_01"
+_surfaces = [{
+"aabb": AABB(0, 0, -0.15000004, 0.15, 1e-05, 0.15000004),
+"attribute_data": PackedByteArray("eM+lPiAeOD88nKY+IB44Pzycpj6+tzc/eM+lPr63Nz8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_rhsq3"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("mpkZPgAAAACamRm+l5kZPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACcmRm+/3////9//z//f////3//P/9/////f/8//3////9//z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_26w75")
+
+[node name="SA_Env_GrassSection_01" type="MeshInstance3D" unique_id=2045308093]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_kbr7n")
+mesh = SubResource("ArrayMesh_766im")

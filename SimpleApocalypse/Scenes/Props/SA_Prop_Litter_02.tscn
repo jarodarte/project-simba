@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://rnwweynl261b"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_p3olj"]
+[ext_resource type="Texture2D" uid="uid://bgfvd20oq0gqy" path="res://SimpleApocalypse/textures/SimpleApocalypse_Texture.png" id="2_5kyar"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3h02"]
+resource_name = "lambert107"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("2_5kyar")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d84vp"]
+_surfaces = [{
+"aabb": AABB(-0.0028052903, 0.000224234, -0.0035281372, 0.0056105424, 1e-05, 0.0070562745),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "lambert107",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Utg3O1sgazlSOGe7Utg3O1sgazlSOGc79tg3u1sgazlSOGc79tg3u1sgazlSOGe7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8ch5u"]
+resource_name = "SA_Prop_Litter_02"
+_surfaces = [{
+"aabb": AABB(-0.0028052903, 0.000224234, -0.0035281372, 0.0056105424, 1e-05, 0.0070562745),
+"attribute_data": PackedByteArray("/////zR5Nz+8XRA//////zR5Nz92KBs//////4M2MD92KBs//////4M2MD+8XRA/"),
+"format": 34359742495,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_e3h02"),
+"name": "lambert107",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Utg3O1sgazlSOGe7Utg3O1sgazlSOGc79tg3u1sgazlSOGc79tg3u1sgazlSOGe7/3///////7//f///////v/9///////+//3///////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d84vp")
+
+[node name="SA_Prop_Litter_02" type="MeshInstance3D" unique_id=2014389407]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_p3olj")
+mesh = SubResource("ArrayMesh_8ch5u")

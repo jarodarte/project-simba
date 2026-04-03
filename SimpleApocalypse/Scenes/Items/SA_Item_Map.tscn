@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://48m3hp1ip7la"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_g0p3b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0p3b"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_idsdu"]
+_surfaces = [{
+"aabb": AABB(-0.005, 0, -0.005, 0.01, 0.0004465279, 0.01),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYA"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("CtejO/Yb6jkK16M7CtejOwAAAAAK16M7CtejuwAAAAAK16M7Cteju/Yb6jkK16M7CtejO/Yb6jkK16O7CtejuwAAAAAK16O7CtejOwAAAAAK16O7Cteju/Yb6jkK16O7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o2uh5"]
+resource_name = "SA_Item_Map"
+_surfaces = [{
+"aabb": AABB(-0.005, 0, -0.005, 0.01, 0.0004465279, 0.01),
+"attribute_data": PackedByteArray("QsZfPm5xED9Cxl8+bnEQP0TGXz5ucRA/RMZfPm5xED9rxH8/eMHvPWvEfz+IoX4+XFVeP4ihfj5cVV4/eMHvPULGXz5ucRA/QsZfPm5xED9Exl8+bnEQP0TGXz5ucRA/QsZfPm5xED9Cxl8+bnEQP0TGXz5ucRA/RMZfPm5xED9eN4k+bnEQP143iT5ucRA/XzeJPm5xED9fN4k+bnEQP2A3iT5ucRA/YDeJPm5xED9fN4k+bnEQP183iT5ucRA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_g0p3b"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CtejO/Yb6jkK16M7CtejOwAAAAAK16M7CtejuwAAAAAK16M7Cteju/Yb6jkK16M7CtejO/Yb6jkK16O7CtejO/Yb6jkK16M7Cteju/Yb6jkK16M7Cteju/Yb6jkK16O7CtejOwAAAAAK16O7CtejO/Yb6jkK16O7Cteju/Yb6jkK16O7CtejuwAAAAAK16O7CtejOwAAAAAK16M7CtejOwAAAAAK16O7CtejuwAAAAAK16O7CtejuwAAAAAK16M7CtejO/Yb6jkK16O7CtejOwAAAAAK16O7CtejOwAAAAAK16M7CtejO/Yb6jkK16M7Cteju/Yb6jkK16M7CtejuwAAAAAK16M7CtejuwAAAAAK16O7Cteju/Yb6jkK16O7/3//f////z//f/9/////P/9//3////8//3//f////z//f///////v/9///////+//3///////7//f///////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_idsdu")
+
+[node name="SA_Item_Map" type="MeshInstance3D" unique_id=1966925215]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_g0p3b")
+mesh = SubResource("ArrayMesh_o2uh5")

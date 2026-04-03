@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_play():
 	GameManager.reset()
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://outside_map.tscn")
 
 func _on_options_button_pressed() -> void:
 	settings_menu.visible = true

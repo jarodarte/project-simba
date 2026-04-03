@@ -8,20 +8,31 @@ var is_flashing: bool = false
 var _is_dead: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")
 var DamageTextScene = preload("res://damage_text.tscn")
-var material: StandardMaterial3D  
+var materials = []
 
 @export var data: EnemyData
 @export var head_collision_shape: CollisionShape3D
 @onready var nav_agent = $NavigationAgent3D
 @onready var damage_zone = $DamageZone
-@onready var mesh = $MeshInstance3D
+@onready var skeleton = $Zombies/Skeleton3D
+@onready var animation = $Zombies/AnimationPlayer
+@onready var meshes = find_children("*", "MeshInstance3D", true)
 
 func _ready():
+	for mesh in meshes:
+		var mat = mesh.get_surface_override_material(0)
+		if mat == null:
+			continue
+		var dup = mat.duplicate()
+		materials.append(dup)
+		mesh.set_surface_override_material(0, dup)
 	health = data.max_health
+	var anim = animation.get_animation("walk")
+	anim.loop_mode = Animation.LOOP_LINEAR
+	animation.play("walk")
 	damage_zone.body_entered.connect(_on_body_entered)
 	player = get_tree().get_first_node_in_group("player")
-	material = mesh.get_surface_override_material(0).duplicate()
-	mesh.set_surface_override_material(0, material)
+
 
 func _physics_process(delta):
 	if player == null:
@@ -32,6 +43,9 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 	var direction = (nav_agent.get_next_path_position() - global_position).normalized()
+	look_at(player.global_position, up_direction)
+	rotation.x = 0
+	rotation.z = 0
 	velocity.x = direction.x * data.speed
 	velocity.z = direction.z * data.speed
 	move_and_slide()
@@ -75,11 +89,14 @@ func take_damage(base_amount: float, hit: Dictionary = {}):
 
 func flash_damage(is_headshot: bool):
 	is_flashing = true
-	var original_color = material.albedo_color
-	material.albedo_color = Color.ORANGE if is_headshot else Color.RED
+	var original_colors = []
+	for material in materials:
+		original_colors.append(material.albedo_color)
+		material.albedo_color = Color.ORANGE if is_headshot else Color.RED
 	await get_tree().create_timer(0.05).timeout
 	if is_inside_tree():
-		material.albedo_color = original_color
+		for i in materials.size():
+			materials[i].albedo_color = original_colors[i]
 	is_flashing = false
 
 func play_death_sound():

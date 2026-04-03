@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://dssqx2dipejsu"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_47yd2"]
+[ext_resource type="Texture2D" uid="uid://bgfvd20oq0gqy" path="res://SimpleApocalypse/textures/SimpleApocalypse_Texture.png" id="2_t2mip"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h82wb"]
+resource_name = "lambert107"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("2_t2mip")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0mukq"]
+_surfaces = [{
+"aabb": AABB(-0.002662201, 0.000224234, -0.003731308, 0.005324402, 1e-05, 0.007462616),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "lambert107",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Unguu1sgazn2iHS7UnguO1sgazn2iHS7UnguO1sgazn2iHQ7Unguu1sgazn2iHQ7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nhkhh"]
+resource_name = "SA_Prop_Litter_04"
+_surfaces = [{
+"aabb": AABB(-0.002662201, 0.000224234, -0.003731308, 0.005324402, 1e-05, 0.007462616),
+"attribute_data": PackedByteArray("/////0KFID8krBA//////8GgJz8krBA//////8GgJz/T4ho//////0KFID/T4ho/"),
+"format": 34359742495,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_h82wb"),
+"name": "lambert107",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Unguu1sgazn2iHS7UnguO1sgazn2iHS7UnguO1sgazn2iHQ7Unguu1sgazn2iHQ7/3///////7//f///////v/9///////+//3///////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0mukq")
+
+[node name="SA_Prop_Litter_04" type="MeshInstance3D" unique_id=1648315610]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_47yd2")
+mesh = SubResource("ArrayMesh_nhkhh")

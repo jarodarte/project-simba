@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://bcoc4whxymg1x"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_jshd0"]
+[ext_resource type="Texture2D" uid="uid://bgfvd20oq0gqy" path="res://SimpleApocalypse/textures/SimpleApocalypse_Texture.png" id="2_cuupv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cctfk"]
+resource_name = "lambert8"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("2_cuupv")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rvhrg"]
+_surfaces = [{
+"aabb": AABB(-0.22153854, 0.0224234, -0.30287743, 0.44307327, 1e-05, 0.60575485),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "lambert8",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("ANpiPkextzzAEpu+ANpiPkextzzAEps+ANpivkextzzAEps+ANtivkextzzAEpu+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yl0ph"]
+resource_name = "Litter_01"
+_surfaces = [{
+"aabb": AABB(-0.22153854, 0.0224234, -0.30287743, 0.44307327, 1e-05, 0.60575485),
+"attribute_data": PackedByteArray("/////9ciMD+6TBs//////8mVNz+6TBs//////8mVNz9CzR8//////9ciMD9CzR8/"),
+"format": 34359742495,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_cctfk"),
+"name": "lambert8",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("ANpiPkextzzAEpu+ANpiPkextzzAEps+ANpivkextzzAEps+ANtivkextzzAEpu+/3////9//7//f////3//v/9/////f/+//3////9//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rvhrg")
+
+[node name="SA_Prop_Litter_01" type="MeshInstance3D" unique_id=2071693016]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_jshd0")
+mesh = SubResource("ArrayMesh_yl0ph")

@@ -535,7 +535,8 @@ func _process_single_fbx(fbx_path: String, target_material: StandardMaterial3D, 
 	# Set the name for the new MeshInstance3D; this will be the root node's name in the saved scene.
 	# It should also match the desired filename (without extension).
 	new_mesh_instance.name = fbx_path.get_file().get_basename()
-	new_mesh_instance.transform = mesh_instance_original.transform # Preserve original transform
+	new_mesh_instance.transform = Transform3D.IDENTITY  # Reset transform to fix root node warning
+	new_mesh_instance.scale = Vector3(100, 100, 100)    # Fix cm → m scale issue
 
 	_print_debug("Prepared MeshInstance3D '{name}' to be the scene root.".format({"name": new_mesh_instance.name}))
 

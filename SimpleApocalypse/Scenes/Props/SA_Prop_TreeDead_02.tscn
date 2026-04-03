@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://bniolt0fikxx"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_uwn20"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb278"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hnbo4"]
+_surfaces = [{
+"aabb": AABB(-0.009878159, -0.0014039087, -0.01231842, 0.021349411, 0.036576305, 0.024657134),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAAAEAAMAAQADAAUABQADAAQABAAGAAUABgAEAAAABQAHAAEAAgABAAcABQAGAAgAAAAIAAYACAAHAAUACQAHAAgABwAJAAIACgAIAAAACAAKAAkAAAALAAoAAgALAAAADAAJAAoAAgAJAAwADQAKAAsACgANAAwADgALAAIACwAOAA0AAgAPAA4ADAAPAAIAEAANAA4ADAANABAAEQAOAA8ADgARABAAEAASAAwADwAMABIAEgAQABEADwATABEAEQATABIAEgATAA8A"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("9uglu4qQcjx71Fu7exTouWa/czwzM985MzPTuGwZyDuaGWU7rqcwu59iDj3heuq6H4VJu+4QED3NTIK7e1SjOntIDT0f5Zm716MnuoNCDz3XA9a7UrhVO4Wnbzw9ShK7cT2vuYWnbzwzc7m7cY25Oy51ujspXK26AABTuuxlcDtIQfC7uN6lu4V5gzsK1zu7cXUaPD14MDt7lKS67HEZuzPPLzoz00m8ANghvGa+wTrNzAI6SOEEua6qZjt71CU8SMEbu1wDuLoUnkC8uC4dvFxTJbrXowc67PE7PFwDuLqPQr06XC8YO2ZuILpSKEo8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n1653"]
+resource_name = "SA_Prop_TreeDead_02"
+_surfaces = [{
+"aabb": AABB(-0.009878159, -0.0014039087, -0.01231842, 0.021349411, 0.036576305, 0.024657134),
+"attribute_data": PackedByteArray("e1Z5PjJlGj94Vnk+MmUaP3hWeT4yZRo/e1Z5PjJlGj94Vnk+MmUaP3hWeT4yZRo/e1Z5PjJlGj97Vnk+MmUaP3hWeT4yZRo/e1Z5PjJlGj9hKlg+MmUaP14qWD4yZRo/XipYPjJlGj9hKlg+MmUaP14qWD4yZRo/XipYPjJlGj9eKlg+MmUaP14qWD4yZRo/XipYPjJlGj9eKlg+MmUaP2EqWD4yZRo/YSpYPjJlGj9fKlg+MmUaP18qWD4yZRo/eFZ5PjJlGj94Vnk+MmUaP3tWeT4yZRo/e1Z5PjJlGj+2TjM+MmUaP7ZOMz4yZRo/tk4zPjJlGj+2TjM+MmUaP5x9ij4yZRo/nH2KPjJlGj+efYo+MmUaP559ij4yZRo/QS57PjJlGj9BLns+MmUaP0Euez4yZRo/QS57PjJlGj+efYo+MmUaP559ij4yZRo/nH2KPjJlGj+cfYo+MmUaP0Muez4yZRo/Qy57PjJlGj9DLns+MmUaP0Muez4yZRo/YSpYPjJlGj9eKlg+MmUaP14qWD4yZRo/YSpYPjJlGj9eKlg+MmUaP14qWD4yZRo/XipYPjJlGj9eKlg+MmUaP2EqWD4yZRo/YSpYPjJlGj9eKlg+MmUaP14qWD4yZRo/YSpYPjJlGj9hKlg+MmUaP2EqWD4yZRo/YSpYPjJlGj8AOZg+OkkaPwA5mD46SRo/ADmYPjpJGj8AOZg+OkkaPw=="),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQABgAFAAgACAAJAAYACgALAAwADAANAAoADgAPABAAEAARAA4AEgAOABEAEQATABIAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAA"),
+"material": SubResource("StandardMaterial3D_rb278"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 68,
+"vertex_data": PackedByteArray("9uglu4qQcjx71Fu7exTouWa/czwzM985MzPTuGwZyDuaGWU7uN6lu4V5gzsK1zu7cY25Oy51ujspXK26UrhVO4Wnbzw9ShK7cT2vuYWnbzwzc7m7AABTuuxlcDtIQfC7e1SjOntIDT0f5Zm716MnuoNCDz3XA9a7uC4dvFxTJbrXowc6XC8YO2ZuILpSKEo87PE7PFwDuLqPQr06SMEbu1wDuLoUnkC8UrhVO4Wnbzw9ShK7cY25Oy51ujspXK26MzPTuGwZyDuaGWU7exTouWa/czwzM985e1SjOntIDT0f5Zm7rqcwu59iDj3heuq69uglu4qQcjx71Fu7uN6lu4V5gzsK1zu7AABTuuxlcDtIQfC7cT2vuYWnbzwzc7m7rqcwu59iDj3heuq6exTouWa/czwzM9859uglu4qQcjx71Fu7H4VJu+4QED3NTIK716MnuoNCDz3XA9a7H4VJu+4QED3NTIK79uglu4qQcjx71Fu7cT2vuYWnbzwzc7m7cXUaPD14MDt7lKS6cY25Oy51ujspXK26AABTuuxlcDtIQfC77HEZuzPPLzoz00m8cXUaPD14MDt7lKS6SOEEua6qZjt71CU8MzPTuGwZyDuaGWU7cY25Oy51ujspXK26ANghvGa+wTrNzAI6uN6lu4V5gzsK1zu7MzPTuGwZyDuaGWU7SOEEua6qZjt71CU87HEZuzPPLzoz00m8AABTuuxlcDtIQfC7uN6lu4V5gzsK1zu7ANghvGa+wTrNzAI6SMEbu1wDuLoUnkC87PE7PFwDuLqPQr06cXUaPD14MDt7lKS67HEZuzPPLzoz00m87PE7PFwDuLqPQr06XC8YO2ZuILpSKEo8SOEEua6qZjt71CU8cXUaPD14MDt7lKS6uC4dvFxTJbrXowc6ANghvGa+wTrNzAI6SOEEua6qZjt71CU8XC8YO2ZuILpSKEo8SMEbu1wDuLoUnkC87HEZuzPPLzoz00m8ANghvGa+wTrNzAI6uC4dvFxTJbrXowc6H4VJu+4QED3NTIK716MnuoNCDz3XA9a7e1SjOntIDT0f5Zm7rqcwu59iDj3heuq6wDunj////z/AO6eP////P8A7p4////8/wDunj////z8I+LvG////v1j8+8P///+/1fyrw////78I+LvG////vzX+vT3///+/Nf69Pf///79ue1oJ////P257Wgn///8/bntaCf///z9ue1oJ////P5uwRJD///8/I7C9lP///z8jsL2U////P6Kw/o////8/8bAGjf///z/xsAaN////P04Ls8T///+/TguzxP///79OC7PE////v04Ls8T///+/1SdtfP///z/VJ218////P9UnbXz///8/1SdtfP///z+NA9k/////v40D2T////+/jQPZP////7+NA9k/////vznO39////+/Oc7f3////785zt/f////vznO39////+/4qTmvP///z/ipOa8////P+Kk5rz///8/4qTmvP///z/dWEnH////P91YScf///8/3VhJx////z/dWEnH////P+U3Wtf///+/5Tda1////7/lN1rX////v+U3Wtf///+/YfOjOP///79h86M4////v2Hzozj///+/YfOjOP///78wrmKu////PzCuYq7///8/MK5irv///z8wrmKu////P8hCf3v///8/yEJ/e////z/IQn97////P8hCf3v///8/awp0Sv///79rCnRK////v2sKdEr///+/awp0Sv///798kX3i////P3yRfeL///8/fJF94v///z98kX3i////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hnbo4")
+
+[node name="SA_Prop_TreeDead_02" type="MeshInstance3D" unique_id=2022025331]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_uwn20")
+mesh = SubResource("ArrayMesh_n1653")

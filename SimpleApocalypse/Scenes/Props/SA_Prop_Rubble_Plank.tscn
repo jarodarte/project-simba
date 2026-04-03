@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://djlcels0x0d3a"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_ij5wv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohcjx"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bmuq1"]
+_surfaces = [{
+"aabb": AABB(-0.0151759, -0.003238351, -0.0022899937, 0.0303518, 0.0045799874, 0.0045799874),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYA"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("V6R4PNrZrzq4ExY7V6R4PIQ6VLu4ExY7V6R4vIQ6VLu4ExY7V6R4vNrZrzq4ExY7V6R4PNrZrzq4Exa7V6R4vIQ6VLu4Exa7V6R4PIQ6VLu4Exa7V6R4vNrZrzq4Exa7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7wpap"]
+resource_name = "SA_Prop_Rubble_Plank"
+_surfaces = [{
+"aabb": AABB(-0.0151759, -0.003238351, -0.0022899937, 0.0303518, 0.0045799874, 0.0045799874),
+"attribute_data": PackedByteArray("ZeEuPkZOcD9l4S4+Rk5wP2XhLj5GTnA/ZeEuPkZOcD95nU8+Rk5wP3mdTz5GTnA/eZ1PPkZOcD95nU8+Rk5wP2XhLj5GTnA/ZeEuPkZOcD9l4S4+Rk5wP2XhLj5GTnA/eZ1PPkZOcD95nU8+Rk5wP3mdTz5GTnA/eZ1PPkZOcD9h1gg+Rk5wP2HWCD5GTnA/ZdYIPkZOcD9l1gg+Rk5wPy2xDD5GTnA/LbEMPkZOcD8tsQw+Rk5wPy2xDD5GTnA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_ohcjx"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("V6R4PNrZrzq4ExY7V6R4PIQ6VLu4ExY7V6R4vIQ6VLu4ExY7V6R4vNrZrzq4ExY7V6R4PNrZrzq4Exa7V6R4PNrZrzq4ExY7V6R4vNrZrzq4ExY7V6R4vNrZrzq4Exa7V6R4PIQ6VLu4Exa7V6R4PNrZrzq4Exa7V6R4vNrZrzq4Exa7V6R4vIQ6VLu4Exa7V6R4PIQ6VLu4ExY7V6R4PIQ6VLu4Exa7V6R4vIQ6VLu4Exa7V6R4vIQ6VLu4ExY7V6R4PNrZrzq4Exa7V6R4PIQ6VLu4Exa7V6R4PIQ6VLu4ExY7V6R4PNrZrzq4ExY7V6R4vNrZrzq4ExY7V6R4vIQ6VLu4ExY7V6R4vIQ6VLu4Exa7V6R4vNrZrzq4Exa7/3//f////z//f/9/////P/9//3////8//3//f////z//f///////v/9///////+//3///////7//f///////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bmuq1")
+
+[node name="SA_Prop_Rubble_Plank" type="MeshInstance3D" unique_id=448247361]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_ij5wv")
+mesh = SubResource("ArrayMesh_7wpap")

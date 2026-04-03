@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://j5oyjj5p38r2"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_s37x8"]
+[ext_resource type="Texture2D" uid="uid://bgfvd20oq0gqy" path="res://SimpleApocalypse/textures/SimpleApocalypse_Texture.png" id="2_e8bkv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj0ej"]
+resource_name = "lambert132"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("2_e8bkv")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hadbn"]
+_surfaces = [{
+"aabb": AABB(-0.1, -0.0019479579, -0.099999845, 0.1, 0.0019479579, 0.099999845),
+"format": 34359742465,
+"index_count": 66,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAQAAAAQABQADAAEABAAGAAEAAQAGAAUABgAEAAcACAAFAAYABwAJAAYABgAJAAgACQAHAAoACwAIAAkACgAMAAkACQAMAAsADAAKAA0ADgALAAwADQAPAAwADAAPAA4ADwANABAAEQAOAA8AEAASAA8ADwASABEA"),
+"name": "lambert132",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("18vOvAAAAAAAAAAA18vOvAAAAADX8868AAAAAAAAAAAAAAAAAAAAAAAAAADX88689ojTvAAAAAAAAAAAAAAAAAAAAACkiNO89ojTvAAAAACkiNO87AnrvAAAAAAAAAAAAAAAAAAAAADsCeu87AnrvAAAAACaCeu87AnrvJ9S/7oAAAAAAAAAAJ9S/7rsCeu87AnrvJ9S/7qaCeu84aYBvZ9S/7oAAAAAAAAAAJ9S/7q4pgG94aYBvZ9S/7q4pgG9zczMvZ9S/7oAAAAAAAAAAJ9S/7quzMy9zczMvZ9S/7q4zMy9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qonwp"]
+resource_name = "SA_Env_Road_Corner_01"
+_surfaces = [{
+"aabb": AABB(-0.1, -0.0019479579, -0.099999845, 0.1, 0.0019479579, 0.099999845),
+"attribute_data": PackedByteArray("kOUOP5LLRD+Q5Q4/kstEP5DlDj+Sy0Q/kOUOP5LLRD+Q5Q4/kstEPwCClz44KgQ/AIKXPjgqBD8Agpc+OCoEPwCClz44KgQ/AC5rPsALBT8ALms+wAsFPwAuaz7ACwU/AC5rPsALBT8ALms+wAsFPwAuaz7ACwU/AC5rPsALBT8AJzI/SsdFPwAnMj9Kx0U/ACcyP0rHRT8AJzI/SsdFPwAnMj9Kx0U/ACcyP0rHRT8Agpc+OCoEPwCClz44KgQ/AIKXPjgqBD8Agpc+OCoEPwBtuT6qJQY/AG25PqolBj8Abbk+qiUGPwBtuT6qJQY/AG25PqolBj8Abbk+qiUGPwBtuT6qJQY/EIiYPm3dbz8QiJg+bd1vPxCImD5t3W8/EIiYPm3dbz8QiJg+bd1vPxCImD5t3W8/EIiYPm3dbz8QiJg+bd1vPw=="),
+"format": 34359742487,
+"index_count": 66,
+"index_data": PackedByteArray("AAABAAIAAwAEAAIABQAGAAcABwAIAAUACQAKAAsACwAMAAkADQAOAAkACQAPAA0AEAARABIAEgATABAAEAATABQAFAAVABAAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAdAB8AHwAgAB4AIQAiACMAIwAkACEAJQAmACcAJwAoACUA"),
+"material": SubResource("StandardMaterial3D_nj0ej"),
+"name": "lambert132",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 41,
+"vertex_data": PackedByteArray("18vOvAAAAAAAAAAA18vOvAAAAADX8868AAAAAAAAAAAAAAAA18vOvAAAAADX8868AAAAAAAAAADX88687AnrvJ9S/7oAAAAA7AnrvJ9S/7qaCeu87AnrvAAAAACaCeu87AnrvAAAAAAAAAAA7AnrvJ9S/7qaCeu87AnrvJ9S/7oAAAAA4aYBvZ9S/7oAAAAA4aYBvZ9S/7q4pgG9AAAAAJ9S/7q4pgG9AAAAAJ9S/7rsCeu84aYBvZ9S/7q4pgG94aYBvZ9S/7q4pgG94aYBvZ9S/7oAAAAAzczMvZ9S/7oAAAAAzczMvZ9S/7q4zMy9AAAAAJ9S/7quzMy9AAAAAJ9S/7q4pgG97AnrvAAAAACaCeu87AnrvJ9S/7qaCeu8AAAAAJ9S/7rsCeu8AAAAAAAAAADsCeu8AAAAAAAAAADsCeu8AAAAAAAAAACkiNO89ojTvAAAAACkiNO87AnrvAAAAACaCeu87AnrvAAAAAAAAAAA9ojTvAAAAACkiNO89ojTvAAAAAAAAAAAAAAAAAAAAACkiNO8AAAAAAAAAADX886818vOvAAAAADX88689ojTvAAAAACkiNO89ojTvAAAAAAAAAAA9ojTvAAAAACkiNO818vOvAAAAADX886818vOvAAAAAAAAAAA/3///////7//f///////v/9///////+//3///////7//f///////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////78AAP7/////vwAA/v////+/AAD+/////78AAP7/////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hadbn")
+
+[node name="SA_Env_Road_Corner_01" type="MeshInstance3D" unique_id=1905050537]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_s37x8")
+mesh = SubResource("ArrayMesh_qonwp")

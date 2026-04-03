@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://bbfluqiq8u3d8"]
+
+[ext_resource type="Material" uid="uid://1y6eavor7dqi" path="res://SimpleApocalypse/Materials/SimpleApocalypse_Texture.material" id="1_0y7aq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y7aq"]
+resource_name = "lambert1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mnv12"]
+_surfaces = [{
+"aabb": AABB(-0.004729595, -3.435485e-05, -0.0019258786, 0.00945919, 0.00086250366, 0.0038517523),
+"format": 34359742465,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYACAAJAAoACgALAAgACQAIAAwADAAIAAsADQAKAAkACwAKAA0ADAAOAAkACQAOAA0ACwAPAAwADgAMAA8ADQAPAAsADwANAA4A"),
+"lods": [0.0023550289, PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYA")],
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("uPqaO5K/2jnNjPQ5uPqaOz0YELjNjPQ5uPqauz0YELjNjPQ5uPqau5K/2jnNjPQ5uPqaO5K/2jlxjfS5uPqauz0YELhxjfS5uPqaOz0YELhxjfS5uPqau5K/2jlxjfS5H3WqOiAYWTqabfw6H3WqOuyyhjiabfw6H3Wquuyyhjiabfw6H3WquiAYWTqabfw6H3WqOiAYWTrDbfy6H3WquuyyhjjDbfy6H3WqOuyyhjjDbfy6H3WquiAYWTrDbfy6")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n3i3q"]
+resource_name = "SA_Item_BearTrap"
+_surfaces = [{
+"aabb": AABB(-0.004729595, -3.435485e-05, -0.0019258786, 0.00945919, 0.00086250366, 0.0038517523),
+"attribute_data": PackedByteArray("Cl5yPvBlcD8KXnI+8GVwPwpecj7wZXA/Cl5yPvBlcD+Jm5o+8GVwP4mbmj7wZXA/iZuaPvBlcD+Jm5o+8GVwPwpecj7wZXA/Cl5yPvBlcD8KXnI+8GVwPwpecj7wZXA/0olOPvBlcD/SiU4+8GVwP9KJTj7wZXA/0olOPvBlcD/SiU4+8GVwP9KJTj7wZXA/0olOPvBlcD/SiU4+8GVwP9KJTj7wZXA/0olOPvBlcD/SiU4+8GVwP9KJTj7wZXA/uYFPPvYncD+5gU8+9idwP7mBTz72J3A/uYFPPvYncD9gLYk+9idwP2AtiT72J3A/YC2JPvYncD9gLYk+9idwP7mBTz72J3A/uYFPPvYncD+5gU8+9idwP7mBTz72J3A/ga0rPvYncD+BrSs+9idwP4GtKz72J3A/ga0rPvYncD+BrSs+9idwP4GtKz72J3A/ga0rPvYncD+BrSs+9idwP4GtKz72J3A/ga0rPvYncD+BrSs+9idwP4GtKz72J3A/"),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwA"),
+"lods": [0.0023550289, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA")],
+"material": SubResource("StandardMaterial3D_0y7aq"),
+"name": "lambert1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("uPqaO5K/2jnNjPQ5uPqaOz0YELjNjPQ5uPqauz0YELjNjPQ5uPqau5K/2jnNjPQ5uPqaO5K/2jlxjfS5uPqaO5K/2jnNjPQ5uPqau5K/2jnNjPQ5uPqau5K/2jlxjfS5uPqaOz0YELhxjfS5uPqaO5K/2jlxjfS5uPqau5K/2jlxjfS5uPqauz0YELhxjfS5uPqaOz0YELjNjPQ5uPqaOz0YELhxjfS5uPqauz0YELhxjfS5uPqauz0YELjNjPQ5uPqaO5K/2jlxjfS5uPqaOz0YELhxjfS5uPqaOz0YELjNjPQ5uPqaO5K/2jnNjPQ5uPqau5K/2jnNjPQ5uPqauz0YELjNjPQ5uPqauz0YELhxjfS5uPqau5K/2jlxjfS5H3WqOiAYWTqabfw6H3WqOuyyhjiabfw6H3Wquuyyhjiabfw6H3WquiAYWTqabfw6H3WqOiAYWTrDbfy6H3WqOiAYWTqabfw6H3WquiAYWTqabfw6H3WquiAYWTrDbfy6H3WqOuyyhjjDbfy6H3WqOiAYWTrDbfy6H3WquiAYWTrDbfy6H3WquuyyhjjDbfy6H3WqOuyyhjiabfw6H3WqOuyyhjjDbfy6H3WquuyyhjjDbfy6H3Wquuyyhjiabfw6H3WqOiAYWTrDbfy6H3WqOuyyhjjDbfy6H3WqOuyyhjiabfw6H3WqOiAYWTqabfw6H3WquiAYWTqabfw6H3Wquuyyhjiabfw6H3WquuyyhjjDbfy6H3WquiAYWTrDbfy6/3//f////z//f/9/////P/9//3////8//3//f////z//f///////v/9///////+//3///////7//f///////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3//f////z//f/9/////P/9//3////8//3//f////z//f///////v/9///////+//3///////7//f///////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mnv12")
+
+[node name="SA_Item_BearTrap" type="MeshInstance3D" unique_id=460139287]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_0y7aq")
+mesh = SubResource("ArrayMesh_n3i3q")
