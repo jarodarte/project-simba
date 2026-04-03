@@ -1,13 +1,13 @@
 extends Node3D
 
-@export var enemy_scene: PackedScene
+@export var enemy_scene: Array[PackedScene] = []
 
 func _ready():
 	add_to_group("spawn_point")
 
 func spawn_enemy():
-	if enemy_scene == null:
+	if enemy_scene.is_empty():
 		return
-	var enemy = enemy_scene.instantiate()
+	var enemy = enemy_scene[int(randi() % enemy_scene.size())].instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = global_position

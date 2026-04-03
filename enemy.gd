@@ -24,6 +24,8 @@ func _ready():
 		if mat == null:
 			continue
 		var dup = mat.duplicate()
+		if data.skin_texture:
+			dup.albedo_texture = data.skin_texture
 		materials.append(dup)
 		mesh.set_surface_override_material(0, dup)
 	health = data.max_health

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jd1r71ktepex"]
+
+[ext_resource type="PackedScene" uid="uid://1ugj4shlaao" path="res://zombie_cheerleader.tscn" id="1_nk78y"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="2_r1wyq"]
+[ext_resource type="Texture2D" uid="uid://df3e2q8y4n2ol" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Bellhop.png" id="3_qwsy3"]
+
+[sub_resource type="Resource" id="Resource_6yug8"]
+script = ExtResource("2_r1wyq")
+skin_texture = ExtResource("3_qwsy3")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_nk78y")]
+data = SubResource("Resource_6yug8")
+
+[node name="Hair_Ponytail" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="11" unique_id=737547690]
+visible = false
+
+[node name="Hair_Top" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="12" unique_id=773102184]
+visible = false
+
+[node name="Hat_Cap" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="16" unique_id=2144290638]
+visible = true

@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dns1tpcbxstai"]
 
 [ext_resource type="Script" uid="uid://bu8rejwohaljn" path="res://timed_spawner.gd" id="1_0sxn0"]
-[ext_resource type="PackedScene" uid="uid://dnkfhtodwr512" path="res://basic_enemy.tscn" id="2_qj3i4"]
+[ext_resource type="PackedScene" uid="uid://dk0malq76gvgw" path="res://zombie_airport_security.tscn" id="2_ci4rp"]
+[ext_resource type="PackedScene" uid="uid://d1dws6s7xk8de" path="res://zombie_airport_worker.tscn" id="3_yg8ft"]
+[ext_resource type="PackedScene" uid="uid://jd1r71ktepex" path="res://zombie_bellhop.tscn" id="4_hvj00"]
+[ext_resource type="PackedScene" uid="uid://c4dn0t1vjgb1f" path="res://zombie_businessman.tscn" id="5_ffieh"]
+[ext_resource type="PackedScene" uid="uid://1ugj4shlaao" path="res://zombie_cheerleader.tscn" id="6_6xv0d"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_wodgk"]
 
 [node name="Timed Spawner" type="Node3D" unique_id=1538764362 groups=["spawn_point"]]
 script = ExtResource("1_0sxn0")
-enemy_scene = ExtResource("2_qj3i4")
+enemy_scene = [ExtResource("2_ci4rp"), ExtResource("3_yg8ft"), ExtResource("4_hvj00"), ExtResource("5_ffieh"), ExtResource("6_6xv0d")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=378685866]
 mesh = SubResource("TorusMesh_wodgk")

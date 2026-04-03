@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw7ofsvthnha4"
-path.s3tc="res://.godot/imported/SimpleApocalypse_Texture_2048.png-5c4ee5c97cab8a6c0ae09e4946800ce4.s3tc.ctex"
+path.s3tc="res://.godot/imported/SimpleApocalypse_Texture_2048.png-b94bda4b0ceb58f3730b364431a8d920.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://SimpleApocalypse/textures/SimpleApocalypse_Texture_2048.png"
-dest_files=["res://.godot/imported/SimpleApocalypse_Texture_2048.png-5c4ee5c97cab8a6c0ae09e4946800ce4.s3tc.ctex"]
+source_file="res://SimpleApocalypse/Textures/SimpleApocalypse_Texture_2048.png"
+dest_files=["res://.godot/imported/SimpleApocalypse_Texture_2048.png-b94bda4b0ceb58f3730b364431a8d920.s3tc.ctex"]
 
 [params]
 

@@ -33,7 +33,7 @@ window/size/borderless=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/FBX importer/plugin.cfg", "res://addons/fbx_batch_importer/plugin.cfg", "res://addons/fbx_bulk_conversion/plugin.cfg")
+enabled=PackedStringArray("res://addons/fbx_batch_importer/plugin.cfg")
 
 [global_group]
 

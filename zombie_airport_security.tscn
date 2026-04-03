@@ -2,15 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cgs8cmvlsotgx" path="res://SimpleApocalypse/Models/Characters/Animator/Zombies.fbx" id="1_8kq4b"]
 [ext_resource type="Script" uid="uid://c811pnb2j8kpy" path="res://enemy.gd" id="2_63bdl"]
-[ext_resource type="Texture2D" uid="uid://b4xw78o1h0t0i" path="res://SimpleApocalypse/Models/Characters/Animator/SA_Zombie_AirportSecurity.png" id="2_dsxht"]
+[ext_resource type="Texture2D" uid="uid://b4xw78o1h0t0i" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_AirportSecurity.png" id="2_dsxht"]
 [ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="3_k5vxl"]
+[ext_resource type="Texture2D" uid="uid://0yimch5xd4ve" path="res://SimpleApocalypse/Models/Characters/Textures/SA_Zombie_Businessman.png" id="5_qbha1"]
 
-[sub_resource type="Resource" id="Resource_nybfi"]
+[sub_resource type="Resource" id="Resource_o2kqd"]
 script = ExtResource("3_k5vxl")
+skin_texture = ExtResource("2_dsxht")
 metadata/_custom_type_script = "uid://oue58volyrm1"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63bdl"]
-albedo_texture = ExtResource("2_dsxht")
+albedo_texture = ExtResource("5_qbha1")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dsxht"]
 height = 1.5
@@ -26,7 +28,7 @@ height = 1.5
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("2_63bdl")
-data = SubResource("Resource_nybfi")
+data = SubResource("Resource_o2kqd")
 head_collision_shape = NodePath("HeadHurtbox")
 
 [node name="Skeleton3D" parent="." index="0" unique_id=669375174]
