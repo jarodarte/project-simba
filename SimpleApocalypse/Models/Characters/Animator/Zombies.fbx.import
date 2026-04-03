@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Zombies.fbx-f31bae1b18135d0e188c5a85415c945c.
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
@@ -45,14 +45,14 @@ _subresources={
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
 "settings/loop_mode": 0,
-"slice_1/end_frame": 48,
-"slice_1/loop_mode": 0,
-"slice_1/name": "idle",
+"slice_1/end_frame": 205,
+"slice_1/loop_mode": 1,
+"slice_1/name": "zombie_walk",
 "slice_1/save_to_file/enabled": true,
 "slice_1/save_to_file/fallback_path": "",
 "slice_1/save_to_file/keep_custom_tracks": false,
 "slice_1/save_to_file/path": "",
-"slice_1/start_frame": 0,
+"slice_1/start_frame": 155,
 "slice_10/end_frame": 0,
 "slice_10/loop_mode": 0,
 "slice_10/name": "",
@@ -2093,7 +2093,7 @@ _subresources={
 "slice_99/save_to_file/keep_custom_tracks": false,
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
-"slices/amount": 4
+"slices/amount": 1
 }
 },
 "materials": {

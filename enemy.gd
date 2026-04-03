@@ -14,8 +14,8 @@ var materials = []
 @export var head_collision_shape: CollisionShape3D
 @onready var nav_agent = $NavigationAgent3D
 @onready var damage_zone = $DamageZone
-@onready var skeleton = $Zombies/Skeleton3D
-@onready var animation = $Zombies/AnimationPlayer
+@onready var skeleton = $Skeleton3D
+@onready var animation = $AnimationPlayer
 @onready var meshes = find_children("*", "MeshInstance3D", true)
 
 func _ready():
@@ -27,9 +27,7 @@ func _ready():
 		materials.append(dup)
 		mesh.set_surface_override_material(0, dup)
 	health = data.max_health
-	var anim = animation.get_animation("walk")
-	anim.loop_mode = Animation.LOOP_LINEAR
-	animation.play("walk")
+	animation.play("zombie_walk")
 	damage_zone.body_entered.connect(_on_body_entered)
 	player = get_tree().get_first_node_in_group("player")
 
@@ -44,6 +42,7 @@ func _physics_process(delta):
 		velocity.y = 0
 	var direction = (nav_agent.get_next_path_position() - global_position).normalized()
 	look_at(player.global_position, up_direction)
+	rotation.y += PI 
 	rotation.x = 0
 	rotation.z = 0
 	velocity.x = direction.x * data.speed
