@@ -27,4 +27,5 @@ func _spawn_next():
 	point.spawn_enemy()
 	current_index = (current_index + 1) % spawn_points.size()
 	enemies_spawned += 1
+	GameManager.enemies_alive += 1
 	if enemies_spawned == enemies_to_spawn: timer.stop()

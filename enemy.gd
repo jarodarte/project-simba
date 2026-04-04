@@ -3,7 +3,7 @@ extends CharacterBody3D
 const GRAVITY = 9.8
 
 var player: Node3D = null
-var health: float = 0.0
+var health: int = 0
 var is_flashing: bool = false
 var _is_dead: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")

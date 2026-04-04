@@ -4,7 +4,8 @@ var points:  int   = 0
 var health: float = 100
 var current_wave: int = 0
 var enemies_alive: int = 0
-
+var spawn_cap = 60
+var enemies_to_spawn: int = 0
 
 signal wave_started(new_wave: int)
 signal points_changed(new_points: int)
@@ -15,12 +16,17 @@ signal weapon_ui_update(gun_name: String, current: int, reserve: int)
 signal grenade_ui_update(grenade_name: String, amount: int)
 
 func get_enemies_per_wave() -> int:
-	return 5 + (current_wave * 5) + 100
+	print(current_wave * 0.725 + 6)
+	return int(current_wave * 0.725 + 6)
+
+func get_health_per_wave() -> int:
+	return int(100 * pow(1.15, float(current_wave - 1)))
 
 func reset():
 	points = 0
 	health = 100.0
 	current_wave = 0
+	enemies_to_spawn = 0
 	enemies_alive = 0
 
 func update_points(amount: int):
@@ -29,7 +35,7 @@ func update_points(amount: int):
 
 func start_wave():
 	current_wave += 1
-	enemies_alive = get_enemies_per_wave()
+	enemies_to_spawn = get_enemies_per_wave()
 	wave_started.emit(current_wave)
 
 func enemy_died():

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c811pnb2j8kpy" path="res://enemy.gd" id="2_63bdl"]
 [ext_resource type="Texture2D" uid="uid://b4xw78o1h0t0i" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_AirportSecurity.png" id="2_dsxht"]
 [ext_resource type="Script" uid="uid://oue58volyrm1" path="res://EnemyData.gd" id="3_k5vxl"]
-[ext_resource type="Texture2D" uid="uid://0yimch5xd4ve" path="res://SimpleApocalypse/Models/Characters/Textures/SA_Zombie_Businessman.png" id="5_qbha1"]
+[ext_resource type="Texture2D" uid="uid://0yimch5xd4ve" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Businessman.png" id="5_qbha1"]
 
 [sub_resource type="Resource" id="Resource_o2kqd"]
 script = ExtResource("3_k5vxl")
@@ -126,6 +126,7 @@ bone_idx = 26
 
 [node name="Hair_Top" parent="Skeleton3D" index="12" unique_id=773102184]
 transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.26936337, 2.6998446, 0.36093536)
+visible = false
 bone_idx = 27
 
 [node name="Hair_Top" parent="Skeleton3D/Hair_Top" index="0" unique_id=1356320828]
