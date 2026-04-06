@@ -33,7 +33,6 @@ func _ready():
 	damage_zone.body_entered.connect(_on_body_entered)
 	player = get_tree().get_first_node_in_group("player")
 
-
 func _physics_process(delta):
 	if player == null:
 		return

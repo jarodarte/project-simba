@@ -1,41 +1,15 @@
 [gd_scene format=3 uid="uid://b2pv5a8fko5c2"]
 
+[ext_resource type="PackedScene" uid="uid://bbov7ohg4ib" path="res://SimpleApocalypse/Scenes/Weapons/SA_Wep_Pistol.tscn" id="1_6e3nq"]
 [ext_resource type="AudioStream" uid="uid://bgao3p3g2f2e5" path="res://Audio/impactWood_medium_004.ogg" id="1_08c3m"]
 [ext_resource type="AudioStream" uid="uid://b3c43s46scqbo" path="res://Audio/open_002.ogg" id="2_bttkv"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_7jeoi"]
-size = Vector3(0.15, 0.15, 0.3)
-
 [sub_resource type="Animation" id="Animation_7jeoi"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_08c3m"]
 resource_name = "reload"
 length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(6.2831855, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bttkv"]
 _data = {
@@ -44,9 +18,10 @@ _data = {
 }
 
 [node name="Node3D" type="Node3D" unique_id=1054360183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048844844, 0.03203273)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=358462554]
-mesh = SubResource("PrismMesh_7jeoi")
+[node name="SA_Wep_Pistol" parent="." unique_id=2135661151 instance=ExtResource("1_6e3nq")]
+transform = Transform3D(-50, 0, 4.371139e-06, 0, 50, 0, -4.371139e-06, 0, -50, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1498071955]
 libraries/ = SubResource("AnimationLibrary_bttkv")
@@ -59,4 +34,4 @@ stream = ExtResource("2_bttkv")
 bus = &"SFX"
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=1178840547]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16180697)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06765564, -0.20937446)
