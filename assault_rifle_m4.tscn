@@ -35,4 +35,4 @@ stream = ExtResource("2_jao7y")
 bus = &"SFX"
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=1286258517]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06996615, 0.2038984, 0.66470474)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0097642215, 0.12080729, 0.6486247)

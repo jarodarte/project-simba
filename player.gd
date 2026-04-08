@@ -66,6 +66,7 @@ func _physics_process(delta):
 		var trying_to_shoot = Input.is_action_pressed("shoot") if player_shooter.current_weapon.is_auto else Input.is_action_just_pressed("shoot")
 		if trying_to_shoot and player_shooter.can_shoot and player_shooter.current_weapon.current_ammo > 0:
 			player_shooter.fire_gun(is_on_floor())
+			weapon_sway.add_recoil()
 
 	# jumping process
 	if not is_on_floor():
