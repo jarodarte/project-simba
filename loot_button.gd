@@ -83,7 +83,14 @@ func give_gun_to_player():
 	var new_weapon = gun_drop.duplicate(true)
 	new_weapon.current_ammo = new_weapon.magazine_size
 	new_weapon.current_reserve_magazines = new_weapon.max_reserve_magazines
-	player.player_shooter.runtime_weapons[player.player_shooter.weapon_index] = new_weapon
+	
+	if player.player_shooter.runtime_weapons.size() < 2:
+		player.player_shooter.runtime_weapons.append(new_weapon)
+		player.player_shooter.weapon_index = player.player_shooter.runtime_weapons.size() - 1
+	else:
+		player.player_shooter.runtime_weapons[player.player_shooter.weapon_index] = new_weapon
+	
+	
 	player.player_shooter.current_weapon = new_weapon
 	player.player_shooter.spawn_weapon()
 	player.player_shooter.reset_gun_state()

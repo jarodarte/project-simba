@@ -118,7 +118,7 @@ func swap_weapon(direction: int):
 		return
 	_spray_index = 0
 	_spray_reset_timer = 0.0
-	weapon_index = wrap(weapon_index + direction, 0, weapons.size())
+	weapon_index = wrap(weapon_index + direction, 0, runtime_weapons.size())
 	current_weapon = runtime_weapons[weapon_index]
 	spawn_weapon()
 	emit_weapon_stats()
