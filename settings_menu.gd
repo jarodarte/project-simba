@@ -1,6 +1,6 @@
 extends Control
 
-const ACTIONS = [ "forward", "back", "left", "right", "interact", "jump", "shoot", "reload", "next_weapon", "prev_weapon", "weapon_1", "weapon_2",]
+const ACTIONS = [ "forward", "back", "left", "right", "interact", "jump", "shoot", "grenade", "reload", "next_weapon", "prev_weapon",]
 
 @onready var action_list = $TabContainer/Input/ScrollContainer/ActionList
 @onready var reset_button = $TabContainer/Input/ResetButton

@@ -228,8 +228,6 @@ func update(delta, speed_ratio: float):
 	_current_move_spread = lerp(_current_move_spread, target_spread, 10.0 * delta)
 
 func equip_grenade() -> void:
-	if current_grenade_data.current_amount <= 0:
-		return
 	if runtime_explosives.is_empty():
 		return
 	current_grenade_data = runtime_explosives[grenade_index]
@@ -259,7 +257,7 @@ func unequip_grenade() -> void:
 	emit_weapon_stats()
 
 func start_cook() -> void:
-	if _cooking or current_grenade_node == null:
+	if _cooking or current_grenade_node == null  or current_grenade_data.current_amount == 0:
 		return
 	_cooking = true
 	current_grenade_node.start_fuse()

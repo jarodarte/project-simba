@@ -81,6 +81,8 @@ func toggle_pause():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
+		if settings_menu.visible == true:
+			return
 		toggle_pause()
 
 func _ready():
