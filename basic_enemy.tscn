@@ -21,7 +21,7 @@ radius = 0.3
 height = 0.6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
-radius = 0.4
+radius = 1.0
 
 [node name="basic_enemy" type="CharacterBody3D" unique_id=700309911 node_paths=PackedStringArray("head_collision_shape") groups=["enemy"]]
 collision_layer = 4
@@ -29,6 +29,9 @@ collision_mask = 5
 script = ExtResource("1_rwafm")
 data = ExtResource("2_rwafm")
 head_collision_shape = NodePath("HeadHurtbox")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1221998308]
+process_callback = 0
 
 [node name="HeadHurtbox" type="CollisionShape3D" parent="." unique_id=1549179496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6939442, 0)
@@ -55,3 +58,5 @@ collision_mask = 3
 
 [node name="EnemyHitbox" type="CollisionShape3D" parent="DamageZone" unique_id=46808253]
 shape = SubResource("CapsuleShape3D_4gyqm")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const GRAVITY = 9.8
+const ATTACK_RANGE = 1.5
 
 var player: Node3D = null
 var health: int = 0
@@ -9,6 +10,8 @@ var _is_dead: bool = false
 var death_sound = preload("res://Audio/minimize_001.ogg")
 var DamageTextScene = preload("res://damage_text.tscn")
 var materials = []
+var is_attacking: bool = false
+var attack_timer: Timer
 
 @export var data: EnemyData
 @export var head_collision_shape: CollisionShape3D
@@ -17,8 +20,11 @@ var materials = []
 @onready var skeleton = $Skeleton3D
 @onready var animation = $AnimationPlayer
 @onready var meshes = find_children("*", "MeshInstance3D", true)
+@onready var hitbox = $DamageZone/EnemyHitbox
+
 
 func _ready():
+	data.contact_damage = 35
 	for mesh in meshes:
 		var mat = mesh.get_surface_override_material(0)
 		if mat == null:
@@ -28,9 +34,15 @@ func _ready():
 			dup.albedo_texture = data.skin_texture
 		materials.append(dup)
 		mesh.set_surface_override_material(0, dup)
+	hitbox.shape.radius = ATTACK_RANGE
 	health = data.max_health
+	attack_timer = Timer.new()
+	attack_timer.wait_time = 1.0
+	add_child(attack_timer)
+	attack_timer.timeout.connect(_on_attack_timer_timeout)
 	animation.play("zombie_walk")
 	damage_zone.body_entered.connect(_on_body_entered)
+	damage_zone.body_exited.connect(_on_body_exited)
 	player = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta):
@@ -46,15 +58,27 @@ func _physics_process(delta):
 	rotation.y += PI 
 	rotation.x = 0
 	rotation.z = 0
-	velocity.x = direction.x * data.speed
-	velocity.z = direction.z * data.speed
+	if global_position.distance_to(player.global_position) > ATTACK_RANGE:
+		velocity.x = direction.x * data.speed
+		velocity.z = direction.z * data.speed
+	else:
+		velocity.x = 0
+		velocity.z = 0
+		
 	move_and_slide()
 
 func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
-	body.take_damage(data.contact_damage)
-	_die()
+	player.take_damage(data.contact_damage)
+	is_attacking = true
+	attack_timer.start()
+
+func _on_body_exited(body):
+	if not body.is_in_group("player"):
+		return
+	is_attacking = false
+	attack_timer.stop()
 
 func take_damage(base_amount: float, hit: Dictionary = {}):
 	if not is_inside_tree():
@@ -119,3 +143,6 @@ func _exit_tree():
 	if not _is_dead:
 		_is_dead = true
 		GameManager.enemy_died()
+
+func _on_attack_timer_timeout() -> void:
+	player.take_damage(data.contact_damage)
