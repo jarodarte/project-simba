@@ -61,24 +61,26 @@ func fire_gun(is_grounded: bool):
 
 		emit_weapon_stats()
 
-		var shot_dir = get_shot_direction(is_grounded)
-		var hit = shoot_ray(shot_dir)
-
 		var muzzle = current_weapon_node.get_node_or_null("Muzzle")
 		var muzzle_pos = muzzle.global_position if muzzle else camera.global_position
-		var end_pos = hit.position if not hit.is_empty() else camera.global_position + shot_dir * 1000.0
+		
+		for n in current_weapon.pellet_count:
+			var shot_dir = get_shot_direction(is_grounded)
+			var hit = shoot_ray(shot_dir)
 
-		var tracer = tracer_scene.instantiate()
-		get_tree().root.add_child(tracer)
-		tracer.init(muzzle_pos, end_pos)
+			var end_pos = hit.position if not hit.is_empty() else camera.global_position + shot_dir * 1000.0
 
-		if not hit.is_empty():
-			var effect = hit_effect_scene.instantiate()
-			get_tree().root.add_child(effect)
-			effect.global_position = hit.position
-			effect.emitting = true
-			if hit.collider and hit.collider.is_in_group("enemy"):
-				hit.collider.take_damage(current_weapon.damage, hit)
+			var tracer = tracer_scene.instantiate()
+			get_tree().root.add_child(tracer)
+			tracer.init(muzzle_pos, end_pos)
+
+			if not hit.is_empty():
+				var effect = hit_effect_scene.instantiate()
+				get_tree().root.add_child(effect)
+				effect.global_position = hit.position
+				effect.emitting = true
+				if hit.collider and hit.collider.is_in_group("enemy"):
+					hit.collider.take_damage(current_weapon.damage, hit)
 
 		await get_tree().create_timer(current_weapon.burst_delay).timeout
 	_is_bursting = false

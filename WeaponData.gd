@@ -15,6 +15,7 @@ class_name WeaponData
 @export var burst_count: int = 1
 @export var burst_delay: float = 0.1
 @export var reload_time: float = 2.0
+@export var pellet_count: int = 1
 @export_group("Spray")
 @export var spread_radius: float = 0.0
 @export var max_spread_radius: float = 1.0
