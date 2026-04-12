@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_pp57v")
+fire_rate = 0.1
 damage = 20
 current_ammo = null
 weapon_scene = ExtResource("2_25jnp")

@@ -13,14 +13,14 @@ func init(from: Vector3, to: Vector3) -> void:
 	_target = to
 	_direction = (to - from).normalized()
 	_distance = from.distance_to(to)
-	
+
 	# orient the mesh along the travel direction
 	look_at(to, Vector3.UP)
-	
+
 func _process(delta: float) -> void:
 	var step = SPEED * delta
 	_travelled += step
 	global_position += _direction * step
-	
+
 	if _travelled >= _distance:
 		queue_free()

@@ -54,7 +54,6 @@ func fire_gun(is_grounded: bool):
 		current_weapon.current_ammo -= 1
 		_spray_index += 1
 		_current_spread += current_weapon.spread_per_shot
-		print(_current_spread)
 		_spray_reset_timer = current_weapon.spray_reset_time
 		var audio = current_weapon_node.get_node_or_null("ShootSound")
 		if audio:

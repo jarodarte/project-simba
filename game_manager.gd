@@ -16,7 +16,6 @@ signal weapon_ui_update(gun_name: String, current: int, reserve: int)
 signal grenade_ui_update(grenade_name: String, amount: int)
 
 func get_enemies_per_wave() -> int:
-	print(current_wave * 0.725 + 6)
 	return int(current_wave * 0.725 + 6)
 
 func get_health_per_wave() -> int:

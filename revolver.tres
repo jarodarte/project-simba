@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://trjtpc1snwos"]
+
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="1_1oe3q"]
+[ext_resource type="PackedScene" uid="uid://cpil7nj8bwig8" path="res://revolver.tscn" id="2_tgp47"]
+
+[resource]
+script = ExtResource("1_1oe3q")
+name = "Revolver"
+damage = 65
+magazine_size = 6
+current_ammo = null
+weapon_scene = ExtResource("2_tgp47")
+current_reserve_magazines = null
+headshot_multiplier = 2.0
+burst_delay = 0.05
+spread_radius = 0.05
+max_spread_radius = 4.0
+spread_per_shot = 0.8
+spray_reset_time = 0.3
+move_spread_max = 0.08
+jump_spread = 0.15
+metadata/_custom_type_script = "uid://usc4sl4sxcbl"
