@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ctrpcyqvn3be6"]
+
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://WeaponData.gd" id="1_nk05d"]
+[ext_resource type="PackedScene" uid="uid://djh1bd7q7tgrk" path="res://desert_eagle.tscn" id="2_srj5y"]
+
+[resource]
+script = ExtResource("1_nk05d")
+name = "Desert Eagle"
+fire_rate = 0.35
+damage = 85
+magazine_size = 7
+max_reserve_magazines = 4
+current_ammo = null
+weapon_scene = ExtResource("2_srj5y")
+current_reserve_magazines = 4
+headshot_multiplier = 2.0
+spread_radius = 0.02
+max_spread_radius = 3.0
+spread_per_shot = 0.5
+spray_reset_time = 0.5
+move_spread_max = 0.08
+jump_spread = 0.15
+metadata/_custom_type_script = "uid://usc4sl4sxcbl"

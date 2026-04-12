@@ -29,6 +29,7 @@ var grenade_equipped: bool = false
 var current_grenade_data: ExplosiveData = null
 var current_grenade_node: Node3D = null
 var _cooking: bool = false
+var _current_spread: float = 0.0
 
 func spawn_weapon():
 	if current_weapon_node:
@@ -52,6 +53,8 @@ func fire_gun(is_grounded: bool):
 
 		current_weapon.current_ammo -= 1
 		_spray_index += 1
+		_current_spread += current_weapon.spread_per_shot
+		print(_current_spread)
 		_spray_reset_timer = current_weapon.spray_reset_time
 		var audio = current_weapon_node.get_node_or_null("ShootSound")
 		if audio:
@@ -155,7 +158,7 @@ func get_shot_direction(is_grounded: bool) -> Vector3:
 		offset_deg = current_weapon.spray_pattern[idx]
 	elif current_weapon.spread_radius > 0.0:
 		# random bloom: pick a point inside the spread cone
-		offset_deg = _random_spread(current_weapon.spread_radius)
+		offset_deg = _random_spread(_current_spread)
 
 	# movement inaccuracy: scales with horizontal speed
 	offset_deg += _random_spread(_current_move_spread)
@@ -217,12 +220,14 @@ func _ready() -> void:
 
 	if current_weapon:
 		spawn_weapon()
-		emit_weapon_stats()
+		call_deferred("emit_weapon_stats")
 
 func update(delta, speed_ratio: float):
 	if _spray_reset_timer > 0.0:
+		_current_spread = lerp(_current_spread, current_weapon.max_spread_radius, 10 * delta)
 		_spray_reset_timer -= delta
-	if _spray_reset_timer <= 0.0:
+	else:
+		_current_spread = lerp(_current_spread, current_weapon.spread_radius, 10 * delta)
 		_spray_index = 0
 	var target_spread = current_weapon.move_spread_max * speed_ratio if current_weapon else 0.0
 	_current_move_spread = lerp(_current_move_spread, target_spread, 10.0 * delta)

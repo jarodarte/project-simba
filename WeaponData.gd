@@ -16,6 +16,8 @@ class_name WeaponData
 @export var burst_delay = 0.1
 @export_group("Spray")
 @export var spread_radius: float = 0.0
+@export var max_spread_radius: float = 1.0
+@export var spread_per_shot = 0.2
 @export var spray_pattern: Array[Vector2] = []
 @export var spray_reset_time: float = 0.4
 @export var move_spread_max: float = 0.0
