@@ -13,6 +13,7 @@ weapon_scene = ExtResource("2_tgp47")
 current_reserve_magazines = null
 headshot_multiplier = 2.0
 burst_delay = 0.05
+reload_time = 3.0
 spread_radius = 0.05
 max_spread_radius = 4.0
 spread_per_shot = 0.8

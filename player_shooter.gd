@@ -102,7 +102,7 @@ func reload():
 		reload_audio.play()
 	current_weapon_node.get_node("AnimationPlayer").play("reload")
 
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(current_weapon.reload_time).timeout
 	_spray_index = 0
 	_spray_reset_timer = 0.0
 
