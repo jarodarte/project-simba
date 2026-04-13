@@ -7,7 +7,7 @@ var _player: CharacterBody3D = null
 var _cooking: bool = false
 var _stuck_to: Node3D = null
 var _stuck_offset: Vector3 = Vector3.ZERO
-
+var ExplosionVFX = preload("res://explosion_vfx.tscn")
 @onready var fuse_timer: Timer = $FuseTimer
 @onready var explosion_area: Area3D = $ExplosionArea
 
@@ -67,9 +67,9 @@ func _play_vfx_then_free() -> void:
 	if has_node("MeshInstance3D"):
 		$MeshInstance3D.visible = false
 
-	# TODO: spawn your explosion VFX/sound here
-	# e.g. var vfx = ExplosionVFX.instantiate(); get_tree().root.add_child(vfx)
-
+	var vfx = ExplosionVFX.instantiate()
+	get_tree().root.add_child(vfx)
+	vfx.global_position = global_position
 	await get_tree().create_timer(0.1).timeout
 	queue_free()
 
