@@ -15,6 +15,7 @@ weapon_scene = ExtResource("2_srj5y")
 current_reserve_magazines = 4
 headshot_multiplier = 2.0
 reload_time = 2.2
+max_range = 50.0
 spread_radius = 0.02
 max_spread_radius = 3.0
 spread_per_shot = 0.5

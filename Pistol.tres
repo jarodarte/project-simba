@@ -11,5 +11,6 @@ current_ammo = null
 weapon_scene = ExtResource("2_25jnp")
 current_reserve_magazines = null
 reload_time = 1.8
+max_range = 40.0
 spread_radius = 0.02
 metadata/_custom_type_script = "uid://usc4sl4sxcbl"
