@@ -28,13 +28,12 @@ func throw(camera: Camera3D) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body == _player:
 		return
-	if _stuck_to != null:  
+	if _stuck_to != null:
 		return
 	if data.sticky:
 		freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
 		freeze = true
 		$CollisionShape3D.disabled = true
-		# push grenade back to surface of the body
 		var push_dir = (global_position - body.global_position).normalized()
 		global_position = body.global_position + push_dir * .5
 		_stuck_to = body
@@ -93,3 +92,14 @@ func _process(_delta: float) -> void:
 		return
 	if not _cooking or _exploded:
 		return
+
+func launch(direction: Vector3, speed: float):
+	var shape = explosion_area.get_node("CollisionShape3D")
+	(shape.shape as SphereShape3D).radius = data.explosion_radius
+	gravity_scale = data.gravity_scale
+	freeze = false
+	$CollisionShape3D.disabled = false
+	if data.sticky or data.impact_explosion:
+		if not _exploded and is_inside_tree():
+			body_entered.connect(_on_body_entered)
+	linear_velocity = direction * speed

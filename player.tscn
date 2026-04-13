@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://beeltvvpf3qod" path="res://assault_rifle_ak.tres" id="12_q13i1"]
 [ext_resource type="Resource" uid="uid://cymn1vpyhy3gb" path="res://smg.tres" id="13_pylmc"]
 [ext_resource type="Resource" uid="uid://db8e4qj72vx3y" path="res://sniper_rifle.tres" id="14_u1c27"]
+[ext_resource type="Resource" uid="uid://55rkybnkn6y2" path="res://Rocket_launcher.tres" id="15_op7ga"]
+[ext_resource type="Resource" uid="uid://us51j8d4eppj" path="res://Grenade_launcher.tres" id="16_q13i1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -62,7 +64,7 @@ script = ExtResource("8_dw050")
 camera = NodePath("../Camera3D")
 raycast = NodePath("../Camera3D/RayCast3D")
 shoot_timer = NodePath("../ShootTimer")
-weapons = Array[ExtResource("2_hqtel")]([ExtResource("8_nvl01"), ExtResource("8_n7ghd"), ExtResource("9_606se"), ExtResource("10_u1c27"), ExtResource("11_op7ga"), ExtResource("12_q13i1"), ExtResource("13_pylmc"), ExtResource("14_u1c27")])
+weapons = Array[ExtResource("2_hqtel")]([ExtResource("8_nvl01"), ExtResource("8_n7ghd"), ExtResource("9_606se"), ExtResource("10_u1c27"), ExtResource("11_op7ga"), ExtResource("12_q13i1"), ExtResource("13_pylmc"), ExtResource("14_u1c27"), ExtResource("15_op7ga"), ExtResource("16_q13i1")])
 weapon_anchor = NodePath("../Camera3D/GunHolder/WeaponAnchor")
 player = NodePath("..")
 explosives = Array[ExtResource("9_n7ghd")]([ExtResource("10_nvl01")])

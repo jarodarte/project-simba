@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ExplosiveData" format=3 uid="uid://ggkh7jpek4ig"]
+
+[ext_resource type="Script" uid="uid://bp2vp4a3x7mxr" path="res://ExplosiveData.gd" id="1_1fkt1"]
+[ext_resource type="PackedScene" uid="uid://gi1u6081qlys" path="res://grenade.tscn" id="1_oesw8"]
+
+[resource]
+script = ExtResource("1_1fkt1")
+name = "RPG round"
+impact_explosion = true
+explosion_radius = 8.0
+damage = 150.0
+grenade_scene = ExtResource("1_oesw8")
+gravity_scale = 0.1
+metadata/_custom_type_script = "uid://bp2vp4a3x7mxr"

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d0uf0olnoycm5"]
+
+[ext_resource type="PackedScene" uid="uid://b8istscy5nmnw" path="res://SimpleApocalypse/Scenes/Weapons/SA_Wep_RPGLauncher.tscn" id="1_8tnk6"]
+[ext_resource type="AudioStream" uid="uid://bgao3p3g2f2e5" path="res://Audio/impactWood_medium_004.ogg" id="2_hab7e"]
+[ext_resource type="AudioStream" uid="uid://b3c43s46scqbo" path="res://Audio/open_002.ogg" id="3_q0b8k"]
+
+[sub_resource type="Animation" id="Animation_kmile"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_j33d7"]
+resource_name = "reload"
+length = 2.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jao7y"]
+_data = {
+&"RESET": SubResource("Animation_kmile"),
+&"reload": SubResource("Animation_j33d7")
+}
+
+[node name="Node3D" type="Node3D" unique_id=1850706280]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.09704888, 0.18583703)
+
+[node name="SA_Wep_RPGLauncher" parent="." unique_id=260857249 instance=ExtResource("1_8tnk6")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -7.284531e-08, 0, 0.8332532)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1283630]
+libraries/ = SubResource("AnimationLibrary_jao7y")
+
+[node name="ShootSound" type="AudioStreamPlayer3D" parent="." unique_id=250515080]
+stream = ExtResource("2_hab7e")
+volume_db = 3.0
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="." unique_id=1645197383]
+stream = ExtResource("3_q0b8k")
+bus = &"SFX"
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1286258517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045657802, 0.21495926, 1.4137673)

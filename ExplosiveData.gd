@@ -12,3 +12,4 @@ class_name ExplosiveData
 @export var grenade_scene: PackedScene
 @export var amount: int = 0
 @export var current_amount: int = 0
+@export var gravity_scale: float
