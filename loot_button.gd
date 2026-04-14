@@ -12,11 +12,15 @@ extends Area3D
 @onready var label = $Label3D
 @onready var sound = $AudioStreamPlayer3D
 
+signal weapon_received(weapon_data: WeaponData)
+
 var player: Node3D = null
 
 func _ready() -> void:
 	label.visible = false
 	player = get_tree().get_first_node_in_group("player")
+	if player:
+		weapon_received.connect(player._on_weapon_received)
 	update_label()
 
 func update_label(message: String = ""):
@@ -83,18 +87,7 @@ func give_gun_to_player():
 	var new_weapon = gun_drop.duplicate(true)
 	new_weapon.current_ammo = new_weapon.magazine_size
 	new_weapon.current_reserve_magazines = new_weapon.max_reserve_magazines
-	
-	if player.player_shooter.runtime_weapons.size() < 2:
-		player.player_shooter.runtime_weapons.append(new_weapon)
-		player.player_shooter.weapon_index = player.player_shooter.runtime_weapons.size() - 1
-	else:
-		player.player_shooter.runtime_weapons[player.player_shooter.weapon_index] = new_weapon
-	
-	
-	player.player_shooter.current_weapon = new_weapon
-	player.player_shooter.spawn_weapon()
-	player.player_shooter.reset_gun_state()
-	player.player_shooter.emit_weapon_stats()
+	weapon_received.emit(new_weapon)
 
 func show_info():
 	label.visible = true

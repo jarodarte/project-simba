@@ -290,3 +290,15 @@ func throw_grenade() -> void:
 	grenade.throw(camera)
 
 	unequip_grenade()
+
+func update_player_gun(weapon_data: WeaponData):
+	if runtime_weapons.size() < 2:
+		runtime_weapons.append(weapon_data)
+		weapon_index = runtime_weapons.size() - 1
+	else:
+		runtime_weapons[weapon_index] = weapon_data
+	
+	current_weapon = weapon_data
+	spawn_weapon()
+	reset_gun_state()
+	emit_weapon_stats()

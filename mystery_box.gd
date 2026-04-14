@@ -17,10 +17,14 @@ var rolled_weapon: WeaponData = null
 var reset_timer: SceneTreeTimer = null
 var label_locked: bool = false
 
+signal weapon_received(weapon_data: WeaponData)
+
 func _ready() -> void:
 	label.visible = false
 	update_label()
 	player = get_tree().get_first_node_in_group("player")
+	if player:
+		weapon_received.connect(player._on_weapon_received)
 	if mesh_resource:
 		mesh_instance.mesh = mesh_resource
 	_build_collision()
@@ -67,11 +71,7 @@ func give_gun_to_player():
 	var new_weapon = rolled_weapon.duplicate(true)
 	new_weapon.current_ammo = new_weapon.magazine_size
 	new_weapon.current_reserve_magazines = new_weapon.max_reserve_magazines
-	player.player_shooter.runtime_weapons[player.player_shooter.weapon_index] = new_weapon
-	player.player_shooter.current_weapon = new_weapon
-	player.player_shooter.spawn_weapon()
-	player.player_shooter.reset_gun_state()
-	player.player_shooter.emit_weapon_stats()
+	weapon_received.emit(new_weapon)
 	hide_info()
 
 func _input(event: InputEvent):

@@ -120,3 +120,9 @@ func take_damage(amount: float):
 	GameManager.health_changed.emit(GameManager.health)
 	if GameManager.health == 0:
 		get_tree().call_deferred("change_scene_to_file", "res://game_over.tscn")
+
+func _on_weapon_received(weapon_data: WeaponData):
+	player_shooter.update_player_gun(weapon_data)
+
+func get_headshot_multiplier() -> float:
+	return player_shooter.current_weapon.headshot_multiplier
