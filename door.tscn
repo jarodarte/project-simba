@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://2a6lqly41usv" path="res://door.gd" id="1_ba8gm"]
 [ext_resource type="AudioStream" uid="uid://bmkb5akc3m6ms" path="res://Audio/confirmation_001.ogg" id="2_v6xrn"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6xrn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0phs7"]
+
 [sub_resource type="Animation" id="Animation_ba8gm"]
 length = 0.001
 tracks/0/type = "value"
@@ -40,13 +44,14 @@ _data = {
 &"disappear": SubResource("Animation_v6xrn")
 }
 
-[node name="Door" type="Node3D" unique_id=612981162 node_paths=PackedStringArray("mesh")]
+[node name="Door" type="StaticBody3D" unique_id=104353507]
 script = ExtResource("1_ba8gm")
-mesh = NodePath("MeshInstance3D")
-cost = null
-interaction_range = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=904292681]
+shape = SubResource("BoxShape3D_v6xrn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=920966354]
+mesh = SubResource("BoxMesh_0phs7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1202765257]
 libraries/ = SubResource("AnimationLibrary_0phs7")
@@ -54,12 +59,6 @@ libraries/ = SubResource("AnimationLibrary_0phs7")
 [node name="Label3D" type="Label3D" parent="." unique_id=1960805977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 billboard = 1
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1494475902]
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=904292681]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1749185207]
 stream = ExtResource("2_v6xrn")
