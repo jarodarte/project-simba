@@ -27,7 +27,6 @@ func _ready():
 	weapon_handler = player_shooter.weapon_handler
 	grenade_handler = player_shooter.grenade_handler
 
-
 func _input(event):
 	if weapon_handler == null or grenade_handler == null:
 		return
@@ -37,36 +36,6 @@ func _input(event):
 		pitch = clamp(pitch - event.relative.y * SettingsManager.mouse_sensitivity, -PI/2.2, PI/2.2)
 		camera.rotation.x = pitch
 
-	if event.is_action_pressed("reload") and not weapon_handler.is_reloading:
-		weapon_handler.reload()
-
-	if event.is_action_pressed("next_weapon"):
-		if grenade_handler.grenade_equipped:
-			grenade_handler.unequip_grenade()
-		weapon_handler.swap_weapon(1)
-	if event.is_action_pressed("prev_weapon"):
-		if grenade_handler.grenade_equipped:
-			grenade_handler.unequip_grenade()
-		weapon_handler.swap_weapon(-1)
-	if event.is_action_pressed("weapon_1"):
-		if grenade_handler.grenade_equipped:
-			grenade_handler.unequip_grenade()
-		weapon_handler.swap_to_weapon(0)
-	if event.is_action_pressed("weapon_2"):
-		if grenade_handler.grenade_equipped:
-			grenade_handler.unequip_grenade()
-		weapon_handler.swap_to_weapon(0)
-	if event.is_action_pressed("grenade"):
-		if grenade_handler.grenade_equipped:
-			grenade_handler.unequip_grenade()
-		else:
-			grenade_handler.equip_grenade()
-
-	if event.is_action_pressed("shoot") and grenade_handler.grenade_equipped:
-		grenade_handler.start_cook()
-
-	if event.is_action_released("shoot") and grenade_handler.grenade_equipped:
-		grenade_handler.throw_grenade()
 
 func _physics_process(delta):
 	if weapon_handler == null or grenade_handler == null:

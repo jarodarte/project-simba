@@ -22,9 +22,7 @@ var attack_timer: Timer
 @onready var meshes = find_children("*", "MeshInstance3D", true)
 @onready var hitbox = $DamageZone/EnemyHitbox
 
-
 func _ready():
-	data.contact_damage = 35
 	for mesh in meshes:
 		var mat = mesh.get_surface_override_material(0)
 		if mat == null:
