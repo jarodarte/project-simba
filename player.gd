@@ -17,55 +17,65 @@ const COUNTER_STRAFE_DECEL = 16.
 
 var oof_sound = preload("res://Audio/error_008.ogg")
 var pitch: float = 0.0
+var weapon_handler: WeaponHandler
+var grenade_handler: GrenadeHandler
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	footstep_timer.timeout.connect(footstep_sound.play)
+	await get_tree().process_frame
+	weapon_handler = player_shooter.weapon_handler
+	grenade_handler = player_shooter.grenade_handler
+
 
 func _input(event):
+	if weapon_handler == null or grenade_handler == null:
+		return
+
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * SettingsManager.mouse_sensitivity)
 		pitch = clamp(pitch - event.relative.y * SettingsManager.mouse_sensitivity, -PI/2.2, PI/2.2)
 		camera.rotation.x = pitch
 
-	if event.is_action_pressed("reload") and not player_shooter.is_reloading:
-		player_shooter.reload()
+	if event.is_action_pressed("reload") and not weapon_handler.is_reloading:
+		weapon_handler.reload()
 
 	if event.is_action_pressed("next_weapon"):
-		if player_shooter.grenade_equipped:
-			player_shooter.unequip_grenade()
-		player_shooter.swap_weapon(1)
+		if grenade_handler.grenade_equipped:
+			grenade_handler.unequip_grenade()
+		weapon_handler.swap_weapon(1)
 	if event.is_action_pressed("prev_weapon"):
-		if player_shooter.grenade_equipped:
-			player_shooter.unequip_grenade()
-		player_shooter.swap_weapon(-1)
+		if grenade_handler.grenade_equipped:
+			grenade_handler.unequip_grenade()
+		weapon_handler.swap_weapon(-1)
 	if event.is_action_pressed("weapon_1"):
-		if player_shooter.grenade_equipped:
-			player_shooter.unequip_grenade()
-		player_shooter.swap_to_weapon(0)
+		if grenade_handler.grenade_equipped:
+			grenade_handler.unequip_grenade()
+		weapon_handler.swap_to_weapon(0)
 	if event.is_action_pressed("weapon_2"):
-		if player_shooter.grenade_equipped:
-			player_shooter.unequip_grenade()
-		player_shooter.swap_to_weapon(0)
+		if grenade_handler.grenade_equipped:
+			grenade_handler.unequip_grenade()
+		weapon_handler.swap_to_weapon(0)
 	if event.is_action_pressed("grenade"):
-		if player_shooter.grenade_equipped:
-			player_shooter.unequip_grenade()
+		if grenade_handler.grenade_equipped:
+			grenade_handler.unequip_grenade()
 		else:
-			player_shooter.equip_grenade()
+			grenade_handler.equip_grenade()
 
-	if event.is_action_pressed("shoot") and player_shooter.grenade_equipped:
-		player_shooter.start_cook()
+	if event.is_action_pressed("shoot") and grenade_handler.grenade_equipped:
+		grenade_handler.start_cook()
 
-	if event.is_action_released("shoot") and player_shooter.grenade_equipped:
-		player_shooter.throw_grenade()
+	if event.is_action_released("shoot") and grenade_handler.grenade_equipped:
+		grenade_handler.throw_grenade()
 
 func _physics_process(delta):
-
+	if weapon_handler == null or grenade_handler == null:
+		return
 	# shooting process
-	if player_shooter.current_weapon and not player_shooter.is_reloading and not player_shooter.grenade_equipped:
-		var trying_to_shoot = Input.is_action_pressed("shoot") if player_shooter.current_weapon.is_auto else Input.is_action_just_pressed("shoot")
-		if trying_to_shoot and player_shooter.can_shoot and player_shooter.current_weapon.current_ammo > 0:
-			player_shooter.fire_gun(is_on_floor())
+	if weapon_handler.current_weapon and not weapon_handler.is_reloading and not grenade_handler.grenade_equipped:
+		var trying_to_shoot = Input.is_action_pressed("shoot") if weapon_handler.current_weapon.is_auto else Input.is_action_just_pressed("shoot")
+		if trying_to_shoot and weapon_handler.can_shoot and weapon_handler.current_weapon.current_ammo > 0:
+			weapon_handler.fire_gun(is_on_floor())
 			weapon_sway.add_recoil()
 
 	# jumping process
@@ -107,7 +117,7 @@ func _physics_process(delta):
 
 	# spray reset
 	var speed_ratio = clamp(Vector2(velocity.x, velocity.z).length() / SPEED, 0.0, 1.0)
-	player_shooter.update(delta, speed_ratio)
+	weapon_handler.update(delta, speed_ratio)
 
 func take_damage(amount: float):
 	GameManager.health = max(0, GameManager.health - amount)
@@ -122,7 +132,7 @@ func take_damage(amount: float):
 		get_tree().call_deferred("change_scene_to_file", "res://game_over.tscn")
 
 func _on_weapon_received(weapon_data: WeaponData):
-	player_shooter.update_player_gun(weapon_data)
+	weapon_handler.update_player_gun(weapon_data)
 
 func get_headshot_multiplier() -> float:
-	return player_shooter.current_weapon.headshot_multiplier
+	return weapon_handler.current_weapon.headshot_multiplier
