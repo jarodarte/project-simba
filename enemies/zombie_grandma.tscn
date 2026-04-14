@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbrvm8aa0g2vk"]
+
+[ext_resource type="PackedScene" uid="uid://bqgxiilggmrs" path="res://enemies/zombie_footballplayer.tscn" id="1_lyj36"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_dbjp1"]
+[ext_resource type="Texture2D" uid="uid://bl3fgxcb6gx2k" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Grandma.png" id="3_nbvrp"]
+
+[sub_resource type="Resource" id="Resource_jaxum"]
+script = ExtResource("2_dbjp1")
+skin_texture = ExtResource("3_nbvrp")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_lyj36")]
+data = SubResource("Resource_jaxum")
+
+[node name="Hair_Bobs" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="10" unique_id=1415465151]
+visible = true
+
+[node name="Hair_Top" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="12" unique_id=773102184]
+visible = true

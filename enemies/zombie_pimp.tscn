@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bt0to6cccodbr"]
+
+[ext_resource type="PackedScene" uid="uid://dvkleeiq5cfjd" path="res://enemies/zombie_pilot.tscn" id="1_c75w5"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_xk4o1"]
+[ext_resource type="Texture2D" uid="uid://dslmyh203pgao" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Pimp.png" id="3_pub7h"]
+
+
+[sub_resource type="Resource" id="Resource_pub7h"]
+script = ExtResource("2_xk4o1")
+skin_texture = ExtResource("3_pub7h")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_c75w5")]
+data = SubResource("Resource_pub7h")
+
+[node name="Hat_Police" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="6" unique_id=766095033]
+visible = false
+
+[node name="Hat_Pimp" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="13" unique_id=1544233387]
+visible = true
+
+[node name="Hat_Sheriff" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="15" unique_id=875606012]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.28442568, 2.77997, 0.39443293)
+bone_name = "Hat_Sheriff"
+bone_idx = 30

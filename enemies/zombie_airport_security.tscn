@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://dk0malq76gvgw"]
+
+[ext_resource type="PackedScene" uid="uid://cgs8cmvlsotgx" path="res://SimpleApocalypse/Models/Characters/Animator/Zombies.fbx" id="1_8kq4b"]
+[ext_resource type="Script" uid="uid://c811pnb2j8kpy" path="res://scripts/enemy.gd" id="2_63bdl"]
+[ext_resource type="Texture2D" uid="uid://b4xw78o1h0t0i" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_AirportSecurity.png" id="2_dsxht"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="3_k5vxl"]
+[ext_resource type="Texture2D" uid="uid://0yimch5xd4ve" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Businessman.png" id="5_qbha1"]
+
+[sub_resource type="Resource" id="Resource_o2kqd"]
+script = ExtResource("3_k5vxl")
+skin_texture = ExtResource("2_dsxht")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63bdl"]
+albedo_texture = ExtResource("5_qbha1")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dsxht"]
+height = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_63bdl"]
+radius = 0.35
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k5vxl"]
+radius = 0.6
+height = 1.5
+
+[node name="Zombies" unique_id=155044975 node_paths=PackedStringArray("head_collision_shape") groups=["enemy"] instance=ExtResource("1_8kq4b")]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("2_63bdl")
+data = SubResource("Resource_o2kqd")
+head_collision_shape = NodePath("HeadHurtbox")
+
+[node name="Skeleton3D" parent="." index="0" unique_id=669375174]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+bones/2/position = Vector3(-0.030457878, 1.0003084, 0.045080256)
+bones/2/rotation = Quaternion(0.004307166, 0.00148119, -0.24078669, 0.9705674)
+bones/3/rotation = Quaternion(-0.07600636, -0.18097542, -0.4514603, 0.8704335)
+bones/4/rotation = Quaternion(-0.686617, 0.17071393, 0.17101276, 0.6856883)
+bones/5/rotation = Quaternion(0.71698135, -0.46258092, 0.23334086, 0.46637827)
+bones/10/rotation = Quaternion(0.5007775, 0.8643926, -0.012114419, 0.043597016)
+bones/11/rotation = Quaternion(-0.6728855, 0.20630482, 0.21020561, 0.67858464)
+bones/12/rotation = Quaternion(-0.31699228, 0.6057696, -0.3917983, -0.6156731)
+bones/17/position = Vector3(-0.01012731, 0.021593416, 0.00028078252)
+bones/17/rotation = Quaternion(0.06184762, -0.03323582, 0.87830746, 0.47291264)
+bones/19/rotation = Quaternion(0.060442027, -0.035657246, 0.054441344, 0.996048)
+bones/20/rotation = Quaternion(3.7092084e-16, 1.5135461e-16, -0.70710677, 0.70710677)
+bones/37/rotation = Quaternion(0.45917112, 0.5372905, 0.407728, -0.5781338)
+bones/38/rotation = Quaternion(-0.034627445, 0.12321273, 0.037522882, 0.991066)
+bones/39/rotation = Quaternion(-0.10004655, 0.9942607, 0.03633799, -0.010769222)
+bones/43/rotation = Quaternion(-0.49363226, 0.4763202, 0.4561023, 0.56693643)
+bones/44/rotation = Quaternion(0.00806801, 0.0690095, 0.024092715, 0.9972924)
+bones/45/rotation = Quaternion(-0.14860389, 0.9888176, -0.011879604, 0.003944999)
+
+[node name="Foot_Left" parent="Skeleton3D" index="0" unique_id=24786024]
+transform = Transform3D(0.81459343, 0.32696584, -0.479094, -0.40162298, 0.91389155, -0.059170105, 0.41849327, 0.24061474, 0.8757671, 0.2509976, 0.1048467, 0.17672445)
+bone_idx = 7
+
+[node name="Foot_Left" parent="Skeleton3D/Foot_Left" index="0" unique_id=2140469436]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="LowerLeg_Left" parent="Skeleton3D" index="1" unique_id=1054865145]
+transform = Transform3D(0.9906299, -0.13563508, -0.01598733, 0.1332056, 0.9853927, -0.10610104, 0.030144772, 0.10297724, 0.9942269, 0.26054972, 0.37491333, 0.16756117)
+bone_idx = 8
+
+[node name="LowerLeg_Left" parent="Skeleton3D/LowerLeg_Left" index="0" unique_id=1449549406]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="UpperLeg_Left" parent="Skeleton3D" index="2" unique_id=513306262]
+transform = Transform3D(0.9906194, -0.11157897, -0.0788885, 0.13296863, 0.92017907, 0.36822522, 0.03150533, -0.37526077, 0.92638373, 0.21689527, 0.7138443, 0.11164951)
+bone_idx = 9
+
+[node name="UpperLeg_Left" parent="Skeleton3D/UpperLeg_Left" index="0" unique_id=1114030684]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Foot_Right" parent="Skeleton3D" index="3" unique_id=1243550997]
+transform = Transform3D(0.9955231, 0.052951515, -0.07829562, -0.053110257, 0.998589, 5.624839e-05, 0.078188114, 0.004102363, 0.9969303, -0.2284399, 0.103562355, -0.06943225)
+bone_idx = 14
+
+[node name="Foot_Right" parent="Skeleton3D/Foot_Right" index="0" unique_id=1315220064]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="LowerLeg_Right" parent="Skeleton3D" index="4" unique_id=1200261672]
+transform = Transform3D(0.9994195, -0.033813745, 0.00417032, 0.031421248, 0.8674737, -0.49648985, 0.013170453, 0.4963326, 0.8680326, -0.22952798, 0.34821078, -0.007531278)
+bone_idx = 15
+
+[node name="LowerLeg_Right" parent="Skeleton3D/LowerLeg_Right" index="0" unique_id=442691993]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="UpperLeg_Right" parent="Skeleton3D" index="5" unique_id=975755412]
+transform = Transform3D(0.9991388, -0.03319128, -0.024899695, 0.0350339, 0.99636614, 0.07763588, 0.022232382, -0.07844136, 0.9966708, -0.24154742, 0.6826731, 0.058186673)
+bone_idx = 16
+
+[node name="UpperLeg_Right" parent="Skeleton3D/UpperLeg_Right" index="0" unique_id=1005475049]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Police" parent="Skeleton3D" index="6" unique_id=766095033]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.27989078, 2.7580135, 0.38926688)
+visible = false
+bone_idx = 21
+
+[node name="Hat_FireFighter" parent="Skeleton3D" index="7" unique_id=1876438210]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.2102518, 2.4449089, 0.3645571)
+visible = false
+bone_idx = 22
+
+[node name="Hat_Cap_Backwards" parent="Skeleton3D" index="8" unique_id=1681164053]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.29409218, 2.7655044, 0.26637936)
+visible = false
+bone_idx = 23
+
+[node name="Hat_Helmet" parent="Skeleton3D" index="9" unique_id=956590925]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.26563013, 2.713039, 0.42765602)
+visible = false
+bone_idx = 24
+
+[node name="Hair_Bobs" parent="Skeleton3D" index="10" unique_id=1415465151]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.24690592, 2.4939957, 0.11491713)
+visible = false
+bone_idx = 25
+
+[node name="Hair_Ponytail" parent="Skeleton3D" index="11" unique_id=737547690]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.19694576, 2.144796, -0.18556455)
+visible = false
+bone_idx = 26
+
+[node name="Hair_Top" parent="Skeleton3D" index="12" unique_id=773102184]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.26936337, 2.6998446, 0.36093536)
+visible = false
+bone_idx = 27
+
+[node name="Hair_Top" parent="Skeleton3D/Hair_Top" index="0" unique_id=1356320828]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hat_Pimp" parent="Skeleton3D" index="13" unique_id=1544233387]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.27641213, 2.7411697, 0.38530213)
+visible = false
+bone_idx = 28
+
+[node name="Hair_Punk" parent="Skeleton3D" index="14" unique_id=1874195714]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.28181443, 2.762151, 0.3797094)
+visible = false
+bone_idx = 29
+
+[node name="Hat_Sheriff" parent="Skeleton3D" index="15" unique_id=875606012]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.28442568, 2.77997, 0.39443293)
+visible = false
+bone_idx = 30
+
+[node name="Hat_Cap" parent="Skeleton3D" index="16" unique_id=2144290638]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.26279444, 2.7365048, 0.5088537)
+visible = false
+bone_idx = 31
+
+[node name="Hat_Cap" parent="Skeleton3D/Hat_Cap" index="0" unique_id=1662958572]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="GasMask" parent="Skeleton3D" index="17" unique_id=453025604]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.17714776, 2.3141842, 0.39392984)
+visible = false
+bone_idx = 32
+
+[node name="Hat_Hobo" parent="Skeleton3D" index="18" unique_id=1031822037]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.26581445, 2.6837785, 0.3594276)
+visible = false
+bone_idx = 33
+
+[node name="RiotHelmet" parent="Skeleton3D" index="19" unique_id=517993622]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.20701718, 2.396843, 0.28732124)
+visible = false
+bone_idx = 34
+
+[node name="WarHelmet" parent="Skeleton3D" index="20" unique_id=1632072729]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.23842335, 2.548905, 0.3231059)
+visible = false
+bone_idx = 35
+
+[node name="WarHelmet" parent="Skeleton3D/WarHelmet" index="0" unique_id=585235560]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Head" parent="Skeleton3D" index="21" unique_id=1333688844]
+transform = Transform3D(0.96973085, -0.19709963, 0.14413029, 0.22345082, 0.95431435, -0.19837695, -0.098445624, 0.22457832, 0.9694705, -0.19197315, 2.324988, 0.2724156)
+bone_idx = 36
+
+[node name="Head" parent="Skeleton3D/Head" index="0" unique_id=2000495429]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hand_Right" parent="Skeleton3D" index="22" unique_id=417331558]
+transform = Transform3D(-0.14804548, -0.3812464, 0.91254234, -0.27956837, 0.9012086, 0.33115584, -0.9486433, -0.20609197, -0.24000439, -0.58334947, 1.8830276, 1.177252)
+bone_idx = 40
+
+[node name="Hand_Right" parent="Skeleton3D/Hand_Right" index="0" unique_id=675060608]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="LowerArm_Right" parent="Skeleton3D" index="23" unique_id=416259537]
+transform = Transform3D(-0.19441901, -0.2790659, 0.9403846, -0.08582215, 0.9598405, 0.26709637, -0.97715706, -0.028777275, -0.21056136, -0.64228016, 1.8347574, 0.85981023)
+bone_idx = 41
+
+[node name="LowerArm_Right" parent="Skeleton3D/LowerArm_Right" index="0" unique_id=134876195]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="UpperArm_Right" parent="Skeleton3D" index="24" unique_id=129153930]
+transform = Transform3D(0.016115285, -0.3380496, 0.94099015, 0.061141357, 0.93968433, 0.3365334, -0.9979991, 0.052110046, 0.0358121, -0.679799, 1.8333964, 0.3676572)
+bone_idx = 42
+
+[node name="UpperArm_Right" parent="Skeleton3D/UpperArm_Right" index="0" unique_id=1362396007]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Hand_Left" parent="Skeleton3D" index="25" unique_id=20164937]
+transform = Transform3D(-0.051216774, 0.013042711, -0.9986023, 0.073550306, 0.99724835, 0.009252707, 0.9959755, -0.07297374, -0.05203518, 0.4494856, 1.7361916, 1.1622539)
+bone_idx = 46
+
+[node name="Hand_Left" parent="Skeleton3D/Hand_Left" index="0" unique_id=202472303]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="LowerArm_Left" parent="Skeleton3D" index="26" unique_id=2121533686]
+transform = Transform3D(-0.06410159, 0.019696217, -0.9977489, -0.22257769, 0.9743378, 0.033533804, 0.9728053, 0.22422622, -0.058072716, 0.46916503, 1.7784053, 0.8408761)
+bone_idx = 47
+
+[node name="LowerArm_Left" parent="Skeleton3D/LowerArm_Left" index="0" unique_id=1425299110]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="UpperArm_Left" parent="Skeleton3D" index="27" unique_id=1302596572]
+transform = Transform3D(0.073382124, 0.0037806705, -0.99729663, -0.27056497, 0.9625642, -0.016259491, 0.95990086, 0.27102667, 0.07165791, 0.46238428, 1.9026734, 0.36038613)
+bone_idx = 48
+
+[node name="UpperArm_Left" parent="Skeleton3D/UpperArm_Left" index="0" unique_id=327571531]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Body" parent="Skeleton3D" index="28" unique_id=1062404499]
+transform = Transform3D(0.99533737, -0.09536997, 0.014416309, 0.09645342, 0.9842134, -0.1483925, -3.652078e-05, 0.14909111, 0.9888235, -0.07518529, 1.4974806, 0.11728093)
+bone_idx = 49
+
+[node name="Body" parent="Skeleton3D/Body" index="0" unique_id=648380624]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Prop_Backpack" parent="Skeleton3D" index="29" unique_id=906290490]
+transform = Transform3D(0.99533737, -0.09536997, 0.014416309, 0.09645342, 0.9842134, -0.1483925, -3.652078e-05, 0.14909111, 0.9888235, -0.08703568, 1.6196238, -0.26602435)
+bone_idx = 50
+
+[node name="Prop_Backpack" parent="Skeleton3D/Prop_Backpack" index="0" unique_id=130300544]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="Prop_FireFighterPack" parent="Skeleton3D" index="30" unique_id=2733680]
+transform = Transform3D(0.99533737, -0.09536997, 0.014416309, 0.09645342, 0.9842134, -0.1483925, -3.652078e-05, 0.14909111, 0.9888235, -0.08703568, 1.6196238, -0.26602435)
+visible = false
+bone_idx = 51
+
+[node name="LowerBody" parent="Skeleton3D" index="31" unique_id=890704247]
+transform = Transform3D(0.99923337, -0.039142042, 0.0008009728, 0.039147675, 0.99919224, -0.009074091, -0.00044514798, 0.00909849, 0.9999585, -0.029063523, 0.96471417, 0.04475614)
+bone_idx = 52
+
+[node name="LowerBody" parent="Skeleton3D/LowerBody" index="0" unique_id=1370678396]
+surface_material_override/0 = SubResource("StandardMaterial3D_63bdl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="2" unique_id=1282207807]
+
+[node name="BodyHurtbox" type="CollisionShape3D" parent="." index="3" unique_id=34241193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78090405, 0)
+shape = SubResource("CapsuleShape3D_dsxht")
+
+[node name="HeadHurtbox" type="CollisionShape3D" parent="." index="4" unique_id=2018598306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33270955, 1.7919931, -0.07975006)
+shape = SubResource("SphereShape3D_63bdl")
+
+[node name="DamageZone" type="Area3D" parent="." index="5" unique_id=724965187]
+collision_layer = 9
+collision_mask = 3
+
+[node name="EnemyHitbox" type="CollisionShape3D" parent="DamageZone" index="0" unique_id=1149624899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0210615, 0)
+shape = SubResource("CapsuleShape3D_k5vxl")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cm1qjmq1xjic8"]
+
+[ext_resource type="PackedScene" uid="uid://dbrvm8aa0g2vk" path="res://enemies/zombie_grandma.tscn" id="1_434c6"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_pekgm"]
+[ext_resource type="Texture2D" uid="uid://d2tq8n88xopmb" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Hobo.png" id="3_lxqep"]
+
+[sub_resource type="Resource" id="Resource_00kqy"]
+script = ExtResource("2_pekgm")
+skin_texture = ExtResource("3_lxqep")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_434c6")]
+data = SubResource("Resource_00kqy")
+
+[node name="Hair_Bobs" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="10" unique_id=1415465151]
+visible = false
+
+[node name="Hair_Top" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="12" unique_id=773102184]
+visible = false
+
+[node name="Hat_Hobo" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="18" unique_id=1031822037]
+visible = true

@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bso10yfd3643u"]
-
-[ext_resource type="Script" path="res://spawn_manager.gd" id="1_svyko"]
-
-[node name="SpawnManager" type="Node" unique_id=1907412247]
-script = ExtResource("1_svyko")
-
-[node name="Timer" type="Timer" parent="." unique_id=698200992]

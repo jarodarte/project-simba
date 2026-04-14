@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://owb14u5mnip"]
+
+[ext_resource type="Script" uid="uid://bphi1qigo244" path="res://scripts/game_over.gd" id="1_y26ei"]
+
+[node name="Control" type="Control" unique_id=1798882861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=456844143]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -42.5
+offset_right = 46.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="VBoxContainer" unique_id=1130487662]
+layout_mode = 2
+text = "GAME OVER"
+
+[node name="FinalWaveLabel" type="Label" parent="VBoxContainer" unique_id=59518452]
+layout_mode = 2
+
+[node name="ReplayButton" type="Button" parent="VBoxContainer" unique_id=1519881349]
+layout_mode = 2
+text = "Replay"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=287062817]
+layout_mode = 2
+text = "Main Menu
+"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

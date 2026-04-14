@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cing2bxknqcsa"]
+
+[ext_resource type="PackedScene" uid="uid://4hkpg2jdag64" path="res://enemies/zombie_santa.tscn" id="1_bu2x2"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_2foj0"]
+[ext_resource type="Texture2D" uid="uid://du5sg3m5hppfq" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Shopkeeper.png" id="3_h5r2y"]
+
+
+[sub_resource type="Resource" id="Resource_yrspe"]
+script = ExtResource("2_2foj0")
+skin_texture = ExtResource("3_h5r2y")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_bu2x2")]
+data = SubResource("Resource_yrspe")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://1ugj4shlaao"]
+
+[ext_resource type="PackedScene" uid="uid://dk0malq76gvgw" path="res://enemies/zombie_airport_security.tscn" id="1_gvbxy"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_jejg7"]
+[ext_resource type="Texture2D" uid="uid://cfndut0p3lf2m" path="res://SimpleApocalypse/Models/Characters/Animator/SA_Zombie_Cheerleader.png" id="2_jqquk"]
+[ext_resource type="Texture2D" uid="uid://dk47ffh8logqg" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Cheerleader.png" id="3_pp06e"]
+
+[sub_resource type="Resource" id="Resource_ucvvt"]
+script = ExtResource("2_jejg7")
+skin_texture = ExtResource("3_pp06e")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jejg7"]
+albedo_texture = ExtResource("2_jqquk")
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_gvbxy")]
+data = SubResource("Resource_ucvvt")
+
+[node name="Hair_Ponytail" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="11" unique_id=737547690]
+visible = true
+
+[node name="Hair_Ponytail" parent="Skeleton3D/Hair_Ponytail" index="0" unique_id=127028113]
+surface_material_override/0 = SubResource("StandardMaterial3D_jejg7")
+
+[node name="Prop_Backpack" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="29" unique_id=906290490]
+visible = false

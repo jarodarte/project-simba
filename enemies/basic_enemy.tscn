@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dnkfhtodwr512"]
+
+[ext_resource type="Script" uid="uid://c811pnb2j8kpy" path="res://scripts/enemy.gd" id="1_rwafm"]
+[ext_resource type="Resource" uid="uid://bswlakghi5nem" path="res://enemies/basic_enemy.tres" id="2_rwafm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7k104"]
+radius = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7k104"]
+radius = 0.4
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a0tk4"]
+radius = 0.4
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4gyqm"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+radius = 1.0
+
+[node name="basic_enemy" type="CharacterBody3D" unique_id=700309911 node_paths=PackedStringArray("head_collision_shape") groups=["enemy"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_rwafm")
+data = ExtResource("2_rwafm")
+head_collision_shape = NodePath("HeadHurtbox")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1221998308]
+process_callback = 0
+
+[node name="HeadHurtbox" type="CollisionShape3D" parent="." unique_id=1549179496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6939442, 0)
+shape = SubResource("SphereShape3D_7k104")
+
+[node name="BodyHurtbox" type="CollisionShape3D" parent="." unique_id=1034230685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25363153, 0)
+shape = SubResource("CapsuleShape3D_7k104")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1016774746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25283492, 0)
+mesh = SubResource("CapsuleMesh_a0tk4")
+surface_material_override/0 = SubResource("StandardMaterial3D_7k104")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=651860541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69285834, 0)
+mesh = SubResource("SphereMesh_4gyqm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1061427175]
+
+[node name="DamageZone" type="Area3D" parent="." unique_id=1079467073]
+collision_layer = 9
+collision_mask = 3
+
+[node name="EnemyHitbox" type="CollisionShape3D" parent="DamageZone" unique_id=46808253]
+shape = SubResource("CapsuleShape3D_4gyqm")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

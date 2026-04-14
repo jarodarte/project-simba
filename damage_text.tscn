@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://khg8b0bio7v5"]
-
-[ext_resource type="Script" uid="uid://qvm0fbuun07u" path="res://damage_text.gd" id="1_csl0i"]
-
-[node name="DamageText" type="Label3D" unique_id=1085032934]
-script = ExtResource("1_csl0i")

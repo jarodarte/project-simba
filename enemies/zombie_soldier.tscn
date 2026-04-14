@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://6rqxslm6mfh"]
+
+[ext_resource type="PackedScene" uid="uid://cing2bxknqcsa" path="res://enemies/zombie_shopkeeper.tscn" id="1_s77rb"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_ak0pq"]
+[ext_resource type="Texture2D" uid="uid://cye4qtf0nvw17" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_Soldier.png" id="3_ny028"]
+
+[sub_resource type="Resource" id="Resource_d3pvl"]
+script = ExtResource("2_ak0pq")
+skin_texture = ExtResource("3_ny028")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_s77rb")]
+data = SubResource("Resource_d3pvl")
+
+[node name="WarHelmet" parent="Skeleton3D/WarHelmet" parent_id_path=PackedInt32Array(1632072729) index="0" unique_id=585235560]
+visible = true
+
+[node name="Prop_Backpack" parent="Skeleton3D/Prop_Backpack" parent_id_path=PackedInt32Array(906290490) index="0" unique_id=130300544]
+visible = true

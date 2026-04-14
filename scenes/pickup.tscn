@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://qke7amwi4ky6"]
+
+[ext_resource type="Script" uid="uid://yojnqampmbe0" path="res://scripts/pickup.gd" id="1_fs8dk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2kikv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fs8dk"]
+
+[node name="Pickup" type="Area3D" unique_id=1822226648 groups=["pickups"]]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_fs8dk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1715307549]
+shape = SubResource("SphereShape3D_2kikv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=381940]
+mesh = SubResource("SphereMesh_fs8dk")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1945149531 groups=["pickups"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+visible = false
+layers = 5
+billboard = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

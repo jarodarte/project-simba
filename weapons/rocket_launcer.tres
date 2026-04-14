@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://55rkybnkn6y2"]
+
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://scripts/weapon_data.gd" id="1_8h0db"]
+[ext_resource type="Resource" uid="uid://ggkh7jpek4ig" path="res://weapons/rocket_launcher.tres" id="1_cqxd1"]
+[ext_resource type="PackedScene" uid="uid://gi1u6081qlys" path="res://weapons/grenade.tscn" id="2_0g3lq"]
+[ext_resource type="PackedScene" uid="uid://d0uf0olnoycm5" path="res://weapons/rocket_launcher.tscn" id="4_0g3lq"]
+
+
+[resource]
+script = ExtResource("1_8h0db")
+name = "RPG"
+fire_rate = 1.5
+magazine_size = 1
+max_reserve_magazines = 5
+current_ammo = null
+weapon_scene = ExtResource("4_0g3lq")
+current_reserve_magazines = null
+reload_time = 3.0
+projectile_speed = 50.0
+explosive_data = ExtResource("1_cqxd1")
+explosive_scene = ExtResource("2_0g3lq")
+metadata/_custom_type_script = "uid://usc4sl4sxcbl"

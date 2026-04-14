@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://c5vcp70r6veoo"]
+
+[ext_resource type="Script" uid="uid://p6r51qxt2sq2" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://usc4sl4sxcbl" path="res://scripts/weapon_data.gd" id="2_hqtel"]
+[ext_resource type="AudioStream" uid="uid://ccguib30lv3an" path="res://Audio/footstep_concrete_002.ogg" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://cf6x0amtic4fi" path="res://scripts/weapon_sway.gd" id="6_2hs0m"]
+[ext_resource type="Script" uid="uid://bv1p5xyfeecmi" path="res://scripts/interaction_checker.gd" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://ju1dfjq5pddd" path="res://scripts/player_shooter.gd" id="8_dw050"]
+[ext_resource type="Resource" uid="uid://dvgobqgn8x74v" path="res://weapons/pistol.tres" id="8_nvl01"]
+[ext_resource type="Script" uid="uid://bp2vp4a3x7mxr" path="res://scripts/explosive_data.gd" id="9_n7ghd"]
+[ext_resource type="Resource" uid="uid://3bn861mduogq" path="res://weapons/frag_grenade.tres" id="10_nvl01"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1934467046 groups=["player"]]
+collision_layer = 2
+floor_constant_speed = true
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1998143408]
+shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1820032560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.08964625)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=254172082]
+target_position = Vector3(0, 0, -100)
+collision_mask = 5
+collide_with_areas = true
+
+[node name="GunHolder" type="Node3D" parent="Camera3D" unique_id=188650488]
+
+[node name="WeaponAnchor" type="Node3D" parent="Camera3D/GunHolder" unique_id=806945104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, -0.3, -0.6)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=788094981]
+one_shot = true
+
+[node name="FootstepSound" type="AudioStreamPlayer3D" parent="." unique_id=1291425240]
+stream = ExtResource("5_sweqy")
+bus = &"SFX"
+
+[node name="FootstepTimer" type="Timer" parent="." unique_id=475741616]
+wait_time = 0.5
+
+[node name="WeaponSway" type="Node3D" parent="." unique_id=1383967517 node_paths=PackedStringArray("gun_holder")]
+script = ExtResource("6_2hs0m")
+gun_holder = NodePath("../Camera3D/GunHolder")
+
+[node name="InteractionChecker" type="Node3D" parent="." unique_id=4697784]
+script = ExtResource("7_1jxqw")
+
+[node name="PlayerShooter" type="Node3D" parent="." unique_id=338797724 node_paths=PackedStringArray("camera", "raycast", "shoot_timer", "weapon_anchor", "player")]
+script = ExtResource("8_dw050")
+camera = NodePath("../Camera3D")
+raycast = NodePath("../Camera3D/RayCast3D")
+shoot_timer = NodePath("../ShootTimer")
+weapons = Array[ExtResource("2_hqtel")]([ExtResource("8_nvl01")])
+weapon_anchor = NodePath("../Camera3D/GunHolder/WeaponAnchor")
+player = NodePath("..")
+explosives = Array[ExtResource("9_n7ghd")]([ExtResource("10_nvl01")])
+
+[connection signal="timeout" from="ShootTimer" to="PlayerShooter" method="_on_shoot_timer_timeout"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://gi1u6081qlys"]
+
+[ext_resource type="Script" uid="uid://bbd35g000b2d4" path="res://scripts/grenade.gd" id="1_gju2f"]
+[ext_resource type="PackedScene" uid="uid://dd1228pkn3f3u" path="res://SimpleApocalypse/Scenes/Weapons/SA_Wep_Grenade.tscn" id="2_24g56"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_24g56"]
+friction = 0.8
+bounce = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pu16u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ga5sg"]
+size = Vector3(0.0017842102, 0.0030930042, 0.0015523147)
+
+[node name="Grenade" type="RigidBody3D" unique_id=381011493]
+collision_layer = 8
+collision_mask = 5
+mass = 0.4
+physics_material_override = SubResource("PhysicsMaterial_24g56")
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp = 0.5
+script = ExtResource("1_gju2f")
+
+[node name="FuseTimer" type="Timer" parent="." unique_id=539112145]
+
+[node name="ExplosionArea" type="Area3D" parent="." unique_id=586811979]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExplosionArea" unique_id=2094370826]
+shape = SubResource("SphereShape3D_pu16u")
+
+[node name="SA_Wep_Grenade" parent="." unique_id=1550212845 instance=ExtResource("2_24g56")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=716847668]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.011594774, -4.773028e-07, 0)
+shape = SubResource("BoxShape3D_ga5sg")

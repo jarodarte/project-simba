@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bqgxiilggmrs"]
+
+[ext_resource type="PackedScene" uid="uid://dqpmhoed8pdma" path="res://enemies/zombie_firefighter.tscn" id="1_mr103"]
+[ext_resource type="Script" uid="uid://oue58volyrm1" path="res://scripts/enemy_data.gd" id="2_oliq4"]
+[ext_resource type="Texture2D" uid="uid://btdou1bmtwrif" path="res://SimpleApocalypse/Textures/Textures/Zombies/SA_Zombie_FootballPlayer.png" id="3_pfmrq"]
+
+[sub_resource type="Resource" id="Resource_3ecu8"]
+script = ExtResource("2_oliq4")
+skin_texture = ExtResource("3_pfmrq")
+metadata/_custom_type_script = "uid://oue58volyrm1"
+
+[node name="Zombies" unique_id=155044975 instance=ExtResource("1_mr103")]
+data = SubResource("Resource_3ecu8")
+
+[node name="Hat_FireFighter" parent="Skeleton3D" parent_id_path=PackedInt32Array(669375174) index="7" unique_id=1876438210]
+visible = false
